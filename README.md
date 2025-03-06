@@ -42,9 +42,48 @@ Java is a platform-independent language because:
 - That’s why Java is called **WORA**.
 - **WORA → Write Once, Run Anywhere**
 
-  [Watch this video](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
+[Watch this video](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
 
 ![zp](https://github.com/user-attachments/assets/f30c99df-1027-47b1-8beb-2f93aa558c51)
+
+
+## Java Architecture:
+
+![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
+
+# Java Development Environment
+
+## 1. JDK (Java Development Kit)
+The Java Development Kit (JDK) provides the necessary environment to develop and execute Java programs. It includes essential tools such as:
+- Compiler
+- Archiver
+- Debugger
+- Java Runtime Environment (JRE)
+- Other development tools
+
+JDK is platform-dependent, meaning separate installers are required for Windows, Unix, and Mac operating systems.
+
+### JDK Components:
+- **Development Tools**: Provides an environment to develop Java programs.
+- **JRE (Java Runtime Environment)**: Allows execution of Java programs.
+
+## 2. JRE (Java Runtime Environment)
+The Java Runtime Environment (JRE) is a software package that provides an environment to run (but not develop) Java programs on a machine. It contains:
+- **JVM (Java Virtual Machine)**
+- **Libraries**
+- **Other essential components**
+
+JRE is primarily used for running Java applications and does not include development tools.
+
+## 3. JVM (Java Virtual Machine)
+The Java Virtual Machine (JVM) is a virtual CPU that provides a runtime environment for executing Java bytecode. It is responsible for:
+- Converting bytecode into machine-specific code.
+- Loading class files using the class loader.
+- Verifying bytecode integrity with the bytecode verifier.
+- Executing bytecode line by line, functioning as an interpreter.
+
+## 4. JIT (Just-In-Time Compiler)
+The Just-In-Time (JIT) Compiler is a component of the JVM that enhances Java application performance by compiling bytecodes into native machine code at runtime.
 
 
 
