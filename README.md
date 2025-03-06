@@ -3,8 +3,10 @@
 Java is a **Class-based, High-level, Object-Oriented Programming Language**.
 
 ## Key Features:
-- **Highly Secure, Functional, and Robust**
-- **Platform Independent**
+- **Platform Independent or Portable**
+- **Object Oriented Language**
+- **Security**
+- **Rich API's**
 
 ## History:
 - Developed by **Sun Microsystems** on **May 23, 1995**
