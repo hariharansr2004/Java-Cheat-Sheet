@@ -94,5 +94,19 @@ Just-In-Time Compiler is a part of the **JVM** that enhances the performance of 
 
 <br>
 
+## ClassLoader
+
+- Find and Loads Java Classes!
+
+Three Types
+- System Class Loader - Loads all application classes from CLASSPATH
+- Extension Class Loader - Loads all classes from extension directory
+- Bootstrap Class Loader - Loads all the Java core files
+
+Order of execution of ClassLoaders
+- JVM needs to find a class, it starts with System Class Loader. 
+- If it is not found, it checks with Extension Class Loader. 
+- If it not found, it goes to the Bootstrap Class Loader. 
+- If a class is still not found, a ClassNotFoundException is thrown.
 
 
