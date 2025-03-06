@@ -1224,6 +1224,11 @@ class ConstructorChaining {
 ### Q What is Constructor calling?
 - The process of calling one constructor from another constructor within the same class is known as Constructor calling.
 
+### Q Can a Constructor can be static,final or abstract?
+- **No** , A Constructor cannot be static or final or abstract
+  
+###  Q Can a Constructor can be public,private or protected?
+- **Yes**, a Constructor can be public or private or protected
 <br> 
 
 # Object-Oriented Programming Concepts
@@ -1281,6 +1286,7 @@ The class that inherits from another class is called the **subclass**, **derived
 - **Reusability**: The major advantage of inheritance is code reuse.
 - **Extendibility**: We can add new functionality to our application without modifying existing code.
 - Example: Microsoft Word has multiple versions such as Word 2003, 2007, etc. Instead of rewriting the entire code, the existing code is reused with additional features.
+<br>
 
 ### Types:
 ![image](https://github.com/user-attachments/assets/1467fe72-5bd4-4e3d-83c0-38fbb62f7c60)
@@ -1458,7 +1464,137 @@ public class HybridInheritance extends father// if we put son it will only give 
 ```
 <br>
 
+### Multiple Inheritance: 
+- A class that can inherit properties of more than one parent class.
+  
+### Java doesn’t support Multiple Inheritance Why? 
+- As per java rule whenever we create object for subclass object its super class constructor must be called in-order to complete the constructor chaining process.
+- But in Multiple inheritance one subclass will have more than one superclass, when we create object of the subclass the JVM will get confuse which superclass constructor it should execute first to complete the constructor chaining.
+- To avoid this confusion multiple inheritance is not allowed in java.
+  
+### Q. Can we access all variables and features of parent class in child class?
+- No, the accessibility of parent class features inside child class is also decided by access modifier. For example, a private variable or method in parent class won't be accessible inside child class.
+
+### Q.What do you do if you don’t want a class to be inherited?
+- Just make it final
 
 
+# Java Constructors
+
+## Overview
+
+- Constructor is a special method that is used to initialize the objects.
+- By default, a constructor is called when an object is created.
+- It can be used to set initial values for object attributes.
+- A constructor in Java can’t be abstract, final, static, or synchronized.
+- Same Name as Class Name
+- No return Type
+- Automatic invocation (e.g., if we apply brakes, the car will stop).
+- Initialization of objects
+
+## How Java Constructors are Different from Methods?
+
+| Feature            | Constructors | Methods |
+|--------------------|-------------|---------|
+| Name              | Must be the same as the class name | Can have different names |
+| Return Type       | No return type | Has a return type or `void` if it does not return any value |
+| Invocation        | Called only once at the time of object creation | Can be called any number of times |
+
+## Types of Constructors
+
+### 1. Default Constructor
+A constructor that has no parameters is known as a default constructor. The default constructor provides default values to the object like `0`, `null`, etc., depending on the type.
+
+### 2. Parameterized Constructor
+A constructor that allows us to pass one or more arguments. It is used to initialize the object's properties with specific values (if we want to initialize variables with our own values).
+
+### 3. Copy Constructor
+A constructor that is used to create a new object by copying values from an existing object of the same class.
+> **Note:** Java does not support copy constructors, but they can be implemented manually.
+
+## Constructor Overloading
+
+- Multiple constructors in a class can have the same name with different parameters.
+- Constructor overloading allows multiple ways to initialize an object.
+
+# Object-Oriented Programming System (OOPs)
+
+## Overview
+
+Object-Oriented Programming System (OOPs) is a programming concept based on objects. It provides a structured way to design and develop software using principles like Encapsulation, Abstraction, Inheritance, and Polymorphism.
+
+## Why Do We Need OOP?
+
+- **Organized Code** – Helps structure programs neatly.
+- **Reusability** – Write code once, use it multiple times.
+- **Security** – Protects important data from unwanted changes.
+- **Scalability** – Makes it easy to expand projects without breaking existing code.
+
+## Inheritance in OOP
+
+Inheritance is an OOP concept that allows a class to inherit properties and behaviors from another class.
+**Example:** A child inherits some properties from their parents.
+
+### How is inheritance implemented in Java?
+Inheritance is implemented using the `extends` keyword.
+
+### Superclass
+The class whose features are inherited is known as the **superclass**, **base class**, or **parent class**.
+
+### Subclass
+The class that inherits from another class is called the **subclass**, **derived class**, **extended class**, or **child class**.
+
+## Importance of Inheritance in Java
+
+- **Reusability**: The major advantage of inheritance is code reuse.
+- **Extendibility**: We can add new functionality to our application without modifying existing code.
+  - Example: Microsoft Word has multiple versions such as Word 2003, 2007, etc. Instead of rewriting the entire code, the existing code is reused with additional features.
+<br>
+
+## this Keyword
+- ‘this’ keyword in Java is a reference variable that refers to the current instance of the class. It is commonly used to differentiate between instance variables and method parameters with the same name.
+- this can also be used to:
+- 
+- Call current class constructor
+- Call current class method
+- to refer to the current class instance variables.
+
+<br>
+
+##  Super Keyword
+- Super is a keyword that reference parent class or super class or subclass in java (it only returns parent object) it return the objects that represents from parent class
+- super can be used in various contexts as given below:
+- it can be used to refer superclass instance variable
+- it can be used to call a superclass method
+- it can be used to call a superclass constructor.
+<br>
+## Similarities
+- `this()` and `super()` must be the first statements in a constructor.
+- Both this and super are non-static, so they can't be used in static context. It means that we cannot use both the keywords in the main method in Java.
+- Both super and this keywords in Java can be used in constructor chaining to call another constructor. this() calls the no-argument constructor of the current class, and super() calls the no-argument constructor of the parent class.
+
+## Important Points About this() and super() in Java
+- this() as well super() can be used exactly once inside the constructor.
+- If we use this() followed by super() or super() followed by this() we will get compile-time error. It is due to either this() or super() can be the first statement inside the constructor, not both.
+Inside the constructor, we cannot call the this() and super() recursively. 
+<br>
+
+## Interview Question: When Do You Need a `super` Keyword?
+
+- Whenever a derived class inherits the features of a base class, there is a chance that base class features are similar to derived class features, resulting in ambiguity for the JVM. The `super` keyword must be used to distinguish between base class features and derived class features.
+
+## Can We Use Both `this()` and `super()` in the Same Constructor?
+
+- No, Both this() and super() cannot be used together in constructor.
+- this() is used to call default constructor of same class.it should be first statement inside constructor.
+- super() is used to call default constructor of base class.it should be first statement inside constructor.
+- so this() and super() both are used for constructor call but both want to execute at first. that's why it'll show compiler error like :
+```java
+error: call to this must be first statement in constructor this(); or
+
+error: call to this must be first statement in constructor super();
+```
+
+<br>
 
 
