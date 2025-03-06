@@ -137,7 +137,7 @@ public class HelloWorld {
 - A `.java` file must contain at least one class or interface declaration. A blank file will not be considered a valid Java program by the compiler.
 <br>
 
-## Can We Perform Changes in Bytecode? What Are the Issues?
+## Can We Perform Changes in Bytecode? 
 Yes, you can make changes to bytecode manually, but it’s highly discouraged due to several issues.
 
 <br>
@@ -470,7 +470,102 @@ int c=a+b;
 
 <br>
 
-# Variables in Java
+## Control Statements in Java
+
+## If-Else Statement
+The `if-else` statement controls the execution of code blocks based on whether a condition evaluates to `true` or `false`.
+
+```java
+if (condition) {
+    // Code executes if condition is true
+} else {
+    // Code executes if condition is false
+}
+```
+## Nested If Statement
+
+- You can place an if statement inside another if to create complex decision-making scenarios.
+```java
+if (condition1) {
+    if (condition2) {
+        // code if both condition1 and condition2 are true
+    }
+}
+```
+## If-Else Ladder
+
+- Multiple if-else statements chained together. Useful when you need to test several conditions.
+
+```java
+if (condition1) {
+    // code if condition1 is true
+} else if (condition2) {
+    // code if condition2 is true
+} else {
+    // code if none of the above are true
+}
+```
+
+## Loops
+Loops facilitate the execution of a set of instructions repeatedly until a specific condition is met.
+
+### 1. While Loop
+Executes repeatedly until the specified condition becomes `false`.
+
+```java
+while (condition) {
+    // Code executes while condition is true
+}
+```
+
+### 2. Do-While Loop
+Executes the block at least once before checking the condition, then repeats as long as the condition is `true`.
+
+```java
+do {
+    // Code executes at least once
+} while (condition);
+```
+
+### 3. For Loop
+Used when the number of iterations is known beforehand. It consists of three parts: initialization, condition, and increment/decrement.
+
+#### Normal For Loop:
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+```
+
+#### Enhanced For Loop:
+Used to iterate through arrays and collections in Java. It starts with index `0`.
+
+```java
+String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+for (String car : cars) {
+    System.out.println(car);
+}
+```
+**Note:** Printing `car` gives the values of the array, whereas printing `cars` prints the memory location of the array.
+
+#### Nested For Loop:
+Used for iterating through rows and columns, commonly used in 2D structures and nested iterations.
+
+```java
+// Outer loop
+for (int i = 1; i <= 3; i++) {
+    // Inner loop
+    for (int j = 1; j <= i; j++) {
+        System.out.println("Inner: " + j);
+    }
+}
+```
+**Execution Flow:**
+- When `i = 1`, `j` runs for `1`.
+- When `i = 2`, `j` runs for `1, 2`.
+- When `i = 3`, `j` runs for `1, 2, 3`.
+
+## Variables in Java
 
 ##  Instance Variable vs. Static Variable vs. Local Variable
 
