@@ -406,8 +406,6 @@ Floating point Literals
 
  Character Literals
 - Represented by single character between single quotes  Example: ```char a = 'a'```
-- Unicode Representation also can be used. Prefix with \u. Example: char letterA = '\u0041';
-- A number value can also be assigned to character. Example: char letterB = 66; Numeric value can be from 0 to 65535;
 - Escape code can be used to represent a character that cannot be typed as literal. Example: char newLine = '\n';
 
 #### Puzzles 
@@ -424,7 +422,7 @@ long a = 123456789l;
 long b = 0x9ABCDEFGHL; 
 long c = 0123456789L;
 
-float f = 123.456;//COMPILER ERROR! A double value cannot be assigned to a float.
+float f = 123.456; //COMPILER ERROR! A double value cannot be assigned to a float.
 
 boolean b = true; boolean b=false;
 boolean b = TRUE;//COMPILATION ERROR
@@ -546,9 +544,6 @@ The return type of a method indicates what type of value it will return to the c
 - The method’s stack frame is created when the method is called and released once it completes execution.
 
 - Java stack follows the Last-In-First-Out (LIFO) principle, meaning the last method invoked will be the first to complete.
-  
-## Void Keyword
-- The `void` keyword indicates that the method should not return a value.
 
 ## Method Overloading
 - Multiple methods can have the same name with different parameters or different data types.
@@ -571,6 +566,9 @@ The return type of a method indicates what type of value it will return to the c
 - **IS-A** relationship is mandatory to perform overriding.
 - While overriding, the method name and arguments must be the same.
 - Example: Updating an existing feature.
+
+ ## Method Chaining:
+- Method chaining refers to calling multiple methods sequentially within another method
 <br>
 
 ## Difference b/w Method Overloading and Method Overriding
@@ -601,6 +599,21 @@ create an Object.
 ### Can the Main Method be Overridden?
 - No, we cannot override the `main` method in Java because a static method cannot be overridden.
 
+## Can we call the main Method Explicitly?
+- Yes we can call  the main Method Explicitly.
+```java
+public class MainExample {
+    public static void main(String[] args) {
+        System.out.println("Main method called");
+    }
+    public static void anotherMethod() {
+        main(new String[]{"arg1", "arg2"}); // Calling main explicitly
+    }
+    public static void main(String[] args) {
+        anotherMethod();
+    }
+}
+```
 
 ### Can We Pass an Object Inside Method Calling?
 - Yes, you can pass objects as parameters inside a method.
