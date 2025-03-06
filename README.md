@@ -358,6 +358,8 @@ Legal Identifier Names
 - Cannot start with a number
 - Cannot be a keyword
 - No limit on length of identifier
+  
+<br>
 
 ## Java Keywords
 List of Java Keywords
@@ -372,6 +374,7 @@ List of Java Keywords
 - Literals    : true, false, null
 - Others      : void, enum
 - Unused  : goto,const
+<br>
 
 ## Literals
 Any primitive data type value in source code is called Literal.
@@ -505,6 +508,7 @@ if (condition1) {
     // code if none of the above are true
 }
 ```
+<br>
 
 ## Loops
 Loops facilitate the execution of a set of instructions repeatedly until a specific condition is met.
@@ -564,6 +568,105 @@ for (int i = 1; i <= 3; i++) {
 - When `i = 1`, `j` runs for `1`.
 - When `i = 2`, `j` runs for `1, 2`.
 - When `i = 3`, `j` runs for `1, 2, 3`.
+
+<br>
+
+
+## Switch Statement
+- The `switch` statement selects one block from multiple blocks to e executed based on a matching value.
+- Multiple nested `switch` statements can also be used.
+**Note:**
+- For `char`, use single quotes (`'A'`).
+- For `String`, use double quotes (`"Hello"`).
+- Disallowed Types:
+- float, double, long: These types are not allowed in a switch statement.
+- boolean: The boolean type cannot be used in a switch statement.
+```java
+int number = 2;
+switch (number) {
+    case 1:
+        System.out.println("One");
+        break;
+    case 2:
+        System.out.println("Two");
+        break;
+    default:
+        System.out.println("Not One or Two");
+}
+
+** Nested switch:**
+public class NestedSwitchExample {
+    public static void main(String[] args) {
+        String day = "Monday";
+        String topic = "Collections";
+
+        switch (day) {
+            case "Monday":
+                System.out.println("Start of the week");
+
+                switch (topic) {
+                    case "Collections":
+                        System.out.println("Today's topic: Learning Java Collections");
+                        break;
+                    case "OOP":
+                        System.out.println("Today's topic: Learning Object-Oriented Programming");
+                        break;
+                    default:
+                        System.out.println("General Java learning session");
+                }
+                break;
+
+            case "Friday":
+                System.out.println("End of the week");
+                break;
+
+            default:
+                System.out.println("Midweek day");
+        }
+    }
+}
+
+```
+<br>
+
+## Enums in Java
+An `enum` (enumeration) is a special class that represents a group of constant values and it is known at compile time.
+### Enum Methods
+- To access a single value of an `enum`, use `enum_name.valueOf()`
+- To directly access a particular value, use `enum_name.valueName`.
+- To access all values of an `enum`, use `enum_name.values()`.
+
+```java
+enum Color { RED, GREEN, BLUE }
+Color color = Color.RED;
+switch (color) {
+    case RED:
+        System.out.println("Red color");
+        break;
+    case GREEN:
+        System.out.println("Green color");
+        break;
+}
+
+enum courses { JAVA, AI, ML }
+courses selectedCourse = courses.valueOf(a);
+switch (selectedCourse) {
+      case JAVA:
+           System.out.println("Java course");
+           break;
+      case AI:
+           System.out.println("AI course");
+	   break;
+      case ML:
+	   System.out.println("MI course");
+           break;
+      default:
+           System.out.println("Invalid course");
+     }
+}}
+```
+
+<br>
 
 ## Variables in Java
 
@@ -687,7 +790,21 @@ create an Object.
 ### Can the Main Method be Overloaded?
 - Yes, we can overload the `main` method in Java, but JVM only calls the original `main` method. It will never call our overloaded `main` method.
   
-- ![image](https://github.com/user-attachments/assets/0e9ffda3-b4d2-4f6d-a99a-45bea90c0e3c)
+```java
+public class CanMainbeOverloaded {
+	public static void main(String[] args) {
+		System.out.println("Original Main Method");
+	}
+	
+	public static void main(Double[] args) {
+		System.out.println("Overloaded Main Method");
+	}
+	
+	public static void main(int args) {
+		System.out.println("Overloaded Main Method");
+	}
+}
+```
 
 - **Output:** `Original Main Method`
 
@@ -714,15 +831,38 @@ public class MainExample {
 - Yes, you can pass objects as parameters inside a method.
 - Any changes made to the object in the called method will be reflected in the calling method as well.
   
-![image](https://github.com/user-attachments/assets/3d7a9ebb-1d21-4aa9-a505-13cb14f7e02d)
+```java
+public class CanWePassObjectsinMethodCall {
+	int b=20;
+	void mc(int a) {
+		System.out.println("Passing Objects in method call: "+a);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CanWePassObjectsinMethodCall obj=new CanWePassObjectsinMethodCall();
+		obj.mc(obj.b);//passing object in method call
+	}
+}
+```
 
 ### Can we overload static methods? 
 - Yes. We can have two or more static methods with the same name, but parameters or datatypes should be different.
 
 ### Can we overload methods that differ only by static keywords? 
 - We cannot overload two methods in Java if they differ only by static keyword (the number of parameters and types of parameters is the same).
-
-![image](https://github.com/user-attachments/assets/3e1d2310-575d-42e3-a98a-3b3519744a2a)
+```java
+public class Test {
+	public static void foo() {
+		System.out.println("Test.foo() called ");
+	}
+	public void foo() { // Compiler Error: cannot redefine foo()
+		System.out.println("Test.foo(int) called ");
+	}
+	public static void main(String args[]) { 
+		Test.foo();
+	}
+}
+```
 
 ### Call by Value:
 - Calling a method by passing a value in the parameter.
@@ -731,8 +871,7 @@ public class MainExample {
 public class CallByValue {
 	int data=50;//instance variable
 	void print(int data){ //cpy of data is passed to the method (localvariable)
-		data=data+100;
-    //changes in local variable only it won't affect the original variable outside the method.
+		data=data+100; //changes in local variable only it won't affect the original variable outside the method.
 	}
 	
 	public static void main(String[] args) {
