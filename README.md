@@ -33,6 +33,7 @@ Java is widely used in:
 - No, it’s partially object oriented because,it supports primitive data types like "int", "float", and "double", which are not objects.
 
 <br>
+
 ## Platform Independence:
 Java is a platform-independent language because:
 - In any programming language, source code is compiled into executable code, which cannot run across all platforms.
