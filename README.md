@@ -884,7 +884,7 @@ class GFG {
 
 | Feature                | Instance Variable | Static Variable | Local Variable |
 |------------------------|------------------|----------------|---------------|
-| Defintion |An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. |A **static variable** is a class-level variable shared among all instances of the class. It is declared using the `static` keyword.| variables are declared within a method, constructor, or block.They must be initialized before use, as they do not have default values.|
+| Defintion |An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. |A **static variable** is a class-level variable which is shared among all instances of the class. It is declared using the `static` keyword.| variables are declared within a method, constructor, or block.They must be initialized before use, as they do not have default values.|
 | Memory Allocation      | Created when an object is instantiated. | Allocated once when the class is loaded. | Allocated when the method/block is executed and destroyed after execution. |
 | Memory Location      | Located in Heap | Located in Heap  | Located in Stack |
 | Scope                 | Specific to each object. | Shared across all objects of the class. | Limited to the method/block in which it is declared. |
@@ -952,6 +952,11 @@ The return type of a method indicates what type of value it will return to the c
 - The method’s stack frame is created when the method is called and released once it completes execution.
 
 - Java stack follows the Last-In-First-Out (LIFO) principle, meaning the last method invoked will be the first to complete.
+
+## Static Methods:
+- Static Methods are methods that are associated with the class not with objects of the class
+- For Static Methods, we can able to pass the arguments with class_name.method_name without creating objects.
+
 
 ## Method Overloading
 - Multiple methods can have the same name with different parameters or different data types.
@@ -1112,7 +1117,123 @@ Call by Value Explanation in detail:
 <br>
 
 
+# Java Constructors
 
+## Overview
+
+- Constructor is a special method that is used to initialize the objects.
+- By default, a constructor is called when an object is created.
+- It can be used to set initial values for object attributes.
+- A constructor in Java can’t be abstract, final, static, or synchronized.
+- Same Name as Class Name
+- No return Type
+- Automatic invocation (e.g., if we apply brakes, the car will stop).
+- Initialization of objects
+
+## How Java Constructors are Different from Methods?
+
+| Feature            | Constructors | Methods |
+|--------------------|-------------|---------|
+| Name              | Must be the same as the class name | Can have different names |
+| Return Type       | No return type | Has a return type or `void` if it does not return any value |
+| Invocation        | Called only once at the time of object creation | Can be called any number of times |
+
+## Types of Constructors
+
+### 1. Default Constructor
+A constructor that has no parameters is known as a default constructor. The default constructor provides default values to the object like `0`, `null`, etc., depending on the type.
+
+### 2. Parameterized Constructor
+A constructor that allows us to pass one or more arguments. It is used to initialize the object's properties with specific values (if we want to initialize variables with our own values).
+
+### 3. Copy Constructor
+A constructor that is used to create a new object by copying values from an existing object of the same class.
+> **Note:** Java does not support copy constructors, but they can be implemented manually.
+
+## Constructor Overloading
+
+-  Constructor overloading is a technique of having more than one constructor in the same class with different parameter lists.
+
+- Constructor overloading allows multiple ways to initialize an object.
+  
+```java
+public class Person 
+{	
+// Declaring a non-parameterized constructor.
+   Person() { 
+      System.out.println("Introduction:");
+   }
+// Declaring one parameterized constructor.
+   Person(String name){
+     System.out.println("Name: " +name);	
+   }
+// Declaring two parameterized constructor.
+   Person(String scname, int rollNo) {
+	 System.out.println("School name: "+scname+ ", "+"Roll no:"+rollNo);
+   }
+public static void main(String[] args) 
+{
+ // JVM will call constructor depending on arguments passed.
+  Person p1 = new Person(); // calling with zero argument.
+  Person p2 = new Person("John"); // calling with one argument.
+  Person p3 = new Person("DPS", 12); // calling with two arguments.
+ }
+}
+```
+
+## Constructor Chaining
+
+- Constructor chaining occurs when one constructor calls another constructor in the same class using this()
+- Rules for Constructor Chaining:
+> 1. this() must be the first statement in the constructor.
+> 2. Only one constructor call is allowed in each constructor.
+
+```java
+class A {
+    A() {
+        System.out.println("No-parameter constructor in A class");
+    }
+    
+    A(int a) {
+        this();  // Calls the no-parameter constructor
+        System.out.println("1-parameter constructor in A class");
+    }
+    A(int a, int b) {
+        this(a);  // Calls the 1-parameter constructor
+        System.out.println("2-parameter constructor in A class");
+    }
+}
+class ConstructorChaining {
+    public static void main(String[] args) {
+        A a1 = new A(10, 20);  // Invokes the 2-parameter constructor
+    }
+}
+```
+
+### Q What is Constructor calling?
+- The process of calling one constructor from another constructor within the same class is known as Constructor calling.
+
+<br> <br>
+
+# Object-Oriented Programming Concepts
+
+## Class:
+- A Class is a blueprint or template or user-defined prototype for creating objects.
+- It consists of Data members, methods, constructors, nested classes, interfaces etc.
+  
+## Object: 
+- Objects is a real time entity and it’s created at run time.
+- It is known as instance of a class
+- Each object has a state, behaviour, identity.
+- The objects can be created by using the new keyword.
+- Default value of Object is null
+  
+![image](https://github.com/user-attachments/assets/5bcefa1a-754d-403d-9be6-4f85a4183d22)
+- State: It is represented by attributes(variables) of an object. 
+- Behaviour: It is represented by the methods of an object.
+- Identity: It gives a unique name to an object.
+
+- More info:[Reference variables]
 
 
 
