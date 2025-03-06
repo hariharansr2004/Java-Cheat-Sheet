@@ -29,8 +29,7 @@ Java is widely used in:
 ## Features of Java:
 ![z](https://github.com/user-attachments/assets/d36093cc-7e45-44a2-8bbe-6f728c2b2bc0)
 
-
-
+---
 ## Platform Independence:
 Java is a platform-independent language because:
 - In any programming language, source code is compiled into executable code, which cannot run across all platforms.
@@ -46,49 +45,55 @@ Java is a platform-independent language because:
 
 ![zp](https://github.com/user-attachments/assets/f30c99df-1027-47b1-8beb-2f93aa558c51)
 
-
-
+---
 
 ## Java Architecture:
 
 ![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
 
-# Java Development Environment
+---
 
-## 1. JDK (Java Development Kit)
-The Java Development Kit (JDK) provides the necessary environment to develop and execute Java programs. It includes essential tools such as:
-- Compiler
-- Archiver
-- Debugger
-- Java Runtime Environment (JRE)
-- Other development tools
+# Java Environment Components  
 
-JDK is platform-dependent, meaning separate installers are required for Windows, Unix, and Mac operating systems.
+## 1. JDK (Java Development Kit)  
+Java Development Kit provides the environment to develop and execute Java programs. It includes:  
+- A **compiler**, an **archiver**, a **debugger**, and other development tools.  
+- **Java Runtime Environment (JRE)** for executing Java programs.  
 
-### JDK Components:
-- **Development Tools**: Provides an environment to develop Java programs.
-- **JRE (Java Runtime Environment)**: Allows execution of Java programs.
+**Note:** JDK is platform-dependent, so separate installers are needed for Windows, Unix, and Mac operating systems.  
 
-## 2. JRE (Java Runtime Environment)
-The Java Runtime Environment (JRE) is a software package that provides an environment to run (but not develop) Java programs on a machine. It contains:
-- **JVM (Java Virtual Machine)**
-- **Libraries**
-- **Other essential components**
+JDK mainly includes two components:  
+- **Development Tools** – Provides an environment to develop Java programs.  
+- **JRE** – Used to execute Java programs.  
 
-JRE is primarily used for running Java applications and does not include development tools.
+---
 
-## 3. JVM (Java Virtual Machine)
-The Java Virtual Machine (JVM) is a virtual CPU that provides a runtime environment for executing Java bytecode. It is responsible for:
-- Converting bytecode into machine-specific code.
-- Loading class files using the class loader.
-- Verifying bytecode integrity with the bytecode verifier.
-- Executing bytecode line by line, functioning as an interpreter.
+## 2. JRE (Java Runtime Environment)  
+Java Runtime Environment is a software package that provides an environment to **run** Java programs (not develop them).  
 
-## 4. JIT (Just-In-Time Compiler)
-The Just-In-Time (JIT) Compiler is a component of the JVM that enhances Java application performance by compiling bytecodes into native machine code at runtime.
+It contains:  
+- **JVM (Java Virtual Machine)**  
+- **Libraries and Other Components** required to run Java applications.  
 
+**Note:** JRE is primarily for running Java applications, not for development.  
 
+---
 
+## 3. JVM (Java Virtual Machine)  
+JVM is a virtual CPU that provides a runtime environment for executing Java bytecodes.  
+
+It performs the following tasks:  
+- Converts **bytecode** into **machine-specific code**.  
+- Loads class files in the **class loader**.  
+- Verifies bytecode with the **bytecode verifier**.  
+- Executes bytecode line by line (hence, it acts as an **interpreter**).  
+
+---
+
+## 4. JIT (Just-In-Time Compiler)  
+Just-In-Time Compiler is a part of the **JVM** that enhances the performance of Java applications by **compiling bytecodes to native machine code at runtime**.  
+
+---
 
 
 
