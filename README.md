@@ -459,7 +459,8 @@ char ch1 = 66000; //COMPILER ERROR!
 9. **Shift Operators**: Shift bits left or right. (`<<`, `>>`, `>>>`).
 10. **`instanceof` Operator**: Checks object type. (`obj instanceof Class`).
     
-![image](https://github.com/user-attachments/assets/9fe7b8f9-83a5-498f-97b0-56e094b69f87)
+![image](https://github.com/user-attachments/assets/c20b4abf-1fd3-4b14-a1b2-146644f6a73c)
+
 
 ## Q. What is Operand and Operator
 - The values or variables on which the operator acts on it is known as Operand. Eg:a,b
@@ -666,6 +667,215 @@ switch (selectedCourse) {
 }}
 ```
 
+<br>
+
+## Type Casting in Java
+
+- Type casting is a concept in programming where you change the data type of a variable from one type to another.
+
+- In Java, there are two types of casting:
+
+## 1. Implicit Casting (Automatic)
+- Also known as widening casting
+- **automatically** when converting a smaller type to a larger type.
+- Order: byte -> short -> char -> int -> long -> float -> double
+```java
+public class ImplicitCastingExample {
+    public static void main(String[] args) {
+        int myInt = 10;
+        double myDouble = myInt; // Implicit casting from int to double
+        System.out.println("Integer value: " + myInt); // Outputs: Integer value: 10
+        System.out.println("Double value: " + myDouble); // Outputs: Double value: 10.0
+    }
+}
+```
+
+## 2.Explicit Casting (manually) 
+- Also known as Narrowing Casting
+- **manually**Converting a larger type to a smaller size type
+- Order:double -> float -> long -> int -> char -> short -> byte
+```java
+public class NarrowingCastingExample {
+    public static void main(String[] args) {
+        double myDouble = 9.78;
+        int myInt = (int) myDouble; // Explicit casting from double to int
+        System.out.println("Double value: " + myDouble); // Outputs: Double value: 9.78
+        System.out.println("Integer value: " + myInt); // Outputs: Integer value: 9
+    }
+}
+```
+<br>
+
+## Wrapper Classes
+- Wrapper classes provide a way to use primitive data types (int, float,boolean etc..) as objects. 
+
+## Need of Wrapper Classes
+- Data structures in the Collection framework, such as ArrayList and Vector, store only objects (reference types) and not primitive types.
+
+## 1.Autoboxing
+- Autoboxing is the automatic conversion of a primitive type to its corresponding wrapper class object. For example – conversion of int to Integer, long to Long, double to Double, etc.
+  
+## 2. Unboxing
+- Unboxing is the automatic conversion of a wrapper class object to its corresponding primitive type. It is just the reverse process of autoboxing. For example – conversion of Integer to int, Long to long, Double to double, etc.
+
+```java
+public class Wrapperclasses {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Boxing or Wrapping
+		int obj=10;
+		Integer a=Integer.valueOf(obj);
+		int j=a.intValue();//UnBoxing
+		
+		
+		byte b=10;
+		long l=123456;
+		short s=4;
+		double d=55.98D;
+		boolean b2=true;
+		float f=67.987F;
+		int i=76;
+		char c='a';
+		
+		//autoboxing: Converting primitive to objects
+		Byte byteobj=b;
+		Long longobj=l;
+		Short shortobj=s;
+		Double doubleobj=d;
+		Boolean booleanobj=b2;
+		Float floatobj=f;
+		Integer intobj=i;
+		Character charobj=c;
+		System.out.println("Primitive type to Object:");
+		System.out.println("--------------------------------");
+		
+		//Autounboxing: convert objects to primitive
+		
+		byte bytevalue=byteobj;
+		long longvalue=longobj;
+		short shortvalue= shortobj;
+		double doublevalue=doubleobj;
+		boolean booleanvalue=booleanobj;
+		float floatvalue=floatobj;
+		int intvalue= intobj;
+		char charvalue= charobj;
+		
+		System.out.println("Objects to primitives:");
+		System.out.println("--------------------------------");
+		
+		//Converting String into datatype [String itself comes under Object an instance of the String class.]
+		System.out.println("String to primitives");
+		String s1="123";
+		int val=Integer.parseInt(s1);
+		System.out.println(val);
+		String s2="10";
+		double val2=Double.parseDouble(s2);
+		System.out.println(val2);
+
+	}
+
+}
+``` 
+
+## Wrapper Class Utility Methods
+
+- A number of utility methods are defined in wrapper classes to create and convert them.
+
+#### valueOf  Methods
+We can use the valueOf() method to create a Wrapper object for a given primitive or String. 
+
+>  Wrapper valueOf(String s): 
+> >Every wrapper class except Character class contains a static valueOf() method to create Wrapper class object for a given String.
+
+``` java
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		Integer I = Integer.valueOf("10"); 
+		System.out.println(I); 
+		
+		Double D = Double.valueOf("10.0"); 
+		System.out.println(D); 
+		
+		Boolean B = Boolean.valueOf("true"); 
+		System.out.println(B); 
+
+		// Here we will get RuntimeException 
+		Integer I1 = Integer.valueOf("ten"); 
+	} 
+}
+```
+
+> Wrapper valueOf(primitive p):
+> > Every Wrapper class including the Character class contains the following method to create a Wrapper object for the given primitive type.
+
+```java
+// Java program to illustrate valueof() Method 
+
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		Integer I = Integer.valueOf(10); 
+		Double D = Double.valueOf(10.5); 
+		Character C = Character.valueOf('a');
+                Boolean B = Boolean.valueOf("true"); 
+		System.out.println(B); 
+		System.out.println(I); 
+		System.out.println(D); 
+		System.out.println(C); 
+	} 
+}
+```
+
+#### xxxValue methods 
+
+We can use xxxValue() methods to get the primitive for the given Wrapper Object.
+```java
+Integer integer = Integer.valueOf(57);
+int primitive = integer.intValue();//57
+float primitiveFloat = integer.floatValue();//57.0f
+
+Float floatWrapper = Float.valueOf(57.0f);
+int floatToInt = floatWrapper.intValue();//57
+float floatToFloat = floatWrapper.floatValue();//57.0f
+```
+
+#### parseXxx methods
+
+We can use parseXxx() methods to convert String to primitive. 
+
+```java
+// Java program to illustrate parseXxx() Method 
+
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		int i = Integer.parseInt("10"); 
+		double d = Double.parseDouble("10.5"); 
+		boolean b = Boolean.parseBoolean("true"); 
+		
+		System.out.println(i); 
+		System.out.println(d); 
+		System.out.println(b); 
+	} 
+}
+```
+### toString() Method
+We can use the toString() method to convert the Wrapper object or primitive or any other to String.
+
+```java
+// Java program to illustrate toString() Method 
+
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		Integer I = new Integer(10); 
+		String s = I.toString(); 
+		System.out.println(s); 
+	} 
+}
+```
 <br>
 
 ## Variables in Java
@@ -901,175 +1111,7 @@ Call by Value Explanation in detail:
 
 <br>
 
-## Wrapper Classes
-- Wrapper classes provide a way to use primitive data types (int, float,boolean etc..) as objects. 
 
-## Need of Wrapper Classes
-- Data structures in the Collection framework, such as ArrayList and Vector, store only objects (reference types) and not primitive types.
-
-```java
-public class Wrapperclasses {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//Boxing or Wrapping
-		int obj=10;
-		Integer a=Integer.valueOf(obj);
-		int j=a.intValue();//UnBoxing
-		
-		
-		byte b=10;
-		long l=123456;
-		short s=4;
-		double d=55.98D;
-		boolean b2=true;
-		float f=67.987F;
-		int i=76;
-		char c='a';
-		
-		//autoboxing: Converting primitive to objects
-		Byte byteobj=b;
-		Long longobj=l;
-		Short shortobj=s;
-		Double doubleobj=d;
-		Boolean booleanobj=b2;
-		Float floatobj=f;
-		Integer intobj=i;
-		Character charobj=c;
-		System.out.println("Primitive type to Object:");
-		System.out.println("--------------------------------");
-		
-		//Autounboxing: convert objects to primitive
-		
-		byte bytevalue=byteobj;
-		long longvalue=longobj;
-		short shortvalue= shortobj;
-		double doublevalue=doubleobj;
-		boolean booleanvalue=booleanobj;
-		float floatvalue=floatobj;
-		int intvalue= intobj;
-		char charvalue= charobj;
-		
-		System.out.println("Objects to primitives:");
-		System.out.println("--------------------------------");
-		
-		//Converting String into datatype [String itself comes under Object an instance of the String class.]
-		System.out.println("String to primitives");
-		String s1="123";
-		int val=Integer.parseInt(s1);
-		System.out.println(val);
-		String s2="10";
-		double val2=Double.parseDouble(s2);
-		System.out.println(val2);
-
-	}
-
-}
-```
-
-## 1.Autoboxing
-- Autoboxing is the automatic conversion of a primitive type to its corresponding wrapper class object. For example – conversion of int to Integer, long to Long, double to Double, etc. 
-## 2. Unboxing
-- Unboxing is the automatic conversion of a wrapper class object to its corresponding primitive type. It is just the reverse process of autoboxing. For example – conversion of Integer to int, Long to long, Double to double, etc. 
-
-## Wrapper Class Utility Methods
-
-- A number of utility methods are defined in wrapper classes to create and convert them.
-
-#### valueOf  Methods
-We can use the valueOf() method to create a Wrapper object for a given primitive or String. 
-
->  Wrapper valueOf(String s): 
-> >Every wrapper class except Character class contains a static valueOf() method to create Wrapper class object for a given String.
-
-``` java
-class GFG { 
-	public static void main(String[] args) 
-	{ 
-		Integer I = Integer.valueOf("10"); 
-		System.out.println(I); 
-		
-		Double D = Double.valueOf("10.0"); 
-		System.out.println(D); 
-		
-		Boolean B = Boolean.valueOf("true"); 
-		System.out.println(B); 
-
-		// Here we will get RuntimeException 
-		Integer I1 = Integer.valueOf("ten"); 
-	} 
-}
-```
-
-> Wrapper valueOf(primitive p):
-> > Every Wrapper class including the Character class contains the following method to create a Wrapper object for the given primitive type.
-
-```java
-// Java program to illustrate valueof() Method 
-
-class GFG { 
-	public static void main(String[] args) 
-	{ 
-		Integer I = Integer.valueOf(10); 
-		Double D = Double.valueOf(10.5); 
-		Character C = Character.valueOf('a');
-                Boolean B = Boolean.valueOf("true"); 
-		System.out.println(B); 
-		System.out.println(I); 
-		System.out.println(D); 
-		System.out.println(C); 
-	} 
-}
-```
-
-#### xxxValue methods 
-
-We can use xxxValue() methods to get the primitive for the given Wrapper Object.
-```java
-Integer integer = Integer.valueOf(57);
-int primitive = integer.intValue();//57
-float primitiveFloat = integer.floatValue();//57.0f
-
-Float floatWrapper = Float.valueOf(57.0f);
-int floatToInt = floatWrapper.intValue();//57
-float floatToFloat = floatWrapper.floatValue();//57.0f
-```
-
-#### parseXxx methods
-
-We can use parseXxx() methods to convert String to primitive. 
-
-```java
-// Java program to illustrate parseXxx() Method 
-
-class GFG { 
-	public static void main(String[] args) 
-	{ 
-		int i = Integer.parseInt("10"); 
-		double d = Double.parseDouble("10.5"); 
-		boolean b = Boolean.parseBoolean("true"); 
-		
-		System.out.println(i); 
-		System.out.println(d); 
-		System.out.println(b); 
-	} 
-}
-```
-### toString() Method
-We can use the toString() method to convert the Wrapper object or primitive or any other to String.
-
-```java
-// Java program to illustrate toString() Method 
-
-class GFG { 
-	public static void main(String[] args) 
-	{ 
-		Integer I = new Integer(10); 
-		String s = I.toString(); 
-		System.out.println(s); 
-	} 
-}
-```
 
 
 
