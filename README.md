@@ -131,13 +131,13 @@ public class HelloWorld {
 <br>
 
 ## What Happens if We Save a Blank File as a .java File?
-
 - If you save a blank file with a `.java` extension and try to compile it using `javac`, the compiler will return an error.
 - A `.java` file must contain at least one class or interface declaration. A blank file will not be considered a valid Java program by the compiler.
 <br>
-## Can We Perform Changes in Bytecode? What Are the Issues?
 
+## Can We Perform Changes in Bytecode? What Are the Issues?
 Yes, you can make changes to bytecode manually, but it’s highly discouraged due to several issues.
+
 <br>
 
 
