@@ -41,8 +41,7 @@ Java is a platform-independent language because:
 - A byte code generated in a **Windows** environment can also be executed in a **Linux** environment. This makes Java platform-independent.
 - That’s why Java is called **WORA**.
 - **WORA → Write Once, Run Anywhere**
-
-[Watch this video](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
+-[Watch this video](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
 
 ![image](https://github.com/user-attachments/assets/e1c9828e-2c06-4bd6-bec9-552ac114a5ce)
 
