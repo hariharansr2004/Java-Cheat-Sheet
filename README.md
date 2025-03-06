@@ -296,6 +296,40 @@ multi-line comment
  * which can be used for JavaDoc.
  */
 ```
+<br>
+
+### Scanner Class
+- The Scanner class is a predefined class in Java used for reading input from various sources, such as the keyboard (System.in), files, or strings. It enables programs to accept user input at runtime, making applications interactive.
+- To use the Scanner class, you first need to import it from the `java.util` package. 
+- The Scanner class provides various methods to read different types of input. Some commonly used methods include:
+
+- `nextByte()`: Reads a byte value.
+
+- `nextBoolean()`: Reads a boolean value (true/false).
+
+- `nextShort()`: Reads a short integer.
+
+- `nextInt()`: Reads an integer.
+
+- `nextFloat()`: Reads a float value.
+
+- `nextDouble()`: Reads a double value.
+
+- `nextLong()`: Reads a long integer.
+
+- `next()`: Reads a single word (string without spaces).
+
+- `nextLine()`: Reads a whole line (string with spaces).
+
+## Important Notes:
+- **InputMismatchException:** If the user provides an input of a type that doesn’t match the expected type, a java.util.InputMismatchException will be thrown.
+ ``` For example, if you enter a float when an integer is expected:
+Enter age:  44.5
+Exception in thread "main" java.util.InputMismatchException
+```
+-**No nextChar() Method:** There is no method named nextChar(). Instead, to get a character input, you can read a string using next() and then use charAt(index) to retrieve the desired character.
+
+<br>
 
 ## Interview Questions Related to Java Basics
 
@@ -426,6 +460,16 @@ char ch1 = 66000; //COMPILER ERROR!
     
 ![image](https://github.com/user-attachments/assets/9fe7b8f9-83a5-498f-97b0-56e094b69f87)
 
+## Q. What is Operand and Operator
+- The values or variables on which the operator acts on it is known as Operand. Eg:a,b
+- Operator is a symbol or keyword used to perform operations on operands Eg: +
+```
+int c=a+b;
+```
+## Q. What is Field and Attributes
+- Field-> A variable with values is known as field
+- Attributes->The name of the variable.
+
 <br>
 
 # Variables in Java
@@ -435,7 +479,6 @@ char ch1 = 66000; //COMPILER ERROR!
 | Feature                | Instance Variable | Static Variable | Local Variable |
 |------------------------|------------------|----------------|---------------|
 | Defintion |An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. |A **static variable** is a class-level variable shared among all instances of the class. It is declared using the `static` keyword.| variables are declared within a method, constructor, or block.They must be initialized before use, as they do not have default values.|
-| Declaration Location   | Inside a class but outside any method, without `static` keyword. | Inside a class, declared with the `static` keyword. | Inside a method, constructor, or block. |
 | Memory Allocation      | Created when an object is instantiated. | Allocated once when the class is loaded. | Allocated when the method/block is executed and destroyed after execution. |
 | Memory Location      | Located in Heap | Located in Heap  | Located in Stack |
 | Scope                 | Specific to each object. | Shared across all objects of the class. | Limited to the method/block in which it is declared. |
@@ -447,6 +490,8 @@ char ch1 = 66000; //COMPILER ERROR!
 
 <br>
 
+## Question based on variables
+
 ### Q. Is Initialization of Local Variables Mandatory?
 **Yes**, it is mandatory to initialize local variables. If we do not initialize them, we will get a compile-time error saying:
 ```
@@ -456,8 +501,308 @@ Variable might not be initialized
 ### Q. What if local variable and global variable names are same?
 - If local var and global var names are same first priority is always given to local variables because they are inside method and nearer for execution to JVM.
 
+### Can we directly use static variables inside the main?
+-	No, we can’t use the static variables inside the main without a method.
+
+### Can we mark a local variable as static?
+- No, we cannot mark a local variable with a static keyword.
+
+### How to access static variables without using methods?
+- By directly printing the name of the variables
+
+### Can we call a static variable by using objects?
+- Yes, we can call a static variable directly by using object but it’s called object cloning and we should not call static variable by using object.
+
+## Diff b\w null and 0’s 
+- 0 is value and null is nothing where we create an empty memory	
+
 
 <br>
+
+# Methods
+
+## Overview
+- A method is a block of code that only runs when it is called.
+- We can pass parameters to a method.
+- Methods are similar to functions in C++ and Python.
+
+## Use of Methods
+- Define once and use it many times.
+
+## Method Return Type:
+
+The return type of a method indicates what type of value it will return to the caller:
+
+- Primitive types: The method can return values like int, float, boolean, etc.
+
+- Reference types: The method can return objects, arrays, or user-defined types.
+
+- Void: If a method has a void return type, it does not return any value.
+
+## Memory Management of Methods:
+
+- When a method is invoked, it gets memory allocated in the stack area as a stack frame.
+
+- The method’s stack frame is created when the method is called and released once it completes execution.
+
+- Java stack follows the Last-In-First-Out (LIFO) principle, meaning the last method invoked will be the first to complete.
+  
+## Void Keyword
+- The `void` keyword indicates that the method should not return a value.
+
+## Method Overloading
+- Multiple methods can have the same name with different parameters or different data types.
+- Example: Amazon payment portal (By UPI, Netbanking, Credit Cards, Amazon Pay Balance).
+- Also called:
+  - Function Overloading
+  - Compile-time Polymorphism
+  - Static Polymorphism
+  - Early Binding Polymorphism
+
+### How to Perform Method Overloading?
+- By changing the number of parameters.
+- By changing the data type.
+- By changing the order of parameters.
+
+## Method Overriding
+- A subclass (child class) can access the same method of a parent class.
+- Also called:
+  - Run-time Polymorphism
+- **IS-A** relationship is mandatory to perform overriding.
+- While overriding, the method name and arguments must be the same.
+- Example: Updating an existing feature.
+<br>
+
+## Difference b/w Method Overloading and Method Overriding
+
+# Questions based on Methods
+## Q. Can we overload final methods ?
+ Yes, we can overload final methods because final keyword says do not
+change implementation and in overloading we are not changing
+implementation rather we are changing arguments.
+
+## Can we overload private methods or not ?
+A. Yes, we can overload private methods because private methods are
+accessible everywhere in same class and overloading also happens within
+class.
+
+## Can we overload non static methods or not ?
+A. Yes, we can overload non static methods but to call them we have to
+create an Object.
+
+## Can the Main Method be Overloaded?
+- Yes, we can overload the `main` method in Java, but JVM only calls the original `main` method. It will never call our overloaded `main` method.
+  
+- ![image](https://github.com/user-attachments/assets/0e9ffda3-b4d2-4f6d-a99a-45bea90c0e3c)
+
+- **Output:** `Original Main Method`
+
+## Can the Main Method be Overridden?
+- No, we cannot override the `main` method in Java because a static method cannot be overridden.
+
+
+## Can We Pass an Object Inside Method Calling?
+- Yes, you can pass objects as parameters inside a method.
+- Any changes made to the object in the called method will be reflected in the calling method as well.
+  
+![image](https://github.com/user-attachments/assets/3d7a9ebb-1d21-4aa9-a505-13cb14f7e02d)
+
+## Can we overload static methods? 
+- Yes. We can have two or more static methods with the same name, but parameters or datatypes should be different.
+
+## Can we overload methods that differ only by static keywords? 
+- We cannot overload two methods in Java if they differ only by static keyword (the number of parameters and types of parameters is the same).
+
+![image](https://github.com/user-attachments/assets/3e1d2310-575d-42e3-a98a-3b3519744a2a)
+
+### Call by Value:
+- Calling a method by passing a value in the parameter.
+- Any changes made to the parameter within the method doesn’t affect the original value outside the method.
+```
+public class CallByValue {
+	int data=50;//instance variable
+	void print(int data){ //cpy of data is passed to the method (localvariable)
+		data=data+100;
+    //changes in local variable only it won't affect the original variable outside the method.
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CallByValue obj=new CallByValue();
+		System.out.println("Before Change: "+obj.data);//calling instance variable
+		obj.print(500);//calling method
+		System.out.println("After Change: "+obj.data);
+	}
+ }
+```
+Call by Value Explanation in detail:
+
+**NOTE:Java doesn't have CallByReference because java doesn't support pointers.**
+
+<br>
+
+## Wrapper Classes
+- Wrapper classes provide a way to use primitive data types (int, float,boolean etc..) as objects. 
+- 
+# Need of Wrapper Classes
+-Data structures in the Collection framework, such as ArrayList and Vector, store only objects (reference types) and not primitive types.
+
+```
+public class Wrapperclasses {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Boxing or Wrapping
+		int obj=10;
+		Integer a=Integer.valueOf(obj);
+		int j=a.intValue();//UnBoxing
+		
+		
+		byte b=10;
+		long l=123456;
+		short s=4;
+		double d=55.98D;
+		boolean b2=true;
+		float f=67.987F;
+		int i=76;
+		char c='a';
+		
+		//autoboxing: Converting primitive to objects
+		Byte byteobj=b;
+		Long longobj=l;
+		Short shortobj=s;
+		Double doubleobj=d;
+		Boolean booleanobj=b2;
+		Float floatobj=f;
+		Integer intobj=i;
+		Character charobj=c;
+		System.out.println("Primitive type to Object:");
+		System.out.println("Byte Object: "+byteobj);
+		System.out.println("Long Object: "+longobj);
+		System.out.println("Short Object: "+shortobj);
+		System.out.println("double Object: "+doubleobj);
+		System.out.println("Boolean Object: "+booleanobj);
+		System.out.println("Float Object: "+floatobj);
+		System.out.println("Integer Object: "+intobj);
+		System.out.println("Character Object: "+charobj);
+		System.out.println("--------------------------------");
+		
+		
+		
+		//Autounboxing: convert objects to primitive
+		
+		byte bytevalue=byteobj;
+		long longvalue=longobj;
+		short shortvalue= shortobj;
+		double doublevalue=doubleobj;
+		boolean booleanvalue=booleanobj;
+		float floatvalue=floatobj;
+		int intvalue= intobj;
+		char charvalue= charobj;
+		
+		System.out.println("Objects to primitives:");
+		System.out.println("byte value: "+bytevalue);
+		System.out.println("long value: "+longvalue);
+		System.out.println("short value: "+shortvalue);
+		System.out.println("double value: "+doublevalue);
+		System.out.println("boolean value: "+booleanvalue);
+		System.out.println("float value: "+floatvalue);
+		System.out.println("int value: "+intvalue);
+		System.out.println("char value: "+charvalue);
+		System.out.println("--------------------------------");
+		
+		//Converting String into datatype [String itself comes under Object an instance of the String class.]
+		System.out.println("String to primitives");
+		String s1="123";
+		int val=Integer.parseInt(s1);
+		System.out.println(val);
+		String s2="10";
+		double val2=Double.parseDouble(s2);
+		System.out.println(val2);
+
+	}
+
+}
+```
+
+## 1.Autoboxing
+- Autoboxing is the automatic conversion of a primitive type to its corresponding wrapper class object. For example – conversion of int to Integer, long to Long, double to Double, etc. 
+## 2. Unboxing
+- Unboxing is the automatic conversion of a wrapper class object to its corresponding primitive type. It is just the reverse process of autoboxing. For example – conversion of Integer to int, Long to long, Double to double, etc. 
+
+#### Wrapper Class Utility Methods
+
+- A number of utility methods are defined in wrapper classes to create and convert them.
+
+#### valueOf  Methods
+
+Provide another way of creating a Wrapper Object
+
+```java
+Integer seven = 
+    Integer.valueOf("111", 2);//binary 111 is converted to 7
+
+Integer hundred = 
+    Integer.valueOf("100");//100 is stored in variable
+```
+
+#### xxxValue methods 
+
+xxxValue methods help in creating primitives
+
+```java
+Integer integer = Integer.valueOf(57);
+int primitive = integer.intValue();//57
+float primitiveFloat = integer.floatValue();//57.0f
+
+Float floatWrapper = Float.valueOf(57.0f);
+int floatToInt = floatWrapper.intValue();//57
+float floatToFloat = floatWrapper.floatValue();//57.0f
+```
+
+#### parseXxx methods
+
+parseXxx methods are similar to valueOf but they return primitive values
+
+```java
+int sevenPrimitive = 
+    Integer.parseInt("111", 2);//binary 111 is converted to 7
+
+int hundredPrimitive = 
+    Integer.parseInt("100");//100 is stored in variable
+```
+
+#### static toString method
+
+Look at the example of the toString static method below.
+
+```java
+Integer wrapperEight = new Integer(8);
+System.out.println(Integer.
+toString(wrapperEight));//String Output: 8
+```
+
+#### Overloaded static toString method
+
+2nd parameter: radix
+
+```java
+System.out.println(Integer
+.toString(wrapperEight, 2));//String Output: 1000
+```
+
+#### static toYyyyString methods. 
+
+Yyyy can be Hex,Binary,Octal
+
+```java
+System.out.println(Integer
+.toHexString(wrapperEight));//String Output:8 
+System.out.println(Integer
+.toBinaryString(wrapperEight));//String Output:1000
+System.out.println(Integer
+.toOctalString(wrapperEight));//String Output:10
+```
 
 
 
