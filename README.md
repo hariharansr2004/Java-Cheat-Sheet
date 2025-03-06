@@ -575,42 +575,42 @@ The return type of a method indicates what type of value it will return to the c
 
 ## Difference b/w Method Overloading and Method Overriding
 
-# Questions based on Methods
-## Q. Can we overload final methods ?
+## Questions based on Methods
+### Q. Can we overload final methods ?
  Yes, we can overload final methods because final keyword says do not
 change implementation and in overloading we are not changing
 implementation rather we are changing arguments.
 
-## Can we overload private methods or not ?
+### Can we overload private methods or not ?
 A. Yes, we can overload private methods because private methods are
 accessible everywhere in same class and overloading also happens within
 class.
 
-## Can we overload non static methods or not ?
+### Can we overload non static methods or not ?
 A. Yes, we can overload non static methods but to call them we have to
 create an Object.
 
-## Can the Main Method be Overloaded?
+### Can the Main Method be Overloaded?
 - Yes, we can overload the `main` method in Java, but JVM only calls the original `main` method. It will never call our overloaded `main` method.
   
 - ![image](https://github.com/user-attachments/assets/0e9ffda3-b4d2-4f6d-a99a-45bea90c0e3c)
 
 - **Output:** `Original Main Method`
 
-## Can the Main Method be Overridden?
+### Can the Main Method be Overridden?
 - No, we cannot override the `main` method in Java because a static method cannot be overridden.
 
 
-## Can We Pass an Object Inside Method Calling?
+### Can We Pass an Object Inside Method Calling?
 - Yes, you can pass objects as parameters inside a method.
 - Any changes made to the object in the called method will be reflected in the calling method as well.
   
 ![image](https://github.com/user-attachments/assets/3d7a9ebb-1d21-4aa9-a505-13cb14f7e02d)
 
-## Can we overload static methods? 
+### Can we overload static methods? 
 - Yes. We can have two or more static methods with the same name, but parameters or datatypes should be different.
 
-## Can we overload methods that differ only by static keywords? 
+### Can we overload methods that differ only by static keywords? 
 - We cannot overload two methods in Java if they differ only by static keyword (the number of parameters and types of parameters is the same).
 
 ![image](https://github.com/user-attachments/assets/3e1d2310-575d-42e3-a98a-3b3519744a2a)
@@ -618,7 +618,7 @@ create an Object.
 ### Call by Value:
 - Calling a method by passing a value in the parameter.
 - Any changes made to the parameter within the method doesn’t affect the original value outside the method.
-```
+```java
 public class CallByValue {
 	int data=50;//instance variable
 	void print(int data){ //cpy of data is passed to the method (localvariable)
@@ -644,10 +644,10 @@ Call by Value Explanation in detail:
 ## Wrapper Classes
 - Wrapper classes provide a way to use primitive data types (int, float,boolean etc..) as objects. 
 - 
-# Need of Wrapper Classes
+## Need of Wrapper Classes
 -Data structures in the Collection framework, such as ArrayList and Vector, store only objects (reference types) and not primitive types.
 
-```
+```java
 public class Wrapperclasses {
 
 	public static void main(String[] args) {
@@ -677,14 +677,6 @@ public class Wrapperclasses {
 		Integer intobj=i;
 		Character charobj=c;
 		System.out.println("Primitive type to Object:");
-		System.out.println("Byte Object: "+byteobj);
-		System.out.println("Long Object: "+longobj);
-		System.out.println("Short Object: "+shortobj);
-		System.out.println("double Object: "+doubleobj);
-		System.out.println("Boolean Object: "+booleanobj);
-		System.out.println("Float Object: "+floatobj);
-		System.out.println("Integer Object: "+intobj);
-		System.out.println("Character Object: "+charobj);
 		System.out.println("--------------------------------");
 		
 		
@@ -701,14 +693,6 @@ public class Wrapperclasses {
 		char charvalue= charobj;
 		
 		System.out.println("Objects to primitives:");
-		System.out.println("byte value: "+bytevalue);
-		System.out.println("long value: "+longvalue);
-		System.out.println("short value: "+shortvalue);
-		System.out.println("double value: "+doublevalue);
-		System.out.println("boolean value: "+booleanvalue);
-		System.out.println("float value: "+floatvalue);
-		System.out.println("int value: "+intvalue);
-		System.out.println("char value: "+charvalue);
 		System.out.println("--------------------------------");
 		
 		//Converting String into datatype [String itself comes under Object an instance of the String class.]
@@ -730,26 +714,57 @@ public class Wrapperclasses {
 ## 2. Unboxing
 - Unboxing is the automatic conversion of a wrapper class object to its corresponding primitive type. It is just the reverse process of autoboxing. For example – conversion of Integer to int, Long to long, Double to double, etc. 
 
-#### Wrapper Class Utility Methods
+## Wrapper Class Utility Methods
 
 - A number of utility methods are defined in wrapper classes to create and convert them.
 
 #### valueOf  Methods
+We can use the valueOf() method to create a Wrapper object for a given primitive or String. 
 
-Provide another way of creating a Wrapper Object
+>  Wrapper valueOf(String s): 
+> >Every wrapper class except Character class contains a static valueOf() method to create Wrapper class object for a given String.
 
+``` java
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		Integer I = Integer.valueOf("10"); 
+		System.out.println(I); 
+		
+		Double D = Double.valueOf("10.0"); 
+		System.out.println(D); 
+		
+		Boolean B = Boolean.valueOf("true"); 
+		System.out.println(B); 
+
+		// Here we will get RuntimeException 
+		Integer I1 = Integer.valueOf("ten"); 
+	} 
+}
+
+> Wrapper valueOf(primitive p):
+> > Every Wrapper class including the Character class contains the following method to create a Wrapper object for the given primitive type.
 ```java
-Integer seven = 
-    Integer.valueOf("111", 2);//binary 111 is converted to 7
+// Java program to illustrate valueof() Method 
 
-Integer hundred = 
-    Integer.valueOf("100");//100 is stored in variable
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		Integer I = Integer.valueOf(10); 
+		Double D = Double.valueOf(10.5); 
+		Character C = Character.valueOf('a');
+                Boolean B = Boolean.valueOf("true"); 
+		System.out.println(B); 
+		System.out.println(I); 
+		System.out.println(D); 
+		System.out.println(C); 
+	} 
+}
 ```
 
 #### xxxValue methods 
 
-xxxValue methods help in creating primitives
-
+We can use xxxValue() methods to get the primitive for the given Wrapper Object.
 ```java
 Integer integer = Integer.valueOf(57);
 int primitive = integer.intValue();//57
@@ -762,47 +777,41 @@ float floatToFloat = floatWrapper.floatValue();//57.0f
 
 #### parseXxx methods
 
-parseXxx methods are similar to valueOf but they return primitive values
+We can use xxxValue() methods to get the primitive for the given Wrapper Object.
 
 ```java
-int sevenPrimitive = 
-    Integer.parseInt("111", 2);//binary 111 is converted to 7
+// Java program to illustrate parseXxx() Method 
 
-int hundredPrimitive = 
-    Integer.parseInt("100");//100 is stored in variable
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		int i = Integer.parseInt("10"); 
+		double d = Double.parseDouble("10.5"); 
+		boolean b = Boolean.parseBoolean("true"); 
+		
+		System.out.println(i); 
+		System.out.println(d); 
+		System.out.println(b); 
+	} 
+}
 ```
-
-#### static toString method
-
-Look at the example of the toString static method below.
+### toString() Method
+We can use the toString() method to convert the Wrapper object or primitive or any other to String.
 
 ```java
-Integer wrapperEight = new Integer(8);
-System.out.println(Integer.
-toString(wrapperEight));//String Output: 8
+// Java program to illustrate toString() Method 
+
+class GFG { 
+	public static void main(String[] args) 
+	{ 
+		Integer I = new Integer(10); 
+		String s = I.toString(); 
+		System.out.println(s); 
+	} 
+}
 ```
 
-#### Overloaded static toString method
 
-2nd parameter: radix
-
-```java
-System.out.println(Integer
-.toString(wrapperEight, 2));//String Output: 1000
-```
-
-#### static toYyyyString methods. 
-
-Yyyy can be Hex,Binary,Octal
-
-```java
-System.out.println(Integer
-.toHexString(wrapperEight));//String Output:8 
-System.out.println(Integer
-.toBinaryString(wrapperEight));//String Output:1000
-System.out.println(Integer
-.toOctalString(wrapperEight));//String Output:10
-```
 
 
 
