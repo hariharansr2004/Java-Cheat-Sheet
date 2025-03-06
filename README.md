@@ -240,66 +240,6 @@ public class Jtc {
 
 <br>
 
-# Size of Data Type in Java
-
-This program demonstrates the size limitations of different data types in Java.
-
-## Java Code:
-
-```java
-/* Size of Data Type */
-
-public class Jtc {
-    public void dataType2() {
-        System.out.println("---dataType2() in Jtc class---");
-        byte b11 = 127;
-        byte b22 = -128;
-        // byte b33 = 128; // Error: 128 is out of range for byte
-        // byte b44 = -129; // Error: -129 is out of range for byte
-        int i11 = 2147483647;
-        int i12 = -2147483648;
-        // int i13 = 2147483648; // Error: 2147483648 is out of range for int
-        // long l14 = 2147483649; // Error: 2147483649 is interpreted as int by default
-        long l12 = 2147483648L; // Correct usage for long type
-        // float f11 = 11.11; // Error: 11.11 is interpreted as double by default
-        float f12 = 11.11f; // Correct usage for float type
-        double d11 = 11.12;
-        double d12 = 11.13d;
-        
-        System.out.println(b11);
-        System.out.println(b22);
-        System.out.println(i11);
-        System.out.println(i12);
-        System.out.println(l12);
-        System.out.println(f12);
-        System.out.println(d12);
-    }
-
-    public static void main(String[] args) {
-        Jtc jtc = new Jtc();
-        jtc.dataType2();
-    }
-}
-```
-
-## Explanation of Errors in Commented Code:
-
-### 1. `byte b33 = 128;`
-- **Error**: `128` is outside the range of the `byte` data type, which can only hold values from `-128` to `127`.
-
-### 2. `byte b44 = -129;`
-- **Error**: `-129` is also outside the range of the `byte` data type.
-
-### 3. `int i13 = 2147483648;`
-- **Error**: `2147483648` is out of range for the `int` type, which supports values from `-2147483648` to `2147483647`.
-
-### 4. `long l14 = 2147483649;`
-- **Error**: Although `2147483649` fits within the `long` range, it is treated as an `int` by default in Java. Adding an `L` at the end like `2147483648L` tells the compiler to treat it as a `long`.
-
-### 5. `float f11 = 11.11;`
-- **Error**: By default, decimal numbers in Java are treated as `double`. To store a value as a `float`, you must append `f` or `F` at the end, like `11.11f`.
-<br>
-
 ## Range of Primitive Data Types
 The range of a data type defines the maximum and minimum values that the type can hold.
 
@@ -324,3 +264,48 @@ public class Jtc {
     }
 }
 ```
+
+## `print` and `println`
+
+- `print()`: Outputs text on the same line.
+- `println()`: Outputs text and then moves to the next line.
+
+## Commenting Code in Java
+
+Comments are notes ignored by the compiler, useful for explaining code.
+
+### Single-line comment:
+```java
+// This is a single-line comment
+```
+
+### Multi-line comment:
+```java
+/*
+This is a
+multi-line comment
+*/
+```
+
+### Documentation comment (used in JavaDoc):
+```java
+/**
+ * This is a documentation comment
+ * which can be used for JavaDoc.
+ */
+```
+
+## Interview Questions Related to Java Basics
+
+### 1. Can we change the syntax of the main method?
+No, JVM recognizes `public static void main(String[] args)` as the entry point, so it must remain unchanged for Java applications to run.
+
+### 2. Can we keep the main method as private?
+No, because JVM needs to access the `main` method from outside the class. If it’s private, the program will compile but not execute, resulting in an error.
+
+### 3. Can we keep the main method non-static?
+No, `main` is static so JVM can call it without creating an object. If it’s non-static, JVM cannot call it directly, and the program will not execute.
+
+### 4. Why do we need `f` for float literals?
+By default, decimal numbers are considered `double`. Adding `f` tells Java to treat the number as a `float`.
+
