@@ -65,7 +65,7 @@ JDK mainly includes two components:
 - **Development Tools** – Provides an environment to develop Java programs.  
 - **JRE** – Used to execute Java programs.  
 
----
+
 
 ## 2. JRE (Java Runtime Environment)  
 Java Runtime Environment is a software package that provides an environment to **run** Java programs (not develop them).  
@@ -76,7 +76,7 @@ It contains:
 
 **Note:** JRE is primarily for running Java applications, not for development.  
 
----
+
 
 ## 3. JVM (Java Virtual Machine)  
 JVM is a virtual CPU that provides a runtime environment for executing Java bytecodes.  
