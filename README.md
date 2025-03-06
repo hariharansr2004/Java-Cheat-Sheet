@@ -316,7 +316,7 @@ By default, decimal numbers are considered `double`. Adding `f` tells Java to tr
 
 <br>
 
-### Identifiers
+## Identifiers
 Names given to a class, method, interface, variables are called identifiers.
 
 Legal Identifier Names
@@ -325,7 +325,7 @@ Legal Identifier Names
 - Cannot be a keyword
 - No limit on length of identifier
 
-### Java Keywords
+## Java Keywords
 List of Java Keywords
 - Primitives DataTypes    : byte,short,int,long,float,double,char,boolean
 - Flow Control    : if, else,for,do, while, switch, case, default, break,
@@ -339,7 +339,7 @@ List of Java Keywords
 - Others      : void, enum
 - Unused  : goto,const
 
-### Literals
+## Literals
 Any primitive data type value in source code is called Literal.
 
 There are four types of literals:
@@ -348,7 +348,7 @@ There are four types of literals:
 - Boolean
 - Double
 
-#### Literals
+#### Literals Types
 
 Integer Literals
 - There are 3 ways of representing an Integer Literal. 
@@ -428,5 +428,97 @@ char ch1 = 66000; //COMPILER ERROR!
 
 <br>
 
+# Variables in Java
+
+## 1. Class Level Variables
+
+Class level variables are declared directly within a class but outside of any method, constructor, or block.
+
+### Characteristics:
+- They can be accessed from any method or block within the class.
+- Memory for class-level variables is allocated in the heap.
+- If not initialized, they are assigned default values by the Java Virtual Machine (JVM).
+
+Class level variables are further divided into:
+
+### 1.1 Instance Variables
+- Variables that are specific to each object of a class.
+
+### 1.2 Static Variables
+- Variables that are shared among all objects of a class.
+
+### Example of Class Level Variables:
+
+```java
+public class JtcClassLevelVariableExample {
+    public static void main(String[] args) {
+        Variable vl = new Variable();
+        vl.variable_m2();
+    }
+}
+
+class Variable {
+    // Class level variables
+    byte b;
+    short s;
+    int i;
+    long l;
+    float f;
+    double d;
+    boolean bl;
+    char c;
+
+    void variable_m2() {
+        System.out.println("byte : " + b);
+        System.out.println("short : " + s);
+        System.out.println("int : " + i);
+        System.out.println("long : " + l);
+        System.out.println("float : " + f);
+        System.out.println("double : " + d);
+        System.out.println("boolean : " + bl);
+        System.out.println("char : " + c);
+    }
+}
+```
+
+### Output:
+```
+byte : 0
+short : 0
+int : 0
+long : 0
+float : 0.0
+double : 0.0
+boolean : false
+char :
+```
+
+### Explanation:
+- The variables are not explicitly initialized, so the JVM assigns them default values.
+- The default values depend on the data type (e.g., `0` for integers, `false` for boolean, etc.).
+
+<br>
+
+## 2. Local Variables
+
+- Local variables are declared within a method, constructor, or block.
+- They must be initialized before use, as they do not have default values.
+
+### Is Initialization of Local Variables Mandatory?
+**Yes**, it is mandatory to initialize local variables. If we do not initialize them, we will get a compile-time error saying:
+```
+Variable might not be initialized
+```
+
+### Characteristics:
+- Memory for local variables is allocated only when the method or block is executed and is released when it ends.
+- Local variables can only be `default` or `final`, i.e., we cannot declare a local variable as `private`, `public`, or `protected`.
+
+### Key Differences Between Class Level and Local Variables:
+![image](https://github.com/user-attachments/assets/cee6d31f-8b23-41f1-86a5-475ca3e900b0)
+
+
+### Q. What if local variable and global variable names are same?
+- If local var and global var names are same first priority is always given to local variables because they are inside method and nearer for execution to JVM.
 
 
