@@ -310,6 +310,91 @@ No, `main` is static so JVM can call it without creating an object. If it’s no
 By default, decimal numbers are considered `double`. Adding `f` tells Java to treat the number as a `float`.
 
 <br>
+### Identifiers
+Names given to a class, method, interface, variables are called identifiers.
+
+Legal Identifier Names
+- Combination of letters, numbers, $ and under-score(_)
+- Cannot start with a number
+- Cannot be a keyword
+- No limit on length of identifier
+
+### Java Keywords
+List of Java Keywords
+- Primitives DataTypes    : byte,short,int,long,float,double,char,boolean
+- Flow Control    : if, else,for,do, while, switch, case, default, break,
+      continue,return
+- Exception Handling      : try, catch, finally,throw,throws,assert
+- Modifiers       : public,private,protected,final,static,native,abstract,
+      synchronized,transient,volatile,strictfp
+- Class Related   : class,interface,package,extends,implements,import
+- Object Related  : new, instanceof,super,this
+- Literals    : true, false, null
+- Others      : void, enum
+- Unused  : goto,const
+
+### Literals
+Any primitive data type value in source code is called Literal.
+
+There are four types of literals:
+- Integer & Long
+- Floating Point
+- Boolean
+- Double
+
+#### Literals
+
+# Integer Literals
+- There are 3 ways of representing an Integer Literal. 
+  - Decimal. Examples: 343, 545
+  - Octal. Digits 0 to 7. Place 0 before a number. Examples : 070,011
+  - Hexadecimal. Digits 0 to 9 and alphabets A to F (10-15). Case insensitive.
+- An integer literal by default is int.
+
+# Long Literals 
+- All 3 integer formats: Decimal, Octal and Hexadecimal can be used to represent long by appending with L or l.
+
+# Floating point Literals
+- Numbers with decimal points. Example: ```double d = 123.456;```
+- To declare a float, append f. Example: float f = 123.456f;
+- Floating point literals are double by default.
+- Appending d or D at end of double literal is optional Example: ```double d = 123.456D;```
+
+# Boolean Literals
+- Valid boolean values are true and false. 
+- TRUE, FALSE or True, False are invalid.
+
+# Character Literals
+- Represented by single character between single quotes  Example: ```char a = 'a'```
+- Unicode Representation also can be used. Prefix with \u. Example: char letterA = '\u0041';
+- A number value can also be assigned to character. Example: char letterB = 66; Numeric value can be from 0 to 65535;
+- Escape code can be used to represent a character that cannot be typed as literal. Example: char newLine = '\n';
+
+#### Puzzles 
+
+```java
+int eight = 010; 
+int nine=011;  
+int invalid = 089;//COMPILER ERROR! 8 and 9 are invalid in Octal
+int sixteen = 0x10; 
+int fifteen = 0XF; 
+int fourteen = 0xe;
+int x = 23,000;
+long a = 123456789l; 
+long b = 0x9ABCDEFGHL; 
+long c = 0123456789L;
+
+float f = 123.456;//COMPILER ERROR! A double value cannot be assigned to a float.
+
+boolean b = true; boolean b=false;
+boolean b = TRUE;//COMPILATION ERROR
+boolean b = 0; //COMPILER ERROR. This is not C Language
+
+char ch = a;
+char a = 97;
+char ch1 = 66000; //COMPILER ERROR!
+```
+<br>
 
 ## Java Operators
 
