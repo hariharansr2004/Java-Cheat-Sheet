@@ -44,5 +44,8 @@ Java is a platform-independent language because:
 
 [Watch this video](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
 
+![image](https://github.com/user-attachments/assets/e1c9828e-2c06-4bd6-bec9-552ac114a5ce)
+
+
 
 
