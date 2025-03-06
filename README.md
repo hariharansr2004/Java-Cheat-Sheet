@@ -1130,6 +1130,7 @@ Call by Value Explanation in detail:
 - Automatic invocation (e.g., if we apply brakes, the car will stop).
 - Initialization of objects
 
+<br>
 ## How Java Constructors are Different from Methods?
 
 | Feature            | Constructors | Methods |
@@ -1137,6 +1138,7 @@ Call by Value Explanation in detail:
 | Name              | Must be the same as the class name | Can have different names |
 | Return Type       | No return type | Has a return type or `void` if it does not return any value |
 | Invocation        | Called only once at the time of object creation | Can be called any number of times |
+<br>
 
 ## Types of Constructors
 
@@ -1149,6 +1151,7 @@ A constructor that allows us to pass one or more arguments. It is used to initia
 ### 3. Copy Constructor
 A constructor that is used to create a new object by copying values from an existing object of the same class.
 > **Note:** Java does not support copy constructors, but they can be implemented manually.
+<br>
 
 ## Constructor Overloading
 
@@ -1180,6 +1183,7 @@ public static void main(String[] args)
  }
 }
 ```
+<br>
 
 ## Constructor Chaining
 
@@ -1234,6 +1238,44 @@ class ConstructorChaining {
 - Identity: It gives a unique name to an object.
 
 - More info:(https://www.geeksforgeeks.org/reference-variable-in-java/)
+
+
+# Object-Oriented Programming System (OOPs)
+
+## Overview
+
+- Object-Oriented Programming System (OOPs) is a programming concept based on objects. 
+- It provides a structured way to design and develop software using principles like Encapsulation, Abstraction, Inheritance, and Polymorphism.
+
+## Why Do We Need OOP?
+
+- **Organized Code** – Helps structure programs neatly.
+- **Reusability** – Write code once, use it multiple times.
+- **Security** – Protects important data from unwanted changes.
+- **Scalability** – Makes it easy to expand projects without breaking existing code.
+
+## Inheritance in OOP
+
+Inheritance is an OOP concept that allows a class to inherit properties and behaviors from another class.
+**Example:** A child inherits some properties from their parents.
+
+### How is inheritance implemented in Java?
+Inheritance is implemented using the `extends` keyword.
+
+### Superclass
+The class whose features are inherited is known as the **superclass**, **base class**, or **parent class**.
+
+### Subclass
+The class that inherits from another class is called the **subclass**, **derived class**, **extended class**, or **child class**.
+
+## Importance of Inheritance in Java
+
+- **Reusability**: The major advantage of inheritance is code reuse.
+- **Extendibility**: We can add new functionality to our application without modifying existing code.
+- Example: Microsoft Word has multiple versions such as Word 2003, 2007, etc. Instead of rewriting the entire code, the existing code is reused with additional features.
+
+![image](https://github.com/user-attachments/assets/1467fe72-5bd4-4e3d-83c0-38fbb62f7c60)
+
 
 
 
