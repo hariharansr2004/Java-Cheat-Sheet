@@ -576,6 +576,7 @@ The return type of a method indicates what type of value it will return to the c
 ## Difference b/w Method Overloading and Method Overriding
 
 ## Questions based on Methods
+
 ### Q. Can we overload final methods ?
  Yes, we can overload final methods because final keyword says do not
 change implementation and in overloading we are not changing
@@ -637,15 +638,15 @@ public class CallByValue {
 ```
 Call by Value Explanation in detail:
 
-**NOTE:Java doesn't have CallByReference because java doesn't support pointers.**
+**NOTE: Java doesn't have CallByReference because java doesn't support pointers.**
 
 <br>
 
 ## Wrapper Classes
 - Wrapper classes provide a way to use primitive data types (int, float,boolean etc..) as objects. 
-- 
+
 ## Need of Wrapper Classes
--Data structures in the Collection framework, such as ArrayList and Vector, store only objects (reference types) and not primitive types.
+- Data structures in the Collection framework, such as ArrayList and Vector, store only objects (reference types) and not primitive types.
 
 ```java
 public class Wrapperclasses {
@@ -678,8 +679,6 @@ public class Wrapperclasses {
 		Character charobj=c;
 		System.out.println("Primitive type to Object:");
 		System.out.println("--------------------------------");
-		
-		
 		
 		//Autounboxing: convert objects to primitive
 		
@@ -777,7 +776,7 @@ float floatToFloat = floatWrapper.floatValue();//57.0f
 
 #### parseXxx methods
 
-We can use xxxValue() methods to get the primitive for the given Wrapper Object.
+We can use parseXxx() methods to convert String to primitive. 
 
 ```java
 // Java program to illustrate parseXxx() Method 
