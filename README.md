@@ -1477,12 +1477,11 @@ public class HybridInheritance extends father// if we put son it will only give 
 
 ### Q.What do you do if you don’t want a class to be inherited?
 - Just make it final
-
+<br>
 
 ## this Keyword
 - ‘this’ keyword in Java is a reference variable that refers to the current instance of the class. It is commonly used to differentiate between instance variables and method parameters with the same name.
 - this can also be used to:
-- 
 - Call current class constructor
 - Call current class method
 - to refer to the current class instance variables.
@@ -1500,6 +1499,7 @@ public class HybridInheritance extends father// if we put son it will only give 
 - `this()` and `super()` must be the first statements in a constructor.
 - Both this and super are non-static, so they can't be used in static context. It means that we cannot use both the keywords in the main method in Java.
 - Both super and this keywords in Java can be used in constructor chaining to call another constructor. this() calls the no-argument constructor of the current class, and super() calls the no-argument constructor of the parent class.
+<br>
 
 ## Important Points About this() and super() in Java
 - this() as well super() can be used exactly once inside the constructor.
