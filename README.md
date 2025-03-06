@@ -513,7 +513,7 @@ Variable might not be initialized
 ### Can we call a static variable by using objects?
 - Yes, we can call a static variable directly by using object but it’s called object cloning and we should not call static variable by using object.
 
-## Diff b\w null and 0’s 
+### Diff b\w null and 0’s 
 - 0 is value and null is nothing where we create an empty memory	
 
 
