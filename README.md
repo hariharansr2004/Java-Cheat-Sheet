@@ -29,9 +29,6 @@ Java is widely used in:
 ## Features of Java:
 ![z](https://github.com/user-attachments/assets/d36093cc-7e45-44a2-8bbe-6f728c2b2bc0)
 
-### Q.Is Java is pure Object Oriented Language?
-- No, it’s partially object oriented because,it supports primitive data types like "int", "float", and "double", which are not objects.
-
 <br>
 
 ## Platform Independence:
@@ -302,16 +299,19 @@ multi-line comment
 
 ## Interview Questions Related to Java Basics
 
-### 1. Can we change the syntax of the main method?
+### 1. Is Java is pure Object Oriented Language?
+- No, it’s partially object oriented because,it supports primitive data types like "int", "float", and "double", which are not objects.
+
+### 2. Can we change the syntax of the main method?
 No, JVM recognizes `public static void main(String[] args)` as the entry point, so it must remain unchanged for Java applications to run.
 
-### 2. Can we keep the main method as private?
+### 3. Can we keep the main method as private?
 No, because JVM needs to access the `main` method from outside the class. If it’s private, the program will compile but not execute, resulting in an error.
 
-### 3. Can we keep the main method non-static?
+### 4. Can we keep the main method non-static?
 No, `main` is static so JVM can call it without creating an object. If it’s non-static, JVM cannot call it directly, and the program will not execute.
 
-### 4. Why do we need `f` for float literals?
+### 5. Why do we need `f` for float literals?
 By default, decimal numbers are considered `double`. Adding `f` tells Java to treat the number as a `float`.
 
 <br>
