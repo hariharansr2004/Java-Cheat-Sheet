@@ -27,7 +27,8 @@ Java is widely used in:
 - Artificial Intelligence
 
 ## Features of Java:
-![Features of Java](https://github.com/user-attachments/assets/d1b55caf-897f-4d8f-8ec0-6228f3997a4e)
+![z](https://github.com/user-attachments/assets/d36093cc-7e45-44a2-8bbe-6f728c2b2bc0)
+
 
 
 ## Platform Independence:
@@ -42,6 +43,6 @@ Java is a platform-independent language because:
 - **WORA → Write Once, Run Anywhere**
 
 [Watch this video](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
-![image](https://github.com/user-attachments/assets/4852bda8-e3be-431b-a8c2-d3889e0a9d13)
+
 
 
