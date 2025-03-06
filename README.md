@@ -753,9 +753,11 @@ class GFG {
 		Integer I1 = Integer.valueOf("ten"); 
 	} 
 }
+```
 
 > Wrapper valueOf(primitive p):
 > > Every Wrapper class including the Character class contains the following method to create a Wrapper object for the given primitive type.
+
 ```java
 // Java program to illustrate valueof() Method 
 
