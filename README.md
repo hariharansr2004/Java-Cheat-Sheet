@@ -934,7 +934,7 @@ Variable might not be initialized
 
 ## Use of Methods
 - Define once and use it many times.
-
+<br>
 ## Method Return Type:
 
 The return type of a method indicates what type of value it will return to the caller:
@@ -944,6 +944,7 @@ The return type of a method indicates what type of value it will return to the c
 - Reference types: The method can return objects, arrays, or user-defined types.
 
 - Void: If a method has a void return type, it does not return any value.
+<br>
 
 ## Memory Management of Methods:
 
@@ -952,11 +953,12 @@ The return type of a method indicates what type of value it will return to the c
 - The method’s stack frame is created when the method is called and released once it completes execution.
 
 - Java stack follows the Last-In-First-Out (LIFO) principle, meaning the last method invoked will be the first to complete.
+<br>
 
 ## Static Methods:
 - Static Methods are methods that are associated with the class not with objects of the class
 - For Static Methods, we can able to pass the arguments with class_name.method_name without creating objects.
-
+<br>
 
 ## Method Overloading
 - Multiple methods can have the same name with different parameters or different data types.
@@ -972,6 +974,8 @@ The return type of a method indicates what type of value it will return to the c
 - By changing the data type.
 - By changing the order of parameters.
 
+<br>
+
 ## Method Overriding
 - A subclass (child class) can access the same method of a parent class.
 - Also called:
@@ -982,6 +986,7 @@ The return type of a method indicates what type of value it will return to the c
 
  ## Method Chaining:
 - Method chaining refers to calling multiple methods sequentially within another method
+<br>
 
 ## Difference b/w Method Overloading and Method Overriding
 
@@ -1090,6 +1095,7 @@ public class Test {
 	}
 }
 ```
+<br>
 
 ### Call by Value:
 - Calling a method by passing a value in the parameter.
@@ -1131,6 +1137,7 @@ Call by Value Explanation in detail:
 - Initialization of objects
 
 <br>
+
 ## How Java Constructors are Different from Methods?
 
 | Feature            | Constructors | Methods |
@@ -1217,7 +1224,7 @@ class ConstructorChaining {
 ### Q What is Constructor calling?
 - The process of calling one constructor from another constructor within the same class is known as Constructor calling.
 
-<br> <br>
+<br> 
 
 # Object-Oriented Programming Concepts
 
@@ -1253,6 +1260,7 @@ class ConstructorChaining {
 - **Reusability** – Write code once, use it multiple times.
 - **Security** – Protects important data from unwanted changes.
 - **Scalability** – Makes it easy to expand projects without breaking existing code.
+<br>
 
 ## Inheritance in OOP
 
@@ -1274,7 +1282,181 @@ The class that inherits from another class is called the **subclass**, **derived
 - **Extendibility**: We can add new functionality to our application without modifying existing code.
 - Example: Microsoft Word has multiple versions such as Word 2003, 2007, etc. Instead of rewriting the entire code, the existing code is reused with additional features.
 
+### Types:
 ![image](https://github.com/user-attachments/assets/1467fe72-5bd4-4e3d-83c0-38fbb62f7c60)
+
+### Single Inheritance: 
+- One class that is allowed to inherit the immediate child class or parent class 
+- Example: Father → Son
+``` java
+//constructor-super-ovveride
+class Credentials {
+	public int regno;
+	public String psw;
+
+	Credentials(int regno, String psw) {
+		this.regno = regno;
+		this.psw = psw;
+	}
+
+	public String display(int regno, String psw) {
+		return ("The credentials are " + regno + " " + psw);
+	}
+}
+
+class Profile extends Credentials {
+	public String name;
+	public String dept;
+
+	Profile(int regno, String psw, String n, String dt) {
+		super(regno, psw);
+		name = n;
+		dept = dt;
+	}
+
+//over-ride
+	public String display() {
+		return (super.display(regno, psw) + " and the profile is " + name + " from " + dept);
+	}
+}
+
+public class T_Singleinheritance {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Profile obj = new Profile(21500169, "8C1l1", "Hariharan", "IT");
+		System.out.println(obj.display());
+
+	}
+
+}
+
+```
+<br>
+
+### Multilevel Inheritance: 
+- It is a chain of inheritance Where one class inherits from another class, and then another class inherits from it.
+- Example: Grandparent → Parent → Child
+``` java
+//skeleton class
+class shape//super class
+{
+	public void display() {
+		System.out.println("Inside shape method");
+	}
+}
+
+class rectangle extends shape //subclass1
+{
+	public void area() {
+
+		System.out.println("Inside rectangle method");
+	}
+	
+}
+class cube extends rectangle//subclass2
+{
+	public void volume() {
+
+		System.out.println("Inside cube method");
+	}
+}
+
+//stub class
+public class MultilevelInheritance {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		cube c =new cube();// all the features will come in cube(including shape,rect.
+		c.display();
+		c.area();
+		c.volume();
+
+	}
+
+}
+
+```
+<br>
+
+### Hierarchical Inheritance:   
+- Multiple classes to inherit from a single parent class.
+- Example: SCOFT->IT, CSE, AIDS
+``` java
+class departments{
+	String depts="SCOFT";
+}
+class department1 extends departments{
+	String dept1="IT";
+}
+class department2 extends departments{
+	String dept2="CSE";
+}
+class department3 extends departments{
+	String dept3="AIDS"; 
+}
+class department4 extends departments{
+	String dept4="ECE"; 
+}
+
+public class T_Hierarchalinheritance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		department1 obj1=new department1();
+		department2 obj2=new department2();
+		department3 obj3=new department3();
+		department4 obj4=new department4();
+		
+		System.out.println(obj1.dept1+" The dept is under "+ obj1.depts);
+		System.out.println(obj2.dept2+" The dept is under "+ obj2.depts);
+		System.out.println(obj3.dept3+" The dept is under "+ obj1.depts);
+		System.out.println(obj4.dept4+" The dept is under "+ obj1.depts);
+		
+```
+<br>
+
+### Hybrid Inheritance: 
+- Hybrid is a combination of two or more types of inheritance in a class Hierarchy.
+- Single, multilevel, hierarchical can be used in this inheritance.
+``` java
+class grandfather{
+	public void showG() {
+		System.out.println("He is a grand father");
+	}
+}
+class father extends grandfather{
+	public void showF() {
+		System.out.println("He is a father");
+	}
+}
+class son extends father{
+	public void showS() {
+		System.out.println("He is a Son");
+	}
+}
+
+public class HybridInheritance extends father// if we put son it will only give son and inherited things
+{
+	public void showD() {
+		System.out.println("She is a Daughter");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		son obj1=new son();
+		obj1.showS();
+		obj1.showF();
+		obj1.showG();
+		System.out.println("-----------------------------");
+		HybridInheritance obj2=new HybridInheritance();
+		obj1.showS();
+		obj2.showD();
+		obj2.showF();
+		obj2.showG();
+
+	}
+
+}
+```
+<br>
 
 
 
