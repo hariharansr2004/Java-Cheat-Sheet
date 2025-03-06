@@ -316,10 +316,13 @@ By default, decimal numbers are considered `double`. Adding `f` tells Java to tr
 1. **Arithmetic Operators**: Perform basic arithmetic operations. (`+`, `-`, `*`, `/`, `%`).
 2. **Unary Operators**: Operate on a single operand. (`++`, `--`).
    >  ++ Increments by 1.
-   > > Post-Increment: Uses value first, then increments. Returns original value before incrementation. 
+   > > Post-Increment: Uses value first, then increments. Returns original value before incrementation.
+   > > 
    > > Pre-Increment: Increments first, then uses value.
-   > 	-- Decrements by 1.
+   > > 
+   > -- Decrements by 1.
    > > Post-Decrement: Uses value first, then decrements. Returns original value before decrementation.
+   > > 
    > > Pre-Decrement: Decrements first, then uses value.
 
 4. **Assignment Operators**: Assign values with operations. (`+=`, `-=`, `*=`, `/=`, `%=`).
