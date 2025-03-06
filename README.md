@@ -28,6 +28,10 @@ Java is widely used in:
 
 ## Features of Java:
 ![z](https://github.com/user-attachments/assets/d36093cc-7e45-44a2-8bbe-6f728c2b2bc0)
+
+### Q.Is Java is pure Object Oriented Language?
+- No, it’s partially object oriented because,it supports primitive data types like "int", "float", and "double", which are not objects.
+
 <br>
 ## Platform Independence:
 Java is a platform-independent language because:
@@ -310,6 +314,7 @@ No, `main` is static so JVM can call it without creating an object. If it’s no
 By default, decimal numbers are considered `double`. Adding `f` tells Java to treat the number as a `float`.
 
 <br>
+
 ### Identifiers
 Names given to a class, method, interface, variables are called identifiers.
 
@@ -344,27 +349,27 @@ There are four types of literals:
 
 #### Literals
 
-# Integer Literals
+Integer Literals
 - There are 3 ways of representing an Integer Literal. 
   - Decimal. Examples: 343, 545
   - Octal. Digits 0 to 7. Place 0 before a number. Examples : 070,011
   - Hexadecimal. Digits 0 to 9 and alphabets A to F (10-15). Case insensitive.
 - An integer literal by default is int.
 
-# Long Literals 
+Long Literals 
 - All 3 integer formats: Decimal, Octal and Hexadecimal can be used to represent long by appending with L or l.
 
-# Floating point Literals
+Floating point Literals
 - Numbers with decimal points. Example: ```double d = 123.456;```
 - To declare a float, append f. Example: float f = 123.456f;
 - Floating point literals are double by default.
 - Appending d or D at end of double literal is optional Example: ```double d = 123.456D;```
 
-# Boolean Literals
+ Boolean Literals
 - Valid boolean values are true and false. 
 - TRUE, FALSE or True, False are invalid.
 
-# Character Literals
+ Character Literals
 - Represented by single character between single quotes  Example: ```char a = 'a'```
 - Unicode Representation also can be used. Prefix with \u. Example: char letterA = '\u0041';
 - A number value can also be assigned to character. Example: char letterB = 66; Numeric value can be from 0 to 65535;
@@ -417,6 +422,9 @@ char ch1 = 66000; //COMPILER ERROR!
 8. **Bitwise Operators**: Operate at the bit level. (`&`, `|`, `^`, `~`).
 9. **Shift Operators**: Shift bits left or right. (`<<`, `>>`, `>>>`).
 10. **`instanceof` Operator**: Checks object type. (`obj instanceof Class`).
+    
+![image](https://github.com/user-attachments/assets/9fe7b8f9-83a5-498f-97b0-56e094b69f87)
+
 <br>
 
 
