@@ -111,4 +111,20 @@ Order of execution of ClassLoaders
 
 <br>
 
+### Architecture of JDK, JRE, JVM:
+![image](https://github.com/user-attachments/assets/cdf79a6f-aa70-4cd1-a516-4d1e8ab2e4a2)
+<br>
 
+### First Java Program
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+
+}
+```
+## Compiling and Running Java Code
+-Compile: javac HelloWorld.java
+-Run: java HelloWorld
