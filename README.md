@@ -126,5 +126,55 @@ public class HelloWorld {
 }
 ```
 ## Compiling and Running Java Code
--Compile: javac HelloWorld.java
--Run: java HelloWorld
+- Compile: javac HelloWorld.java
+- Run: java HelloWorld
+<br>
+
+## What Happens if We Save a Blank File as a .java File?
+
+- If you save a blank file with a `.java` extension and try to compile it using `javac`, the compiler will return an error.
+- A `.java` file must contain at least one class or interface declaration. A blank file will not be considered a valid Java program by the compiler.
+<br>
+
+## Can We Perform Changes in Bytecode? What Are the Issues?
+
+Yes, you can make changes to bytecode manually, but it’s highly discouraged due to several issues.
+<br>
+
+
+## Difference between C++ and Java
+
+| Specifications        | C++                                              | Java                                                   |
+|----------------------|--------------------------------------------------|--------------------------------------------------------|
+| **Memory Management** | Use of Pointers & Structures                     | No user thread, user interface, object, Automatic Garbage Collection by default |
+| **Libraries**         | Available with low-level Functionalities        | High level Services and wide range of classes         |
+| **Multiple Inheritance** | Provides Multiple Inheritance                   | Multiple Inheritance is partially done by interface  |
+| **Operator Overloading** | Supports Operator Overloading                   | Doesn’t Support Operator Overloading                  |
+| **Portability**       | Platform Dependent                              | Platform Independent                                  |
+| **Program Handling**  | Functions & variables reside outside the class | Functions & variables reside only in classes & packages |
+| **Thread Support**    | No build & support in Thread Support. It depends only on the libraries | It has Built-in Thread Support |
+
+<br>
+
+## Datatypes in Java
+
+Data types in Java are divided into two groups:
+
+- **Primitive Data Types**:
+ These data types are predefined by Java and named by a keyword. They are used to store simple values directly. It includes `byte`, `short`, `int`, `long`, `float`, `double`, `boolean`, and `char`.
+- **Non-Primitive Data Types**:
+  These data types are **not predefined**. They are also known as **reference variables** or **object references** in Java. It includes `String`, `Arrays`, `Classes`, `Objects`, and `Interfaces`.
+
+## Memory Representation
+
+- **1 Byte = 8 Bits**
+
+![image](https://github.com/user-attachments/assets/3e1f316d-3c76-46e6-8320-cf0988bac31b)
+
+## ASCII:
+- ASCII- American Standard Code for Information Interchange
+- Created in 1960 for encoding characters in computers and digital systems.
+- Decimal Value for (a-z) : 65-90
+- Decimal Value for (A-Z) : 97-122
+<br>
+
