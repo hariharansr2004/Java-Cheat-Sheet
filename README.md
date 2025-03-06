@@ -28,8 +28,7 @@ Java is widely used in:
 
 ## Features of Java:
 ![z](https://github.com/user-attachments/assets/d36093cc-7e45-44a2-8bbe-6f728c2b2bc0)
-
----
+<br>
 ## Platform Independence:
 Java is a platform-independent language because:
 - In any programming language, source code is compiled into executable code, which cannot run across all platforms.
@@ -45,13 +44,13 @@ Java is a platform-independent language because:
 
 ![zp](https://github.com/user-attachments/assets/f30c99df-1027-47b1-8beb-2f93aa558c51)
 
----
+<br>
 
 ## Java Architecture:
 
 ![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
 
----
+<br>
 
 # Java Environment Components  
 
