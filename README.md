@@ -767,9 +767,21 @@ The return type of a method indicates what type of value it will return to the c
 
  ## Method Chaining:
 - Method chaining refers to calling multiple methods sequentially within another method
-<br>
 
 ## Difference b/w Method Overloading and Method Overriding
+
+| Feature                                | Method Overloading                                      | Method Overriding                                       |
+|----------------------------------------|---------------------------------------------------------|---------------------------------------------------------|
+| Purpose                                | Increases readability of the program                   | Provides a specific implementation of a superclass method |
+| Implementation                     | Within a single class                                   | In two classes with an IS-A (inheritance) relationship |
+| Parameter requirement                   | Must be different                                      | Must be the same                                       |
+| Type of polymorphism                   | Compile-time polymorphism                              | Run-time polymorphism                                  |
+| Return type condition                   | Cannot be overloaded by changing only return type; parameters must change | Return type must be the same or covariant|
+| Error detection                         | Errors can be caught at compile-time                  | Errors are caught at run-time                          |
+| Applicability to private & final methods | Applicable                                            | Not applicable                                        |                         
+| Static methods                          | Can be overloaded                                     | Cannot be overridden                                  |
+
+<br>
 
 ## Questions based on Methods
 
