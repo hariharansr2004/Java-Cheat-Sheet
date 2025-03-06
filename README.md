@@ -315,13 +315,10 @@ By default, decimal numbers are considered `double`. Adding `f` tells Java to tr
 
 1. **Arithmetic Operators**: Perform basic arithmetic operations. (`+`, `-`, `*`, `/`, `%`).
 2. **Unary Operators**: Operate on a single operand. (`++`, `--`).
-   > >  ++ Increments by 1.
-   > > Post-Increment: Uses value first, then increments. Returns original value before incrementation.
-   > > 
-   >> Pre-Increment: Increments first, then uses value.
-   > > 
-   > > 	-- Decrements by 1.
-   > >
+   >  ++ Increments by 1.
+   > > Post-Increment: Uses value first, then increments. Returns original value before incrementation. 
+   > > Pre-Increment: Increments first, then uses value.
+   > 	-- Decrements by 1.
    > > Post-Decrement: Uses value first, then decrements. Returns original value before decrementation.
    > > Pre-Decrement: Decrements first, then uses value.
 
@@ -332,7 +329,7 @@ By default, decimal numbers are considered `double`. Adding `f` tells Java to tr
 8. **Bitwise Operators**: Operate at the bit level. (`&`, `|`, `^`, `~`).
 9. **Shift Operators**: Shift bits left or right. (`<<`, `>>`, `>>>`).
 10. **`instanceof` Operator**: Checks object type. (`obj instanceof Class`).
-
+<br>
 
 
 
