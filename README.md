@@ -177,3 +177,150 @@ Data types in Java are divided into two groups:
 - Decimal Value for (A-Z) : 97-122
 <br>
 
+# Size of Data Type in Java
+
+This program demonstrates the size limitations of different data types in Java.
+
+## Java Code:
+
+```java
+package com.datatypes;
+
+/* Size of Data Type */
+
+public class Jtc {
+    public void dataType2() {
+        System.out.println("---dataType2() in Jtc class---");
+        byte b11 = 127;
+        byte b22 = -128;
+        // byte b33 = 128; // Error: 128 is out of range for byte
+        // byte b44 = -129; // Error: -129 is out of range for byte
+        int i11 = 2147483647;
+        int i12 = -2147483648;
+        // int i13 = 2147483648; // Error: 2147483648 is out of range for int
+        // long l14 = 2147483649; // Error: 2147483649 is interpreted as int by default
+        long l12 = 2147483648L; // Correct usage for long type
+        // float f11 = 11.11; // Error: 11.11 is interpreted as double by default
+        float f12 = 11.11f; // Correct usage for float type
+        double d11 = 11.12;
+        double d12 = 11.13d;
+        
+        System.out.println(b11);
+        System.out.println(b22);
+        System.out.println(i11);
+        System.out.println(i12);
+        System.out.println(l12);
+        System.out.println(f12);
+        System.out.println(d12);
+    }
+
+    public static void main(String[] args) {
+        Jtc jtc = new Jtc();
+        jtc.dataType2();
+    }
+}
+```
+
+## Explanation of Errors in Commented Code:
+
+### 1. `byte b33 = 128;`
+- **Error**: `128` is outside the range of the `byte` data type, which can only hold values from `-128` to `127`.
+
+### 2. `byte b44 = -129;`
+- **Error**: `-129` is also outside the range of the `byte` data type.
+
+### 3. `int i13 = 2147483648;`
+- **Error**: `2147483648` is out of range for the `int` type, which supports values from `-2147483648` to `2147483647`.
+
+### 4. `long l14 = 2147483649;`
+- **Error**: Although `2147483649` fits within the `long` range, it is treated as an `int` by default in Java. Adding an `L` at the end like `2147483648L` tells the compiler to treat it as a `long`.
+
+### 5. `float f11 = 11.11;`
+- **Error**: By default, decimal numbers in Java are treated as `double`. To store a value as a `float`, you must append `f` or `F` at the end, like `11.11f`.
+
+<br>
+
+# Size of Data Type in Java
+
+This program demonstrates the size limitations of different data types in Java.
+
+## Java Code:
+
+```java
+/* Size of Data Type */
+
+public class Jtc {
+    public void dataType2() {
+        System.out.println("---dataType2() in Jtc class---");
+        byte b11 = 127;
+        byte b22 = -128;
+        // byte b33 = 128; // Error: 128 is out of range for byte
+        // byte b44 = -129; // Error: -129 is out of range for byte
+        int i11 = 2147483647;
+        int i12 = -2147483648;
+        // int i13 = 2147483648; // Error: 2147483648 is out of range for int
+        // long l14 = 2147483649; // Error: 2147483649 is interpreted as int by default
+        long l12 = 2147483648L; // Correct usage for long type
+        // float f11 = 11.11; // Error: 11.11 is interpreted as double by default
+        float f12 = 11.11f; // Correct usage for float type
+        double d11 = 11.12;
+        double d12 = 11.13d;
+        
+        System.out.println(b11);
+        System.out.println(b22);
+        System.out.println(i11);
+        System.out.println(i12);
+        System.out.println(l12);
+        System.out.println(f12);
+        System.out.println(d12);
+    }
+
+    public static void main(String[] args) {
+        Jtc jtc = new Jtc();
+        jtc.dataType2();
+    }
+}
+```
+
+## Explanation of Errors in Commented Code:
+
+### 1. `byte b33 = 128;`
+- **Error**: `128` is outside the range of the `byte` data type, which can only hold values from `-128` to `127`.
+
+### 2. `byte b44 = -129;`
+- **Error**: `-129` is also outside the range of the `byte` data type.
+
+### 3. `int i13 = 2147483648;`
+- **Error**: `2147483648` is out of range for the `int` type, which supports values from `-2147483648` to `2147483647`.
+
+### 4. `long l14 = 2147483649;`
+- **Error**: Although `2147483649` fits within the `long` range, it is treated as an `int` by default in Java. Adding an `L` at the end like `2147483648L` tells the compiler to treat it as a `long`.
+
+### 5. `float f11 = 11.11;`
+- **Error**: By default, decimal numbers in Java are treated as `double`. To store a value as a `float`, you must append `f` or `F` at the end, like `11.11f`.
+<br>
+
+## Range of Primitive Data Types
+The range of a data type defines the maximum and minimum values that the type can hold.
+
+## Java Code:
+```java
+
+/* Data Type Minimum and Maximum value */
+
+public class Jtc {
+    public void dataType3() {
+        System.out.println("Byte Range: " + Byte.MIN_VALUE + " to " + Byte.MAX_VALUE);
+        System.out.println("Short Range: " + Short.MIN_VALUE + " to " + Short.MAX_VALUE);
+        System.out.println("int Range: " + Integer.MIN_VALUE + " to " + Integer.MAX_VALUE);
+        System.out.println("Long Range: " + Long.MIN_VALUE + " to " + Long.MAX_VALUE);
+        System.out.println("Float Range: " + Float.MIN_VALUE + " to " + Float.MAX_VALUE);
+        System.out.println("Double Range: " + Double.MIN_VALUE + " to " + Double.MAX_VALUE);
+    }
+
+    public static void main(String[] args) {
+        Jtc jtc = new Jtc();
+        jtc.dataType3();
+    }
+}
+```
