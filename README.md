@@ -823,7 +823,7 @@ public class CanMainbeOverloaded {
 ### Can the Main Method be Overridden?
 - No, we cannot override the `main` method in Java because a static method cannot be overridden.
 
-## Can we call the main Method Explicitly?
+### Can we call the main method explicitly?
 - Yes we can call  the main Method Explicitly.
 ```java
 public class MainExample {
