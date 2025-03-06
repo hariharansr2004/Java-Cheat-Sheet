@@ -309,3 +309,30 @@ No, `main` is static so JVM can call it without creating an object. If it’s no
 ### 4. Why do we need `f` for float literals?
 By default, decimal numbers are considered `double`. Adding `f` tells Java to treat the number as a `float`.
 
+<br>
+
+## Java Operators
+
+1. **Arithmetic Operators**: Perform basic arithmetic operations. (`+`, `-`, `*`, `/`, `%`).
+2. **Unary Operators**: Operate on a single operand. (`++`, `--`).
+   > >  ++ Increments by 1.
+   > > Post-Increment: Uses value first, then increments. Returns original value before incrementation.
+   > > 
+   >> Pre-Increment: Increments first, then uses value.
+   > > 
+   > > 	-- Decrements by 1.
+   > >
+   > > Post-Decrement: Uses value first, then decrements. Returns original value before decrementation.
+   > > Pre-Decrement: Decrements first, then uses value.
+
+4. **Assignment Operators**: Assign values with operations. (`+=`, `-=`, `*=`, `/=`, `%=`).
+5. **Relational Operators**: Compare values, returning boolean. (`==`, `!=`, `>`, `<`, `>=`, `<=`).
+6. **Logical Operators**: Perform logical operations.They have a short-circuiting effect, meaning the second condition is not evaluated if the first is false (`&&`, `||`, `!`).
+7. **Ternary Operator**: Shortened if-else statement. (`condition ? if true : if false`).
+8. **Bitwise Operators**: Operate at the bit level. (`&`, `|`, `^`, `~`).
+9. **Shift Operators**: Shift bits left or right. (`<<`, `>>`, `>>>`).
+10. **`instanceof` Operator**: Checks object type. (`obj instanceof Class`).
+
+
+
+
