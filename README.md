@@ -65,7 +65,7 @@ JDK mainly includes two components:
 - **Development Tools** – Provides an environment to develop Java programs.  
 - **JRE** – Used to execute Java programs.  
 
-
+<br>
 
 ## 2. JRE (Java Runtime Environment)  
 Java Runtime Environment is a software package that provides an environment to **run** Java programs (not develop them).  
@@ -76,7 +76,7 @@ It contains:
 
 **Note:** JRE is primarily for running Java applications, not for development.  
 
-
+<br>
 
 ## 3. JVM (Java Virtual Machine)  
 JVM is a virtual CPU that provides a runtime environment for executing Java bytecodes.  
@@ -87,12 +87,12 @@ It performs the following tasks:
 - Verifies bytecode with the **bytecode verifier**.  
 - Executes bytecode line by line (hence, it acts as an **interpreter**).  
 
----
+<br>
 
 ## 4. JIT (Just-In-Time Compiler)  
 Just-In-Time Compiler is a part of the **JVM** that enhances the performance of Java applications by **compiling bytecodes to native machine code at runtime**.  
 
----
+<br>
 
 
 
