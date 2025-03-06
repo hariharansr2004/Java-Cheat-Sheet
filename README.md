@@ -430,160 +430,34 @@ char ch1 = 66000; //COMPILER ERROR!
 
 # Variables in Java
 
+##  Instance Variable vs. Static Variable vs. Local Variable
 
-## 1. Instance Variables
+| Feature                | Instance Variable | Static Variable | Local Variable |
+|------------------------|------------------|----------------|---------------|
+| Defintion |An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. |A **static variable** is a class-level variable shared among all instances of the class. It is declared using the `static` keyword.| variables are declared within a method, constructor, or block.They must be initialized before use, as they do not have default values.|
+| Declaration Location   | Inside a class but outside any method, without `static` keyword. | Inside a class, declared with the `static` keyword. | Inside a method, constructor, or block. |
+| Memory Allocation      | Created when an object is instantiated. | Allocated once when the class is loaded. | Allocated when the method/block is executed and destroyed after execution. |
+| Memory Location      | Located in Heap | Located in Heap  | Located in Stack |
+| Scope                 | Specific to each object. | Shared across all objects of the class. | Limited to the method/block in which it is declared. |
+| Default Values        | Assigned default values by JVM. | Assigned default values by JVM. | Must be explicitly initialized before use. |
+| Access in Static Methods | Cannot be accessed directly in a static method. | Can be accessed directly in static and non-static methods. | Cannot be accessed outside the method/block. |
+| Access in Non-Static Methods | Can be accessed directly in non-static methods. | Can be accessed directly in both static and non-static methods. | Can only be accessed within the method/block where declared. |
+| Modifiers Allowed | Can use all access modifiers. | Can use all access modifiers. | Can only be `default` or `final` (cannot be `private`, `public`, or `protected`). |
 
-An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. 
 
-### Characteristics:
-- Created when an object of the class is instantiated.
-- Each object of the class has its own copy.
-- Stores unique data for each instance.
-- Cannot be accessed in a static context directly.
-
-### Example:
-```java
-class Student {
-    int sid;  // Instance variable for student ID
-    String sname;  // Instance variable for student name
-    String semail;  // Instance variable for student email
-}
-```
 <br>
 
-## 2. Static Variables
-
-A **static variable** is a class-level variable shared among all instances of the class. It is declared using the `static` keyword.
-
-### Characteristics:
-- Belongs to the class rather than any individual object.
-- Memory is allocated only once when the class is loaded.
-- Can be accessed using the class name.
-- Shared across all instances of the class.
-  
-### Example:
-```java
-class A {
-    static int a = 10; // Static variable
-}
-
-class Main {
-    public static void main(String[] args) {
-        System.out.println(A.a);  // Access using class name
-        A obj = new A();
-        System.out.println(obj.a);  // Access using object
-    }
-}
-```
-<br>
-
-## 3. Local Variables
-
-- Local variables are declared within a method, constructor, or block.
-- They must be initialized before use, as they do not have default values.
-
-### Is Initialization of Local Variables Mandatory?
+### Q. Is Initialization of Local Variables Mandatory?
 **Yes**, it is mandatory to initialize local variables. If we do not initialize them, we will get a compile-time error saying:
 ```
 Variable might not be initialized
 ```
 
-### Characteristics:
-- Memory for local variables is allocated only when the method or block is executed and is released when it ends.
-- Local variables can only be `default` or `final`, i.e., we cannot declare a local variable as `private`, `public`, or `protected`.
-
-### Key Differences Between Class Level and Local Variables:
-![image](https://github.com/user-attachments/assets/cee6d31f-8b23-41f1-86a5-475ca3e900b0)
-
-
-## Diff b/w instance ans static variable
-| Feature | Instance Variable | Static Variable |
-|---------|------------------|----------------|
-| Declaration | Inside class, outside methods | Inside class, outside methods with `static` keyword |
-| Memory Allocation | Created when an object is instantiated | Created when the class is loaded |
-| Access | Through an object | Through class name or object |
-| Data Sharing | Unique per object | Shared among all objects |
-| Can be used in static methods? | ❌ No | ✅ Yes |
-
-
 ### Q. What if local variable and global variable names are same?
 - If local var and global var names are same first priority is always given to local variables because they are inside method and nearer for execution to JVM.
+
+
 <br>
-
-### Scope of a Variable
-- Scope of a variable defines where (which part of code) a variable can be accessed.
-
-#### Important Rules
-- Static Variable can be used anywhere in the class.
-- Member Variable can be used in any non-static method.
-- Local Variable can be used only in the method where it is declared.
-- Block Variable can be used only in the block (code between { and }) where it is declared.
-  
-#### Variable Scope Examples
-Below code shows all these Rules in action:
-```java
-
-public class VariablesExample {
-    //RULE 1:Static Variable can be used anywhere in the class. 
-    static int staticVariable;
-    
-    //RULE 2:Member Variable can be used in any non-static method. 
-    int memberVariable;
-    
-    void method1() {
-		//RULE 3: method1LocalVariable can be used only in method1.
-		int method1LocalVariable;
-
-		memberVariable = 5;//RULE 2
-		staticVariable = 5;//RULE 1
-
-		//Some Code
-		{
-		    //RULE 4:blockVariable can be used only in this block.
-		    int blockVariable;
-		    //Some Code
-		}
-
-		//blockVariable = 5;//COMPILER ERROR - RULE 4
-    }
-    
-    void method2() {
-		//method1LocalVariable = 5; //COMPILER ERROR - RULE3
-    }
-    
-    static void staticMethod() {
-		staticVariable = 5;//RULE 1
-		//memberVariable = 5; //COMPILER ERROR - RULE 2
-    }
-}
-```
-
-#### Scope Example 1
-- staticVariable is declared using keyword static. 
-- It is available in the instance method method1 and static method named staticMethod.
-
-#### Scope Example 2
-- memberVariable is declared directly in the class  and does NOT use keyword static. So, it is an instance variable. 
-- It is available in the instance method method1 but not accessible in the static method named staticMethod.
-
-#### Scope Example 3
-- method1LocalVariable is declared in the method method1. So, it is a local variable. 
-- It is available in the instance method method1 but available in any other  instance or static methods.
-
-#### Scope Example 4
-- blockVariable is declared in a block in method1. So, it is a block variable. 
-- It is available only in the block where it is defined. 
-- It is not accessible any where out side the block , even in the same method.
-
-### Variable Initialization
-- Initialization defines the default value assigned to a variable if it is not initialized.
-
-#### Important Rules
-- Member/Static variables are alway initialized with default values.
-- Default values for numeric types is 0, floating point types is 0.0, boolean is false, char  is '\u0000' and for a object reference variable is null.
-- Local variables are not initialized by default by compiler. 
-- Using a local variable before initialization results in a compilation error.
-- Assigning a null value is a valid initialization for reference variable
 
 
 
