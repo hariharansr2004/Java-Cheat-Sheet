@@ -1479,78 +1479,6 @@ public class HybridInheritance extends father// if we put son it will only give 
 - Just make it final
 
 
-# Java Constructors
-
-## Overview
-
-- Constructor is a special method that is used to initialize the objects.
-- By default, a constructor is called when an object is created.
-- It can be used to set initial values for object attributes.
-- A constructor in Java can’t be abstract, final, static, or synchronized.
-- Same Name as Class Name
-- No return Type
-- Automatic invocation (e.g., if we apply brakes, the car will stop).
-- Initialization of objects
-
-## How Java Constructors are Different from Methods?
-
-| Feature            | Constructors | Methods |
-|--------------------|-------------|---------|
-| Name              | Must be the same as the class name | Can have different names |
-| Return Type       | No return type | Has a return type or `void` if it does not return any value |
-| Invocation        | Called only once at the time of object creation | Can be called any number of times |
-
-## Types of Constructors
-
-### 1. Default Constructor
-A constructor that has no parameters is known as a default constructor. The default constructor provides default values to the object like `0`, `null`, etc., depending on the type.
-
-### 2. Parameterized Constructor
-A constructor that allows us to pass one or more arguments. It is used to initialize the object's properties with specific values (if we want to initialize variables with our own values).
-
-### 3. Copy Constructor
-A constructor that is used to create a new object by copying values from an existing object of the same class.
-> **Note:** Java does not support copy constructors, but they can be implemented manually.
-
-## Constructor Overloading
-
-- Multiple constructors in a class can have the same name with different parameters.
-- Constructor overloading allows multiple ways to initialize an object.
-
-# Object-Oriented Programming System (OOPs)
-
-## Overview
-
-Object-Oriented Programming System (OOPs) is a programming concept based on objects. It provides a structured way to design and develop software using principles like Encapsulation, Abstraction, Inheritance, and Polymorphism.
-
-## Why Do We Need OOP?
-
-- **Organized Code** – Helps structure programs neatly.
-- **Reusability** – Write code once, use it multiple times.
-- **Security** – Protects important data from unwanted changes.
-- **Scalability** – Makes it easy to expand projects without breaking existing code.
-
-## Inheritance in OOP
-
-Inheritance is an OOP concept that allows a class to inherit properties and behaviors from another class.
-**Example:** A child inherits some properties from their parents.
-
-### How is inheritance implemented in Java?
-Inheritance is implemented using the `extends` keyword.
-
-### Superclass
-The class whose features are inherited is known as the **superclass**, **base class**, or **parent class**.
-
-### Subclass
-The class that inherits from another class is called the **subclass**, **derived class**, **extended class**, or **child class**.
-
-## Importance of Inheritance in Java
-
-- **Reusability**: The major advantage of inheritance is code reuse.
-- **Extendibility**: We can add new functionality to our application without modifying existing code.
-  - Example: Microsoft Word has multiple versions such as Word 2003, 2007, etc. Instead of rewriting the entire code, the existing code is reused with additional features.
-<br>
-
 ## this Keyword
 - ‘this’ keyword in Java is a reference variable that refers to the current instance of the class. It is commonly used to differentiate between instance variables and method parameters with the same name.
 - this can also be used to:
@@ -1558,7 +1486,6 @@ The class that inherits from another class is called the **subclass**, **derived
 - Call current class constructor
 - Call current class method
 - to refer to the current class instance variables.
-
 <br>
 
 ##  Super Keyword
@@ -1568,6 +1495,7 @@ The class that inherits from another class is called the **subclass**, **derived
 - it can be used to call a superclass method
 - it can be used to call a superclass constructor.
 <br>
+
 ## Similarities
 - `this()` and `super()` must be the first statements in a constructor.
 - Both this and super are non-static, so they can't be used in static context. It means that we cannot use both the keywords in the main method in Java.
