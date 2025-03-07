@@ -1523,6 +1523,20 @@ error: call to this must be first statement in constructor this(); or
 
 error: call to this must be first statement in constructor super();
 ```
+
+```java
+public Animal() {
+    this.name = "Default Name";
+    //super(), if called, should always the first statement in a constructor.
+    //super(); //COMPILER ERROR
+}
+
+public Animal() {
+    System.out.println("Creating an Animal");
+    //this(string), if called, should always the first statement in a constructor.
+    //this("Default Name");//COMPILER ERROR
+}
+```
 <br>
 
 # Coupling in Java
@@ -1870,6 +1884,7 @@ An exception is a wanted or unwanted event that occurs during the execution of t
 - **Error**: A mistake made by the programmer during coding.
 - **Bug**: An error that is found during testing.
 - **Defect**: A bug that is not caught before release.
+<br>
 
 ## Types of Exceptions
 
@@ -1891,6 +1906,130 @@ Examples:
 Examples:
 - `NullPointerException`
 - `ArrayIndexOutOfBoundsException`
+<br>
+
+### program
+```java
+package Exceptions;
+//User defined Exception 
+class InvalidAge extends Exception{
+	public InvalidAge(String str) { //constructor
+		super(str);   //super(str)->Calls Exception Class Constructor 
+		//Exception Class Constructor accepts only String or throwbale
+	}
+}
+
+public class ExceptionHandlingUsingClass {
+	static void validate(int age) throws InvalidAge{ //throws class
+		if(age<18){
+			throw new InvalidAge("Age is not valid to vote"); //here InvalidAge is a Constructor
+		}
+		else {
+			System.out.println("You're eligible to vote");
+		}
+	}
+	
+	public static void main(String[] args) {
+		try {
+			validate(14);
+		}
+		catch(InvalidAge e) {
+			System.out.println("Caught the exception");
+			System.out.println("Exception occured"+e);
+		}
+		System.out.println("Rest of the code");
+	}
+}
+
+/*
+ * If you make the constructor parameter an int and try to pass it directly to super(), 
+ * it will not work because the Exception class in Java doesn't have a constructor that accepts an int. 
+ * The super() call in the exception class must match one of the constructors provided by the Exception class and all of them expect either a String or a Throwable (or both).
+ * Incorrect Approach (Will Cause Compilation Error):
+   class RoleException extends Exception {
+    public RoleException(int message) {
+        super(message);  // This will cause a compilation error
+    }
+   }
+   
+   Error:
+   constructor Exception in class Exception cannot be applied to given types;
+   required: String
+   found: int
+   reason: actual argument int cannot be converted to String by method invocation conversion
+```
+<br>
+
+#### Number format exception:
+```java
+package Exceptions;
+//Integer.parseInt() -> To convert a string into particular datatype
+public class NumberFormatException {
+
+	public static void main(String[] args) {
+	try {
+		int num=Integer.parseInt("Hi");// this code doesn't execute Note:If a exception occured it will directly move to catch block,it wont read next line of code in try block.
+                //If we use 3 it won't raise error since it is Converted to int
+		int a=Integer.parseInt("3"); 
+		System.out.println(num);
+		System.out.println(a); 
+	}
+	catch(Exception e){
+		System.out.println("Number Format Exception");
+	}
+ }
+
+}
+```
+<br>
+
+#### FileNoutFound exception:
+```java
+import java.io.File;
+import java.io.FileReader;
+
+//Class-> File and File Reader
+public class FileNotFoundException {
+
+	public static void main(String[] args) {
+		try {
+			File f=new File("C:\\Users\\harih\\OneDrive\\Documents\\Java\\JavaProgramming\\src\\Exceptions\\ExceptionHandling.java");
+			FileReader fr=new FileReader(f);
+			System.out.println("File Exists");
+		}
+		catch(Exception e) { //FileNotFoundException
+			System.out.println("File Does Not Exist");
+		}
+	}
+}
+
+```
+<br>
+
+#### OneTryManyCatch
+```java
+public class OneTryManyCatch {
+	public static void main(String[] args) {
+	try {
+		int a[]=new int[5];
+		System.out.println(a[4]);
+	}
+	
+	catch(ArithmeticException e) {
+		System.out.println("Arithmetic Exception Occurs");
+	}
+	catch(ArrayIndexOutOfBoundsException e) {
+		System.out.println("Array Index Out Of Bound Exception Occurs");
+	}
+	catch(Exception e) {
+		System.out.println("Parent Exception Occurs");
+	}
+	System.out.println("Rest of Code");
+	}
+
+}
+```
+<br>
 
 ## `throw` vs `throws`
 
@@ -2293,6 +2432,7 @@ System.out.println("" + 5 + 5 + "25"); //5525
 System.out.println(5 + (5 + "25")); //5525
 System.out.println(5 + 5 + 25); //35
 ```
+
 <br>
 
 # Collections Framework
