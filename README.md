@@ -1512,7 +1512,7 @@ Inside the constructor, we cannot call the this() and super() recursively.
 
 ## Interview Question: When Do You Need a `super` Keyword?
 
-- Whenever a derived class inherits the features of a base class, there is a chance that base class features are similar to derived class features, resulting in ambiguity for the JVM. The `super` keyword must be used to distinguish between base class features and derived class features.
+- Whenever a sub class inherits the features of a super class, there is a chance that super class features are similar to derived sub features, resulting in ambiguity for the JVM. The `super` keyword must be used to distinguish between base class features and derived class features.
 
 ## Can We Use Both `this()` and `super()` in the Same Constructor?
 
