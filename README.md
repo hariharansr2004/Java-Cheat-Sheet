@@ -1932,6 +1932,369 @@ protected void finalize() throws Throwable {
 Before the Garbage Collector deletes an object, the `finalize()` method releases all resources the object uses. Once `finalize()` executes, the Garbage Collector immediately eliminates the Java object.
 <br>
 
+# Arrays
+Array are used to store multiple values in a single variable instead of declaring separate variables for each values
+
+### How to access the element for an array?
+ - we can access the array element by index no changing an array element 
+ - To change the value of the specific elements refer to the index number
+ - **array length** -> to find how many elements an array has,use the length property
+ -If we access an array out of the array size which is not specified(since array size is finished) 
+ -It will raise out-of-index error and returns -1 due to backward indexing
+
+### What is traverse an array?
+   > You can traverse through an array using for loop or enhanced-for which means you can iterate the index using 
+   > loop starting from 0 to length of the array and access element at each index
+
+ **Arrays.fill** -> This method assigns the specified data-type value to each element of the specified range of the specified array
+ 
+```java
+ How to initialize array value?
+ Type 1-> If we want to store element values in an array use new keyword
+ int[] arr= new int[]{1,2,3} // used in corporates
+ Type 2-> Java allows short-hand declaration for array initialization
+ int[] arr={0,9} (if we declare size in int it will use only that size only)
+ Type 3-> No change in functionality but not on size
+ int arr[]={98,99}
+ Type 4->initializes the array value
+ int arr[]=new int[4]
+```
+```java
+//Declaring an Array
+int[] marks;
+
+// Creating an array
+marks = new int[5]; // 5 is size of array
+
+int marks2[] = new int[5];//Declaring and creating an array in same line.
+
+System.out.println(marks2[0]);//New Arrays are always initialized with default values - 0
+
+//Index of elements in an array runs from 0 to length - 1
+marks[0] = 25;
+marks[1] = 30;
+marks[2] = 50;
+marks[3] = 10;
+marks[4] = 5;
+
+System.out.println(marks[2]);//Printing a value from array
+
+//Printing a 1D Array
+int marks5[] = { 25, 30, 50, 10, 5 };
+System.out.println(marks5); //[I@6db3f829
+System.out.println(
+    Arrays.toString(marks5));//[25, 30, 50, 10, 5]
+
+int length = marks.length;//Length of an array: Property length
+
+//Enhanced For Loop
+for (int mark: marks) {
+    System.out.println(mark);
+}
+
+//Fill array with a value
+Arrays.fill(marks, 100); //All array values will be 100
+
+//String Arrays
+String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+```
+
+### 2D Arrays
+
+Best way to visualize a 2D array is as an array of arrays.
+
+```java
+int[][] matrix = { { 1, 2, 3 }, { 4, 5, 6 } };
+
+int[][] matrixA = new int[5][6]; 
+
+//Accessing elements from 2D array:
+System.out.println(matrix[0][0]); //1
+System.out.println(matrix[1][2]); //6
+
+//Looping a 2D array
+for (int[] array: matrix) {
+    for (int number: array) {
+         System.out.println(number);
+    }
+}
+
+// Printing a 2D Array
+int[][] matrix3 = { { 1, 2, 3 }, { 4, 5, 6 } };
+System.out.println(matrix3); //[[I@1d5a0305
+System.out.println(
+
+Arrays.toString(matrix3)); 
+//[[I@6db3f829, [I@42698403]
+
+System.out.println(Arrays.deepToString(matrix3)); 
+//[[1, 2, 3], [4, 5, 6]]
+
+System.out.println(matrix3[0]);//[I@86c347 - matrix3[0] is a 1D Array
+System.out.println(Arrays.toString(matrix3[0]));//[1, 2, 3]
+```
+
+### Other Array Operations
+
+```java
+//Comparing Arrays
+int[] numbers1 = { 1, 2, 3 };
+int[] numbers2 = { 4, 5, 6 };
+
+System.out.println(Arrays
+.equals(numbers1, numbers2)); //false
+
+int[] numbers3 = { 1, 2, 3 };
+
+System.out.println(Arrays
+.equals(numbers1, numbers3)); //true
+
+// Sorting an Array
+
+int rollNos[] = { 12, 5, 7, 9 };
+Arrays.sort(rollNos);
+System.out.println(Arrays.toString(rollNos));//[5, 7, 9, 12]
+
+```
+
+### Array of Objects
+**Array of objects:** Creating array for  objects.
+- Array of objects is used to store multiple instances of class within single array. This allows us to easy manage a collections of objects.
+
+```java
+Person[] persons = new Person[3];
+
+//By default, an array of 3 reference variables is created.
+
+//The person objects are not created
+System.out.println(persons[0]);//null
+
+//Let's create the new objects
+persons[0] = new Person();
+persons[1] = new Person();
+persons[2] = new Person();
+
+//Creating and initializing person array in one statement
+Person[] personsAgain = { new Person(),new Person(),new Person()};
+
+//Another example
+Person[][] persons2D = 
+    {
+		{ new Person(),new Person(),new Person()},
+		{ new Person(),new Person()}
+    };
+```
+<br>
+
+### Class of Objects
+ **Class of Objects:** Creating array for class.
+```java
+class Student{
+	public String name;
+	public int id;
+	Student(int id,String name){
+		this.id=id;
+		this.name=name;
+		
+	}
+	public void display() {
+		System.out.println("Student Id & name is "+id+" "+name);
+	}
+	 public String toString() {
+	        return "id=" + id + ", name='" + name + "'";
+	    }
+	
+}
+public class ClassofObjects {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student[] arr= new Student[10];
+		arr[0]=new Student(100,"hari");
+		arr[1]=new Student(100,"dk");
+		arr[2]=new Student(200,"kumar");
+		arr[3]=new Student(300,"saran");
+		arr[0].display();
+		arr[1].display();
+		System.out.println("Another Way of passing Array Elements: ");
+		Student[] arr1= { new Student(16,"Hari"),new Student(11,"DK"),new Student(29,"Kumaravel")};
+		System.out.println(Arrays.toString(arr1));
+	}
+}
+```
+<br>
+
+#### Array Tips 
+```java
+
+//You can Declare, Create and Initialize Array on same line.
+int marks3[] = { 25, 30, 50, 10, 5 };
+
+//Leaving additional comma is not a problem. (note that comma after 5)
+int marks4[] = { 25, 30, 50, 10, 5, };
+
+
+int marks[]; //Not Readable
+int[] runs; //Readable
+
+
+//int values[5];//Compilation Error!Declaration of an Array should not include size. 
+
+//marks = new int[];//COMPILER ERROR! Size of an array is mandatory to create an array.
+
+
+//Declaring 2D Array Examples:
+int[][] matrix1; //Recommended
+int[] matrix2[]; //Legal but not readable. Avoid.
+
+//Access 10th element when array has only length 5
+//Runtime Exception: ArrayIndexOutOfBoundsException
+//System.out.println(marks[10]);
+
+//Array can contain only values of same type.
+
+//COMPILE ERROR!!
+//int marks4[] = {10,15.0}; //10 is int 15.0 is float
+
+//Cross assigment of primitive arrays is ILLEGAL
+int[] ints = new int[5];
+short[] shorts = new short[5];
+//ints = shorts;//COMPILER ERROR
+//ints = (int[])shorts;//COMPILER ERROR
+
+
+//The first dimension of a 2D array is mandatory
+matrixA = new int[3][];//FINE
+//matrixA = new int[][5];//COMPILER ERROR
+//matrixA = new int[][];//COMPILER ERROR
+
+//Each row in a 2D Array can have a different size. This is called a Ragged Array.
+matrixA = new int[3][];//FINE
+matrixA[0] = new int[3];
+matrixA[0] = new int[4];
+matrixA[0] = new int[5];
+```
+
+# String Class
+
+- A String class can store a sequence of characters. String is not a primitive in Java but a Class in its own right.
+
+## Strings are immutable
+
+- Value of a String Object once created cannot be modified. Any modification on a String object creates a new String object.
+
+```java
+String str3 = "value1";
+str3.concat("value2");
+System.out.println(str3); //value1
+```
+
+Note that the value of str3 is not modified in the above example.  The result should be assigned to a new reference variable (or same variable can be reused).
+
+```java
+String concat = str3.concat("value2");
+System.out.println(concat); //value1value2
+```
+
+
+## String vs StringBuffer vs StringBuilder
+- Immutability : String
+- Thread Safety : String(immutable), StringBuffer
+- Performance : StringBuilder (especially when a number of modifications are made.)
+- [Example 1](src/main/java/com/in28minutes/java/string/StringBufferBuilderExamples.java)
+
+
+#### String Constant Pool
+- The string pool, also known as the string intern pool, is a special storage area in the Java heap memory where the JVM stores string literals.
+- All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
+
+- Following statement creates 1 string object (created on the pool) and 1 reference variable.
+
+```java
+String str1 = "value"; 
+```
+
+- However, if new operator is used to create string object, the new object is created on the heap. Following piece of code create 2 objects.
+
+```java
+//1. String Literal "value" - created in the "String constant pool"
+//2. String Object - created on the heap
+String str2 = new String("value");
+```
+![image](https://github.com/user-attachments/assets/778ae5dc-008d-4e18-a10c-96deedad6fce)
+
+#### String Method Examples
+
+String class defines a number of methods to get information about the string content.
+
+```java
+String str = "abcdefghijk";
+```
+
+##### Get information from String
+
+Following methods help to get information from a String.
+
+```java
+//char charAt(int paramInt)
+System.out.println(str.charAt(2)); //prints a char - c
+System.out.println("ABCDEFGH".length());//8
+System.out.println("abcdefghij".toString()); //abcdefghij
+System.out.println("ABC".equalsIgnoreCase("abc"));//true
+
+//Get All characters from index paramInt
+//String substring(int paramInt)
+System.out.println("abcdefghij".substring(3)); //defghij
+
+//All characters from index 3 to 6
+System.out.println("abcdefghij".substring(3,7)); //defg
+
+String s1 = new String("HELLO"); 
+String s2 = new String("HELLO"); 
+System.out.println(s1 == s2); // false
+System.out.println(s1.equals(s2)); // true
+```
+
+#### String Manipulation methods
+
+Most important thing to remember is a String object cannot be modified. When any of these methods are called, they return a new String with the modified value. The original String remains unchanged.
+
+```java
+//String concat(String paramString)
+System.out.println(str.concat("lmn"));//abcdefghijklmn
+
+//String replace(char paramChar1, char paramChar2)
+System.out.println("012301230123".replace('0', '4'));//412341234123
+
+//String replace(CharSequence paramCharSequence1, CharSequence paramCharSequence2)
+System.out.println("012301230123".replace("01", "45"));//452345234523
+
+System.out.println("ABCDEFGHIJ".toLowerCase()); //abcdefghij
+
+System.out.println("abcdefghij".toUpperCase()); //ABCDEFGHIJ
+
+//trim removes leading and trailings spaces
+System.out.println(" abcd  ".trim()); //abcd
+```
+### String Concatenation Operator
+
+#### Three Rules of String Concatenation
+- RULE1: Expressions are evaluated from left to right. Except if there are parenthesis.
+- RULE2: number + number = number
+- RULE3: number + String = String
+
+```java
+System.out.println(5 + "Test" + 5); //5Test5
+System.out.println(5 + 5 + "Test"); //10Test
+System.out.println("5" + 5 + "Test"); //55Test
+System.out.println("5" + "5" + "25"); //5525
+System.out.println(5 + 5 + "25"); //1025
+System.out.println("" + 5 + 5 + "25"); //5525
+System.out.println(5 + (5 + "25")); //5525
+System.out.println(5 + 5 + 25); //35
+```
+<br>
+
 # Collections Framework
 
 ## What is Collection?
