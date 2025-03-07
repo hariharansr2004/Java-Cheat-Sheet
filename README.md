@@ -1859,8 +1859,96 @@ Explanation: In the example above, Animal is the superclass, and Dog and Cat are
 | **Example**                 | **Method Overloading** | **Method Overriding** |
 
 
+<br>
 
+# Exceptions in Java
 
+## Exception
+An exception is a wanted or unwanted event that occurs during the execution of the program at run time and disrupts the normal flow of the program. The process of handling these exceptions using `try-catch`, `throws`, and `finally` is known as Exception Handling.
 
+## Error, Bug, and Defect
+- **Error**: A mistake made by the programmer during coding.
+- **Bug**: An error that is found during testing.
+- **Defect**: A bug that is not caught before release.
 
+## Types of Exceptions
+
+### 1. User Defined Exceptions
+Exceptions that are created by the user.
+```java
+throw new IllegalArgumentException("Age is not valid");
+```
+
+### 2. Built-in Exceptions
+#### Checked Exceptions
+- Exceptions are checked at compile time.
+Examples:
+- `SQLException`
+- `FileNotFoundException`
+
+#### Unchecked Exceptions
+- Exceptions are checked at run time.
+Examples:
+- `NullPointerException`
+- `ArrayIndexOutOfBoundsException`
+
+## `throw` vs `throws`
+
+| Feature  | `throw` | `throws` |
+|----------|--------|---------|
+| **Definition** | Used to explicitly throw an exception inside a function or block of code. | Used in the method signature to indicate whether an exception may occur or not. |
+| **Location** | Used inside a method or block of code. | Used in the method signature (main) and also in normal methods. |
+| **Usage** | Can throw both checked and unchecked exceptions. | Only used for checked exceptions. Unchecked exceptions do not require `throws`. |
+| **Internal Implementation** | Only one exception can be thrown at a time. | Multiple exceptions can be declared using `throws`. |
+| **Example** | `throw new ArithmeticException("Error");` | `public void myMethod() throws IOException {}` |
+<br>
+
+## Final Keyword
+The `final` keyword is a non-access modifier used to indicate that a variable, method, or class cannot be modified after it is initialized or defined.
+
+### Uses of `final`
+- **Final Variables**: Once a variable is declared as `final`, its value cannot be changed.
+- **Final Methods**: A method declared as `final` cannot be overridden by subclasses. *(Final methods can be overloaded.)*
+- **Final Classes**: A class declared as `final` cannot be extended by other classes.
+<br>
+
+## `finally` Keyword
+A `finally` block is used to execute a particular process regardless of whether an exception is thrown or not and ensures that cleanup code runs.
+- The `finally` block is always executed after the `try` and `catch` blocks.
+- **Note**: The `finally` block is always executed unless there is an unhandled exception that terminates the program.
+- **Will `finally` block return a value?** No, it will not return any value.
+<br>
+
+## `finalize` Method
+The `finalize()` method in Java is a method of the `Object` class, called by the Garbage Collector to perform cleanup activities before destroying an object from memory.
+
+### Syntax
+```java
+protected void finalize() throws Throwable {
+    // Cleanup code
+}
+```
+### Why Use `finalize()`?
+Before the Garbage Collector deletes an object, the `finalize()` method releases all resources the object uses. Once `finalize()` executes, the Garbage Collector immediately eliminates the Java object.
+<br>
+
+# Collections Framework
+
+## What is Collection?
+- Collection refers to a group of objects represented as single unit.
+
+## What are Collection Frameworks?
+- Collection Frameworks are sets of classes and interfaces that provide a ready-made architecture for storing and manipulating groups of objects(data) as a single unit.
+- It contains interfaces, classes, iterators to implement various Data Structures and Algorithms.
+
+## Why Collection Framework?
+
+## What are the main interfaces in the Collection Framework?
+The core interfaces are:
+- `Collection`: The root interface representing a group of objects.
+- `List`: An ordered collection (sequence) that allows duplicate elements.
+- `Set`: A collection that does not allow duplicate elements.
+- `Queue`: A collection used to hold multiple elements prior to processing.
+- `Map`: An object that maps keys to values.
+<br>
 
