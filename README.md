@@ -52,10 +52,6 @@ Java is a platform-independent language because:
 ![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
 <br>
 
-## Working of Java Architecture:
-![ezgif-69eb78587e90da](https://github.com/user-attachments/assets/33d2117e-2331-48a9-94c5-92a42bb2ddc2)
-<br>
-
 # Java Environment Components  
 
 ## 1. JDK (Java Development Kit)  
@@ -63,7 +59,8 @@ Java Development Kit provides the environment to develop and execute Java progra
 - A **compiler**, an **archiver**, a **debugger**, and other development tools.  
 - **Java Runtime Environment (JRE)** for executing Java programs.  
 
-**Note:** JDK is platform-dependent, so separate installers are needed for Windows, Unix, and Mac operating systems.  
+**Note:** 
+`JDK is platform-dependent, so separate installers are needed for Windows, Unix, and Mac operating systems.`
 
 JDK mainly includes two components:  
 - **Development Tools** – Provides an environment to develop Java programs.  
@@ -78,7 +75,9 @@ It contains:
 - **JVM (Java Virtual Machine)**  
 - **Libraries and Other Components** required to run Java applications.  
 
-**Note:** JRE is primarily for running Java applications, not for development.  
+**Note:** 
+`JRE is platform-dependent`
+`JRE is primarily for running Java applications, not for development.`
 
 <br>
 
@@ -91,6 +90,8 @@ It performs the following tasks:
 - Verifies bytecode with the **bytecode verifier**.  
 - Executes bytecode line by line (hence, it acts as an **interpreter**).  
 
+**Note:** 
+`JVM is platform-Independent`
 <br>
 
 ## 4. JIT (Just-In-Time Compiler)  
@@ -99,9 +100,8 @@ Just-In-Time Compiler is a part of the **JVM** that enhances the performance of 
 <br>
 
 ## ClassLoader
-
 - Find and Loads Java Classes!
-
+  
 Three Types
 - System Class Loader - Loads all application classes from CLASSPATH
 - Extension Class Loader - Loads all classes from extension directory
@@ -132,6 +132,10 @@ public class HelloWorld {
 ## Compiling and Running Java Code
 - Compile: javac HelloWorld.java
 - Run: java HelloWorld
+<br>
+
+## Working of Java Architecture:
+![ezgif-69eb78587e90da](https://github.com/user-attachments/assets/33d2117e-2331-48a9-94c5-92a42bb2ddc2)
 <br>
 
 ## What Happens if We Save a Blank File as a .java File?
