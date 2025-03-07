@@ -267,10 +267,21 @@ public class Jtc {
 }
 ```
 
-## `print` and `println`
+## `print` and `println` and `printf`
 
 - `print()`: Outputs text on the same line.
 - `println()`: Outputs text and then moves to the next line.
+- Printf(): Outputs formatted output to the console.
+
+#### Format/Printf Examples
+Let's look at a few examples to quickly understand printf function. 
+```java
+System.out.printf("%d", 5);//5
+System.out.printf("My name is %s", "Rithu");//My name is Rithu
+System.out.printf("%s is %d Years old", "Rithu", 5);//Rithu is 5 Years old
+```
+In the simplest form, string to be formatted starts with % followed by conversion indicator => b - boolean c - char d - integer f - floating point s - string.
+<br>
 
 ## Commenting Code in Java
 
@@ -1123,6 +1134,60 @@ Call by Value Explanation in detail:
 **NOTE: Java doesn't have CallByReference because java doesn't support pointers.**
 
 <br>
+
+# Variable Arguments (Var-Args)
+
+## Overview
+- Variable Arguments, commonly known as var-args, allow methods to accept multiple arguments of a specified type.
+- Make methods more flexible and no need of overloaded methods
+- Java will pack args into array format
+```
+ Syntax:
+- The syntax of a variable argument is <data_type> … <var_name>.
+- Example: int… nums or String… words.
+```
+
+### Key Rules:
+- **One Var-Args per Method:** You can only have one var-args parameter in a method.
+- **Var-Args must be the Last Parameter:** If combined with other parameters, the var-args parameter must always appear at the end.
+
+## Example of Var-Args Usage
+
+```java
+public class VarArgs {
+	public static void varargs(String... strval) {
+		for (String a : strval) {
+			System.out.println(a);
+		}
+	}
+
+	public static void main(String[] args) {
+		VarArgs.varargs("Hari", "Dinesh", "Kumar", "Saran","Rohit");
+	}
+
+}
+```
+
+## Combining Var-Args with Regular Parameters
+You can combine regular parameters and var-args in a method, but the var-args parameter must always be the last parameter.
+
+### Example:
+```java
+public class VarArgs {
+    public static void varargs(int num, String... values) {
+        System.out.println("Fixed Number: " + num);
+        for (String val : values) {
+            System.out.println(val);
+        }
+    }
+
+    public static void main(String[] args) {
+        VarArgs.varargs(5, "Hari", "Dinesh", "Kumar", "Saran", "Rohit");
+    }
+}
+
+```
+<br> 
 
 
 # Java Constructors
