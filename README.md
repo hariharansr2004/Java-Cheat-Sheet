@@ -884,7 +884,7 @@ class GFG {
 	} 
 }
 ```
-### toString() Method
+#### toString() Method
 We can use the toString() method to convert the Wrapper object or primitive or any other to String.
 
 ```java
@@ -903,7 +903,7 @@ class GFG {
 
 ## Variables in Java
 
-##  Instance Variable vs. Static Variable vs. Local Variable
+###  Instance Variable vs. Static Variable vs. Local Variable
 
 | Feature                | Instance Variable | Static Variable | Local Variable |
 |------------------------|------------------|----------------|---------------|
@@ -944,7 +944,6 @@ Variable might not be initialized
 
 ### Diff b\w null and 0’s 
 - 0 is value and null is nothing where we create an empty memory	
-
 
 <br>
 
@@ -1142,9 +1141,10 @@ public class CallByValue {
 	}
  }
 ```
-[Call by Value Explanation in detail]:(cal.pdf)
+[View PDF](callbyvalue.pdf)
 
-**NOTE: Java doesn't have CallByReference because java doesn't support pointers.**
+
+**NOTE**: `Java doesn't have CallByReference because java doesn't support pointers.`
 
 <br>
 
@@ -1224,7 +1224,8 @@ public class VarArgs {
 |--------------------|-------------|---------|
 | Name              | Must be the same as the class name | Can have different names |
 | Return Type       | No return type | Has a return type or `void` if it does not return any value |
-| Invocation        | Called only once at the time of object creation | Can be called any number of times |
+| Invocation        | Called only once at the time of object creation | Can be called any number of times 
+
 <br>
 
 ## Types of Constructors
@@ -1553,13 +1554,15 @@ public class HybridInheritance extends father// if we put son it will only give 
 - In multiple inheritance, a subclass has more than one superclass. That means if Java allowed multiple inheritance, a subclass would have two or more superclass constructors to call.
 - So, the JVM will get confuse constructor should be called first to complete the constructor chaining.
 - To avoid this confusion multiple inheritance is not allowed in java.
-  <br>
+
+<br>
   
 ### Q. Can we access all variables and features of parent class in child class?
 - No, the accessibility of parent class features inside child class is also decided by access modifier. For example, a private variable or method in parent class won't be accessible inside child class.
 
 ### Q.What do you do if you don’t want a class to be inherited?
 - Just make it final
+  
 <br>
 
 ## this Keyword
@@ -1568,6 +1571,7 @@ public class HybridInheritance extends father// if we put son it will only give 
 - Call current class constructor
 - Call current class method
 - to refer to the current class instance variables.
+
 <br>
 
 ##  Super Keyword
@@ -1576,14 +1580,14 @@ public class HybridInheritance extends father// if we put son it will only give 
 - it can be used to refer superclass instance variable
 - it can be used to call a superclass method
 - it can be used to call a superclass constructor.
+  
 <br>
 
 ## Similarities
 - `this()` and `super()` must be the first statements in a constructor.
 - Both this and super are non-static, so they can't be used in static context. It means that we cannot use both the keywords in the main method in Java.
 - Both super and this keywords in Java can be used in constructor chaining to call another constructor. this() calls the no-argument constructor of the current class, and super() calls the no-argument constructor of the parent class.
-<br>
-
+- 
 <br>
 
 ## Interview Question: When Do You Need a `super` Keyword?
@@ -1633,7 +1637,6 @@ Tight coupling in Java refers to a situation where classes or modules are highly
 ![image](https://github.com/user-attachments/assets/25aa624a-610a-4c52-8153-a4748495551a)
 
 <br>
-
 
 ## Abstraction
 Abstraction is the process of hiding the implementation details and only showing the essential functionality or features to the user.  
