@@ -1,5 +1,5 @@
+![image](https://github.com/user-attachments/assets/7853598e-21fd-49db-84d9-b91fbd52a7f2)
 # Java
-
 Java is a **Class-based, High-level, Object-Oriented Programming Language**.
 
 ## Key Features:
@@ -51,6 +51,7 @@ Java is a platform-independent language because:
 ## Java Architecture:
 ![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
 <br>
+
 
 # Java Environment Components  
 
