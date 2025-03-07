@@ -42,6 +42,7 @@ Java is a platform-independent language because:
 - **WORA → Write Once, Run Anywhere**
 
 [Watch this video:](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
+
 <br>
 
 ![zp](https://github.com/user-attachments/assets/f30c99df-1027-47b1-8beb-2f93aa558c51)
@@ -56,7 +57,7 @@ Java is a platform-independent language because:
 
 <br>
 
-# Java Environment Components  
+## Java Environment Components  
 
 ## 1. JDK (Java Development Kit)  
 Java Development Kit provides the environment to develop and execute Java programs. It includes:  
@@ -82,7 +83,7 @@ It contains:
 **Note:** 
  `JRE is platform-dependent`
  `JRE is primarily for running Java applications, not for development.`
-
+ 
 <br>
 
 ## 3. JVM (Java Virtual Machine)  
@@ -123,7 +124,6 @@ Order of execution of ClassLoaders
 ## Architecture of JDK, JRE, JVM:
 
 ![image](https://github.com/user-attachments/assets/f892ba83-e9d9-4cc5-adeb-9c96d9cd7f59)
-
 
 <br>
 
@@ -191,7 +191,7 @@ Data types in Java are divided into two groups:
 - Decimal Value for (A-Z) : 97-122
 <br>
 
-# Size of Data Type in Java
+## Size of Data Type in Java
 
 This program demonstrates the size limitations of different data types in Java.
 
@@ -321,7 +321,7 @@ multi-line comment
 ```
 <br>
 
-### Scanner Class
+## Scanner Class
 - The Scanner class is a predefined class in Java used for reading input from various sources, such as the keyboard (System.in), files, or strings. It enables programs to accept user input at runtime, making applications interactive.
 - To use the Scanner class, you first need to import it from the `java.util` package. 
 - The Scanner class provides various methods to read different types of input. Some commonly used methods include:
