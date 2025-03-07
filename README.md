@@ -29,7 +29,6 @@ Java is widely used in:
 
 ![z](https://github.com/user-attachments/assets/d36093cc-7e45-44a2-8bbe-6f728c2b2bc0)
 
-<br>
 
 ## Platform Independence:
 Java is a platform-independent language because:
@@ -43,11 +42,9 @@ Java is a platform-independent language because:
 - **WORA → Write Once, Run Anywhere**
 
 [Watch this video:](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
-
 <br>
 
 ![zp](https://github.com/user-attachments/assets/f30c99df-1027-47b1-8beb-2f93aa558c51)
-
 
 <br>
 
@@ -83,8 +80,8 @@ It contains:
 - **Libraries and Other Components** required to run Java applications.  
 
 **Note:** 
-`- JRE is platform-dependent`
-`- JRE is primarily for running Java applications, not for development.`
+ `JRE is platform-dependent`
+ `JRE is primarily for running Java applications, not for development.`
 
 <br>
 
@@ -123,14 +120,14 @@ Order of execution of ClassLoaders
 
 <br>
 
-### Architecture of JDK, JRE, JVM:
+## Architecture of JDK, JRE, JVM:
 
 ![image](https://github.com/user-attachments/assets/f892ba83-e9d9-4cc5-adeb-9c96d9cd7f59)
 
 
 <br>
 
-### First Java Program
+## First Java Program
 
 ```java
 public class HelloWorld {
