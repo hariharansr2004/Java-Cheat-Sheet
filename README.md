@@ -1525,7 +1525,24 @@ error: call to this must be first statement in constructor this(); or
 
 error: call to this must be first statement in constructor super();
 ```
-
 <br>
+
+# Coupling in Java
+
+Coupling in Java refers to the degree of interdependence between different modules or classes in a software system. It measures how closely classes or components are connected. In a well-designed software system, it's generally desirable to have **low coupling**. This promotes modularity, reusability, and maintainability.
+<br>
+
+## Types of Coupling in Java
+
+### Loose Coupling
+Loose coupling in Java refers to designing classes and components in a way that minimizes their interdependence. In a loosely coupled system, classes or modules are independent, meaning that changes in one module do not require changes in other modules. This promotes modularity, ease of maintenance, and code reusability.
+
+### Tight Coupling
+Tight coupling in Java refers to a situation where classes or modules are highly interdependent, meaning that changes in one module often require changes in other modules. Tight coupling can lead to code that is difficult to maintain, as modifications in one part of the system can inadvertently affect other parts.
+
+![image](https://github.com/user-attachments/assets/e8145dcd-9fc8-4bb4-8ccf-271034058908)
+<br>
+
+
 
 
