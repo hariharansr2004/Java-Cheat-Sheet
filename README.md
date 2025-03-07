@@ -49,6 +49,9 @@ Java is a platform-independent language because:
 
 ## Java Architecture:
 ![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
+| Image 1 | Image 2 |
+|---------|---------|
+|![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6) | ![ezgif-69eb78587e90da](https://github.com/user-attachments/assets/33d2117e-2331-48a9-94c5-92a42bb2ddc2)|
 
 <br>
 
@@ -64,7 +67,7 @@ Java Development Kit provides the environment to develop and execute Java progra
 
 JDK mainly includes two components:  
 - **Development Tools** – Provides an environment to develop Java programs.  
-- **JRE** – Used to execute Java programs.  
+- **JRE** – Used to execute Java programs.
 
 <br>
 
@@ -76,8 +79,8 @@ It contains:
 - **Libraries and Other Components** required to run Java applications.  
 
 **Note:** 
-`- JRE is platform-dependent
-- JRE is primarily for running Java applications, not for development.`
+`- JRE is platform-dependent`
+`- JRE is primarily for running Java applications, not for development.`
 
 <br>
 
@@ -92,6 +95,7 @@ It performs the following tasks:
 
 **Note:** 
 `JVM is platform-Independent`
+
 <br>
 
 ## 4. JIT (Just-In-Time Compiler)  
