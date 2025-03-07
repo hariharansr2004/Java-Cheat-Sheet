@@ -983,6 +983,8 @@ The return type of a method indicates what type of value it will return to the c
 - **IS-A** relationship is mandatory to perform overriding.
 - While overriding, the method name and arguments must be the same.
 - Example: Updating an existing feature.
+# Note:
+- Private,static and final methods cannot be overriden.
 
  ## Method Chaining:
 - Method chaining refers to calling multiple methods sequentially within another method
@@ -1539,6 +1541,76 @@ Loose coupling in Java refers to designing classes and components in a way that 
 
 ### Tight Coupling
 Tight coupling in Java refers to a situation where classes or modules are highly interdependent, meaning that changes in one module often require changes in other modules. Tight coupling can lead to code that is difficult to maintain, as modifications in one part of the system can inadvertently affect other parts.
+
+![image](https://github.com/user-attachments/assets/e8145dcd-9fc8-4bb4-8ccf-271034058908)
+<br>
+
+
+## Abstraction
+Abstraction is the process of hiding the implementation details and only showing the essential functionality or features to the user.  
+
+### Real-time Example
+When you get a call, we get an option to either pick it up or just reject it. But in reality, there is a lot of code that runs in the background.
+
+### Two Ways to Achieve Abstraction:
+- **Abstract class (0 to 100%)**
+- **Interfaces (100%)**
+
+### Abstract Class
+An abstract class is a restricted class that cannot be used to create objects. It can only be inherited and accessed from another class.
+
+- `abstract` method can be used in an abstract class and doesn't have a body (declaration). The body (definition) should be provided by the subclass.
+- An abstract class must contain at least one abstract method.
+- We can also use abstract and normal methods in an abstract class.
+- We must define concrete methods in an abstract class otherwise it will raise an error.
+- We can indirectly create objects for abstract classes by extending them.
+<br>
+
+### Interface
+An interface is a total abstraction class that must implement all abstract methods declared in the interface.
+
+#### Example
+A TV remote control is an interface, offering buttons like "power" and "volume" to interact with the TV without understanding its internal workings. You just need to know what each button does, which defines its functionality.
+
+- By interface, we can support the functionality of multiple inheritance.
+- It is used to achieve 100% abstraction.
+- Every variable is by default `static` and `final`.
+- Every method is by default `public` and `abstract`.
+- It is used to prevent loose coupling (data leakage).
+- To inherit an interface, we use the `implements` keyword, similar to the `extends` keyword.
+- It is more secure than an abstract class.
+- We can't create objects in an interface.
+
+**Note:** [Refer Key Points] → Must
+
+<br>
+### Understanding Interface Usage
+Let’s say you have a class named `HDFC Bank` that has some private business logic written in the `payment` method and its object is available to use.
+
+Now, there is a different class named `Amazon` that wants to use your object for doing specific tasks, but if you share (`extends`) your whole class of the object with that module, you will expose all your private business logic. So, what will you share? **Interface.**
+
+Now, the person who is implementing the interface of `HDFC Bank` will know what functions `HDFC Bank` has without knowing how it actually does what it's actually doing. If you have the object, you just need the interface and that object will know what to do.
+
+<br>
+
+## Encapsulation
+Encapsulation is the process of binding all the data members and methods into a single entity. It ensures that the data members and methods of a class can’t be accessed directly from other classes.
+
+### Real-World Example
+Your school or office bag contains different stuff like a pen, pencil, notebook, etc. To get any stuff, you need to open the bag. Similarly, in Java, an encapsulation unit contains its data and behavior within it, and in order to access them, you need an object of that unit.
+
+- **Abstraction** focuses more on hiding the internal detail/logic, while **Encapsulation** focuses more on protecting/hiding the data from misuse.
+
+**[Refer Encapsulation in Detail]**
+
+<br>
+
+## Polymorphism
+The word ‘polymorphism’ means having many forms. In Java, polymorphism refers to the ability of a message to be displayed in more than one form.
+
+### Real-life Illustration of Polymorphism in Java
+A person can have different characteristics at the same time. Like a man at the same time is a father, a husband, and an employee. So, the same person possesses different behaviors in different situations.
+
 
 ![image](https://github.com/user-attachments/assets/e8145dcd-9fc8-4bb4-8ccf-271034058908)
 <br>
