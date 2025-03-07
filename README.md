@@ -76,8 +76,8 @@ It contains:
 - **Libraries and Other Components** required to run Java applications.  
 
 **Note:** 
-`JRE is platform-dependent`
-`JRE is primarily for running Java applications, not for development.`
+`- JRE is platform-dependent
+- JRE is primarily for running Java applications, not for development.`
 
 <br>
 
@@ -116,7 +116,7 @@ Order of execution of ClassLoaders
 <br>
 
 ### Architecture of JDK, JRE, JVM:
-![image](https://github.com/user-attachments/assets/cdf79a6f-aa70-4cd1-a516-4d1e8ab2e4a2)
+![image](https://github.com/user-attachments/assets/f892ba83-e9d9-4cc5-adeb-9c96d9cd7f59)
 <br>
 
 ### First Java Program
