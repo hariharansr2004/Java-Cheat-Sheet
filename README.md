@@ -946,6 +946,7 @@ Variable might not be initialized
 ## Use of Methods
 - Define once and use it many times.
 <br>
+
 ## Method Return Type:
 
 The return type of a method indicates what type of value it will return to the caller:
