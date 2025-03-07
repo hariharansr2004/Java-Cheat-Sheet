@@ -1506,10 +1506,6 @@ public class HybridInheritance extends father// if we put son it will only give 
 - Both super and this keywords in Java can be used in constructor chaining to call another constructor. this() calls the no-argument constructor of the current class, and super() calls the no-argument constructor of the parent class.
 <br>
 
-## Important Points About this() and super() in Java
-- this() as well super() can be used exactly once inside the constructor.
-- If we use this() followed by super() or super() followed by this() we will get compile-time error. It is due to either this() or super() can be the first statement inside the constructor, not both.
-Inside the constructor, we cannot call the this() and super() recursively. 
 <br>
 
 ## Interview Question: When Do You Need a `super` Keyword?
@@ -1542,7 +1538,8 @@ Loose coupling in Java refers to designing classes and components in a way that 
 ### Tight Coupling
 Tight coupling in Java refers to a situation where classes or modules are highly interdependent, meaning that changes in one module often require changes in other modules. Tight coupling can lead to code that is difficult to maintain, as modifications in one part of the system can inadvertently affect other parts.
 
-![image](https://github.com/user-attachments/assets/e8145dcd-9fc8-4bb4-8ccf-271034058908)
+![image](https://github.com/user-attachments/assets/25aa624a-610a-4c52-8153-a4748495551a)
+
 <br>
 
 
@@ -1594,7 +1591,6 @@ public class AbstractClass {
 }
 ``` 
 <br>
-
 
 ### Interface
 An interface is a total abstraction class that must implement all abstract methods declared in the interface.
@@ -1777,11 +1773,93 @@ public class PolymorphismSample {
 	}
 
 }
+```
+## Types of Polymorphism:
+
+### 1.Compile-Time Polymorphism  
+- Whenever an object is bound with its functionality at **compile time**, this is known as **compile-time polymorphism** (**method call is decided at compile time**).  
+- Achieved through **method overloading**.  
+- Also called **Early Binding**, **Static Binding**, **Static Method Dispatch**.
+```java
+class MathOperations {
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+// Method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    // Method to add two double values
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        MathOperations mathOps = new MathOperations();
+        System.out.println("Sum of 2 and 3: " + mathOps.add(2, 3));
+        System.out.println("Sum of 1, 2, and 3: " + mathOps.add(1, 2, 3));
+        System.out.println("Sum of 2.5 and 3.5: " + mathOps.add(2.5, 3.5));
+    }
+}
+Explanation: In the example above, The compiler decides which method to call based on the method signature at compile time. This is why it is called Compile-Time Polymorphism.
+```
+  
+### 2.Run-Time Polymorphism  
+- Whenever an object is bound with the functionality at **run time**, this is known as **runtime polymorphism**.  
+- Also known as **Dynamic Binding**, **Late Binding**, **Dynamic Method Dispatch**.  
+- Achieved through **method overriding**.  
+
+**Dynamic Method Dispatch** is the mechanism where a call to an overridden method is resolved at runtime rather than compile time.  
+In this process, the overridden method that is called is based on the **actual object type**, not the reference type.  
+
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal();  // Animal reference and object
+        Animal myDog = new Dog();        // Animal reference but Dog object
+        Animal myCat = new Cat();        // Animal reference but Cat object
+        myAnimal.sound();  // Outputs: Animal makes a sound
+        myDog.sound();     // Outputs: Dog barks
+        myCat.sound();     // Outputs: Cat meows
+    }
+}
+Explanation: In the example above, Animal is the superclass, and Dog and Cat are subclasses that override the sound method.The actual method that gets executed depends on the object type at runtime, which is determined by the JVM (Java Virtual Machine).
 
 ```
-
-![image](https://github.com/user-attachments/assets/e8145dcd-9fc8-4bb4-8ccf-271034058908)
 <br>
+
+
+## **Compile-Time vs. Runtime Polymorphism**  
+
+| Feature                     | **Compile-Time Polymorphism** | **Runtime Polymorphism** |
+|-----------------------------|-----------------------------|--------------------------|
+| **Other Names**             | Static Polymorphism, Early Binding| Dynamic Polymorphism, Late Binding |
+| **Execution**               | method call is decided at compile time | method call is decided at run time |
+| **Performance**             | **Faster** execution as it involves the compiler | **Slower** execution as it involves interpreter |
+| **Inheritance**              | **Not Involved** | **Involved** |
+| **Example**                 | **Method Overloading** | **Method Overriding** |
+
+
+
 
 
 
