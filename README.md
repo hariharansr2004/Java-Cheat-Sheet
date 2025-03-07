@@ -482,7 +482,7 @@ char ch1 = 66000; //COMPILER ERROR!
 9. **Shift Operators**: Shift bits left or right. (`<<`, `>>`, `>>>`).
 10. **`instanceof` Operator**: Checks object type. (`obj instanceof Class`).
     
-|![image](https://github.com/user-attachments/assets/c20b4abf-1fd3-4b14-a1b2-146644f6a73c)|
+![image](https://github.com/user-attachments/assets/c20b4abf-1fd3-4b14-a1b2-146644f6a73c)
 
 
 ## Q. What is Operand and Operator
@@ -617,8 +617,10 @@ switch (number) {
     default:
         System.out.println("Not One or Two");
 }
+```
 
-** Nested switch:**
+`Nested switch:`
+```java
 public class NestedSwitchExample {
     public static void main(String[] args) {
         String day = "Monday";
@@ -649,7 +651,6 @@ public class NestedSwitchExample {
         }
     }
 }
-
 ```
 <br>
 
