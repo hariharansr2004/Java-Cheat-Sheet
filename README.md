@@ -225,19 +225,19 @@ public class Jtc {
 
 ## Explanation of Errors in Commented Code:
 
-### 1. `byte b33 = 128;`
+#### 1. `byte b33 = 128;`
 - **Error**: `128` is outside the range of the `byte` data type, which can only hold values from `-128` to `127`.
 
-### 2. `byte b44 = -129;`
+#### 2. `byte b44 = -129;`
 - **Error**: `-129` is also outside the range of the `byte` data type.
 
-### 3. `int i13 = 2147483648;`
+#### 3. `int i13 = 2147483648;`
 - **Error**: `2147483648` is out of range for the `int` type, which supports values from `-2147483648` to `2147483647`.
 
-### 4. `long l14 = 2147483649;`
+#### 4. `long l14 = 2147483649;`
 - **Error**: Although `2147483649` fits within the `long` range, it is treated as an `int` by default in Java. Adding an `L` at the end like `2147483648L` tells the compiler to treat it as a `long`.
 
-### 5. `float f11 = 11.11;`
+#### 5. `float f11 = 11.11;`
 - **Error**: By default, decimal numbers in Java are treated as `double`. To store a value as a `float`, you must append `f` or `F` at the end, like `11.11f`.
 
 <br>
@@ -267,7 +267,7 @@ public class Jtc {
 }
 ```
 
-## `print` and `println` and `printf`
+#### `print` and `println` and `printf`
 
 - `print()`: Outputs text on the same line.
 - `println()`: Outputs text and then moves to the next line.
@@ -2047,7 +2047,7 @@ public class SpecificDateFormat {
 	}
 }
 /* Explanation:
- * 	String date_input=sc.next();-> we don't know whether the user provides special characters or not so, we use next.
+ * String date_input=sc.next();-> we don't know whether the user provides special characters or not so, we use next.
  *  SimpleDateFormat[under text package]->Ensures that input String is interpreted as date in specified format.
  *  MM->Month mm->Minutes
  *  parse()-> converts String into Date and returns a Date object with the value Thu Jan 01 00:00:00 IST 2025.
