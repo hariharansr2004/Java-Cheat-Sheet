@@ -1875,6 +1875,161 @@ Explanation: In the example above, Animal is the superclass, and Dog and Cat are
 
 <br>
 
+# Date and Time Functions
+
+#### Creating Date Object
+```java
+//Creating Date Object
+Date now = new Date();
+```
+<br>
+
+#### Default Locale
+```java
+Locale defaultLocale = Locale.getDefault();
+System.out.println(defaultLocale.getDisplayCountry());//United States
+System.out.println(defaultLocale.getDisplayLanguage());//English
+```
+<br>
+
+### LocalDate and LocalTime functions
+```java
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.time.LocalTime;
+public class LocalDateandTime {
+	public  static void LocalDate() {
+		LocalDate a=LocalDate.now();
+		LocalDate b=LocalDate.of(2025, 10, 1); //year month 
+		LocalDate c=LocalDate.parse("2024-12-12"); //(format for parse():year-month-date)
+		System.out.println("Local Date: "+a);
+		System.out.println("Specified date by the User using LocalDate.of(): "+b);
+		System.out.println("Parsed Date:" +c);
+		System.out.println("The parse date type is:"+c.getClass().getSimpleName()); // to check the type of object
+	}
+	public static void LocalTime() {
+		LocalTime a=LocalTime.now();
+		LocalTime b=LocalTime.of(2, 30, 5); //format: LocalTime.of(hr,min,sec)
+		LocalTime x=LocalTime.parse("12:12:22");	
+		System.out.println("Current Local Time: "+a);
+		System.out.println("Specified date by the User using LocalTime.of(): "+b);
+		System.out.println("Parsed time: "+x);
+		System.out.println("The parse time type is: "+ x.getClass().getSimpleName());
+	}
+	
+	
+	public static void disp(){  
+		LocalTime c=LocalTime.MAX;
+	    LocalTime d=LocalTime.MIN;
+	    LocalTime e=LocalTime.MIDNIGHT;
+	    LocalTime f=LocalTime.NOON;
+		System.out.println("Max time:"+c);
+		System.out.println("Min time:"+d);
+		System.out.println("Midnight time:"+e);
+		System.out.println("Noon time:"+f);
+	}
+	
+	public static void main(String[] args) {
+		LocalDateandTime.LocalDate();
+		System.out.println("---------------------------------------");
+		LocalDateandTime.LocalTime();
+		System.out.println("---------------------------------------");
+		LocalDateandTime.disp();
+		System.out.println("---------------------------------------");
+		//LocalDateandTime.Calendar();
+	}
+}
+```
+<br>
+
+#### Format Date's using SimpleDateFormat 
+```java
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Scanner;
+
+//Question: Take Date as input from the user from a specified format and print it.
+/* Steps:
+ * 1.Getting User Input
+ * 2.Create Object for SimpleDateFormat Class and also specify the format of the date
+ * 3.Create Object for Date Class to Parse the string into date
+ * 4.Printing the date using .format().
+ */
+public class SpecificDateFormat {
+	public static void main(String[] args) {
+		
+		//Step 1:
+		System.out.println("Enter your in dd/MM/yyyy: ");
+		Scanner sc=new Scanner (System.in);
+		String date_input=sc.next();
+		System.out.println("The input type is: "+date_input.getClass().getSimpleName());
+		
+		//Step 2:
+		SimpleDateFormat SDF_obj=new SimpleDateFormat("dd/MM/yyyy"); 
+        //Step 3:
+		try {
+			Date date_obj=SDF_obj.parse(date_input); 
+			System.out.println("After Parse: "+date_obj);
+			System.out.println("Returning our String input as Date in Specfied Form after parse: "+SDF_obj.format(date_obj));
+			System.out.println("The output type is: "+date_obj.getClass().getSimpleName());
+			
+		}
+		catch(Exception e){
+			System.out.println("Invalid Format"+ e);
+		}
+		sc.close();
+	}
+}
+/* Explanation:
+ * 	String date_input=sc.next();-> we don't know whether the user provides special characters or not so, we use next.
+ *  SimpleDateFormat[under text package]->Ensures that input String is interpreted as date in specified format.
+ *  MM->Month mm->Minutes
+ *  parse()-> converts String into Date and returns a Date object with the value Thu Jan 01 00:00:00 IST 2025.
+ *  SDF_obj.format(date_obj)->returns the Date in user specified format. (Type->Date)
+ *  //If we specify 01/01/2025 instead of dd/mm/yyyy it will specify invalid format due to mismatch of date values
+ */
+```
+<br>
+
+### Calendar
+- Calendar class is used in Java to manipulate Dates. Calendar class provides easy ways to add or reduce days, months or years from a date. It also provide lot of details about a date (which day of the year? Which week of the year? etc.)
+
+#### Calendar is abstract
+Calendar class cannot be created by using new Calendar. The best way to get an instance of Calendar class is by using getInstance() static method in Calendar. 
+```java
+//Calendar calendar = new Calendar(); //COMPILER ERROR
+Calendar calendar = Calendar.getInstance();
+```
+#### Calendar set day, month and year
+Setting day, month or year on a calendar object is simple. Call the set method with appropriate Constant for Day, Month or Year. Next parameter is the value.
+```
+calendar.set(Calendar.DATE, 24);
+calendar.set(Calendar.MONTH, 8);//8 - September
+calendar.set(Calendar.YEAR, 2010);
+```
+#### Calendar get method
+Let's get information about a particular date - 24th September 2010. We use the calendar get method. The parameter passed indicates what value we would want to get from the calendar , day or month or year or .. Few examples of the values you can obtain from a calendar are listed below.
+```java
+System.out.println(calendar.get(Calendar.YEAR));//2010
+System.out.println(calendar.get(Calendar.MONTH));//8
+System.out.println(calendar.get(Calendar.DATE));//24
+System.out.println(calendar.get(Calendar.WEEK_OF_MONTH));//4
+System.out.println(calendar.get(Calendar.WEEK_OF_YEAR));//39
+System.out.println(calendar.get(Calendar.DAY_OF_YEAR));//267
+System.out.println(calendar.getFirstDayOfWeek());//1 -> Calendar.SUNDAY
+```
+#### Calendar - Modify a Date
+We can use the calendar add and roll methods to modify a date. Calendar add method can be used to find a date 5 days or 5 months before the date by passing a ,5 i.e. a negative 5. 
+```
+calendar.add(Calendar.DATE, 5);
+System.out.println(calendar.getTime());//Wed Sep 29 2010
+calendar.add(Calendar.MONTH, 1);
+System.out.println(calendar.getTime());//Fri Oct 29 2010
+calendar.add(Calendar.YEAR, 2);
+System.out.println(calendar.getTime());//Mon Oct 29 2012
+```
+<br>
+
 # Exceptions in Java
 
 ## Exception
@@ -2316,7 +2471,7 @@ matrixA[0] = new int[5];
 
 # String Class
 
-- A String class can store a sequence of characters. String is not a primitive in Java but a Class in its own right.
+- A String class can store a sequence of characters. String is not a primitive in Java but a Class in its own right. String can be a letter,number,symbol,spaces.
 
 ## Strings are immutable
 
@@ -2344,7 +2499,7 @@ System.out.println(concat); //value1value2
 
 
 #### String Constant Pool
-- The string pool, also known as the string intern pool, is a special storage area in the Java heap memory where the JVM stores string literals.
+- The string pool, also known as the string constant pool, is a special storage area in the Java heap memory where the JVM stores string literals.
 - All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
 
 - Following statement creates 1 string object (created on the pool) and 1 reference variable.
@@ -2432,7 +2587,32 @@ System.out.println("" + 5 + 5 + "25"); //5525
 System.out.println(5 + (5 + "25")); //5525
 System.out.println(5 + 5 + 25); //35
 ```
+<br>
 
+#### String Buffer Examples
+```java
+StringBuffer stringbuffer = new StringBuffer("12345");
+stringbuffer.append("6789");
+System.out.println(stringbuffer); //123456789
+//All StringBuffer methods modify the value of the object.
+```
+#### String Builder Examples
+```java
+StringBuilder sb = new StringBuilder("0123456789");
+
+//StringBuilder delete(int startIndex, int endIndexPlusOne)
+System.out.println(sb.delete(3, 7));//012789
+
+StringBuilder sb1 = new StringBuilder("abcdefgh");
+
+//StringBuilder insert(int indext, String whatToInsert)
+System.out.println(sb1.insert(3, "ABCD"));//abcABCDdefgh
+
+StringBuilder sb2 = new StringBuilder("abcdefgh");
+//StringBuilder reverse()
+System.out.println(sb2.reverse());//hgfedcba
+```
+Similar functions exist in StringBuffer also.
 <br>
 
 # Collections Framework
