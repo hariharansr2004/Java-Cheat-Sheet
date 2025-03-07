@@ -117,6 +117,10 @@ Order of execution of ClassLoaders
 ![image](https://github.com/user-attachments/assets/cdf79a6f-aa70-4cd1-a516-4d1e8ab2e4a2)
 <br>
 
+### Working of Java Program:
+![ezgif-69eb78587e90da](https://github.com/user-attachments/assets/33d2117e-2331-48a9-94c5-92a42bb2ddc2)
+<br>
+
 ### First Java Program
 
 ```java
