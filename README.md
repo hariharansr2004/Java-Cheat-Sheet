@@ -49,9 +49,11 @@ Java is a platform-independent language because:
 <br>
 
 ## Java Architecture:
-
 ![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
+<br>
 
+## Working of Java Architecture:
+![image](https://github.com/user-attachments/assets/3a28630b-7162-4102-846f-110b0507cee6)
 <br>
 
 # Java Environment Components  
@@ -115,10 +117,6 @@ Order of execution of ClassLoaders
 
 ### Architecture of JDK, JRE, JVM:
 ![image](https://github.com/user-attachments/assets/cdf79a6f-aa70-4cd1-a516-4d1e8ab2e4a2)
-<br>
-
-### Working of Java Program:
-![ezgif-69eb78587e90da](https://github.com/user-attachments/assets/33d2117e-2331-48a9-94c5-92a42bb2ddc2)
 <br>
 
 ### First Java Program
