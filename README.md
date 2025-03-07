@@ -482,7 +482,7 @@ char ch1 = 66000; //COMPILER ERROR!
 9. **Shift Operators**: Shift bits left or right. (`<<`, `>>`, `>>>`).
 10. **`instanceof` Operator**: Checks object type. (`obj instanceof Class`).
     
-<img src="https://github.com/user-attachments/assets/db457227-47c5-4cee-8a26-bef07b769024" width="700">
+<img src="https://github.com/user-attachments/assets/db457227-47c5-4cee-8a26-bef07b769024" width="600">
 
 
 
