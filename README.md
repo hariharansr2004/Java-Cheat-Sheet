@@ -26,6 +26,7 @@ Java is widely used in:
 - Artificial Intelligence
 
 ## Features of Java:
+
 ![z](https://github.com/user-attachments/assets/d36093cc-7e45-44a2-8bbe-6f728c2b2bc0)
 
 <br>
@@ -41,9 +42,12 @@ Java is a platform-independent language because:
 - That’s why Java is called **WORA**.
 - **WORA → Write Once, Run Anywhere**
 
-[Watch this video](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
+[Watch this video:](https://youtu.be/7yr81Dnn0NY?si=a5Yc6NEeBfCkoqlT) for more details.
+
+<br>
 
 ![zp](https://github.com/user-attachments/assets/f30c99df-1027-47b1-8beb-2f93aa558c51)
+
 
 <br>
 
@@ -120,7 +124,10 @@ Order of execution of ClassLoaders
 <br>
 
 ### Architecture of JDK, JRE, JVM:
+
 ![image](https://github.com/user-attachments/assets/f892ba83-e9d9-4cc5-adeb-9c96d9cd7f59)
+
+
 <br>
 
 ### First Java Program
@@ -136,10 +143,7 @@ public class HelloWorld {
 ## Compiling and Running Java Code
 - Compile: javac HelloWorld.java
 - Run: java HelloWorld
-<br>
-
-## Working of Java Architecture:
-![ezgif-69eb78587e90da](https://github.com/user-attachments/assets/33d2117e-2331-48a9-94c5-92a42bb2ddc2)
+  
 <br>
 
 ## What Happens if We Save a Blank File as a .java File?
@@ -180,7 +184,8 @@ Data types in Java are divided into two groups:
 
 - **1 Byte = 8 Bits**
 
-![image](https://github.com/user-attachments/assets/3e1f316d-3c76-46e6-8320-cf0988bac31b)
+ ![image](https://github.com/user-attachments/assets/3e1f316d-3c76-46e6-8320-cf0988bac31b) 
+
 
 ## ASCII:
 - ASCII- American Standard Code for Information Interchange
@@ -480,7 +485,7 @@ char ch1 = 66000; //COMPILER ERROR!
 9. **Shift Operators**: Shift bits left or right. (`<<`, `>>`, `>>>`).
 10. **`instanceof` Operator**: Checks object type. (`obj instanceof Class`).
     
-![image](https://github.com/user-attachments/assets/c20b4abf-1fd3-4b14-a1b2-146644f6a73c)
+|![image](https://github.com/user-attachments/assets/c20b4abf-1fd3-4b14-a1b2-146644f6a73c)|
 
 
 ## Q. What is Operand and Operator
