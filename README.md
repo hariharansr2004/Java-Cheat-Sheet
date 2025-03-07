@@ -983,7 +983,7 @@ The return type of a method indicates what type of value it will return to the c
 - **IS-A** relationship is mandatory to perform overriding.
 - While overriding, the method name and arguments must be the same.
 - Example: Updating an existing feature.
-# Note:
+### Note:
 - Private,static and final methods cannot be overriden.
 
  ## Method Chaining:
@@ -1564,14 +1564,40 @@ An abstract class is a restricted class that cannot be used to create objects. I
 - We can also use abstract and normal methods in an abstract class.
 - We must define concrete methods in an abstract class otherwise it will raise an error.
 - We can indirectly create objects for abstract classes by extending them.
+ ```java
+abstract class animal
+{
+	public abstract void animalsound();// abstract method?[methods having only declaration. (Body of the method should be in sub class only)]
+	public void sleep() 
+//regular method or concrete method (we must define it otherwise it will raise error)
+	{
+		System.out.println("Sleep");
+	}
+	
+}
+class pig extends animal//sub-class
+{
+	 public void animalsound() {
+		System.out.println("weee-weee");
+	}
+}
+
+
+public class AbstractClass {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		pig obj=new pig();//To access the abstract class we can done it by creating object for extended class
+		obj.animalsound();
+		obj.sleep(); 
+	}
+
+}
+``` 
 <br>
+
 
 ### Interface
 An interface is a total abstraction class that must implement all abstract methods declared in the interface.
-
-#### Example
-A TV remote control is an interface, offering buttons like "power" and "volume" to interact with the TV without understanding its internal workings. You just need to know what each button does, which defines its functionality.
-
 - By interface, we can support the functionality of multiple inheritance.
 - It is used to achieve 100% abstraction.
 - Every variable is by default `static` and `final`.
@@ -1581,16 +1607,86 @@ A TV remote control is an interface, offering buttons like "power" and "volume" 
 - It is more secure than an abstract class.
 - We can't create objects in an interface.
 
-**Note:** [Refer Key Points] → Must
+#### Example
+A TV remote control is an interface, offering buttons like "power" and "volume" to interact with the TV without understanding its internal workings. You just need to know what each button does, which defines its functionality.
+
+ ```java
+interface printable{
+	int age=10;//static and final
+	void print();//abstract method
+}
+
+public class Interface implements printable{
+	public void print() {
+		System.out.println("Hello");
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Interface obj=new Interface();
+		//age=20;//it's final by default so we can't change the value
+		obj.print();
+		System.out.println(printable.age);//accessing variable directly by interface name since it's static and final.
+	}
+}
+```
 
 <br>
+
 ### Understanding Interface Usage
+
 Let’s say you have a class named `HDFC Bank` that has some private business logic written in the `payment` method and its object is available to use.
 
-Now, there is a different class named `Amazon` that wants to use your object for doing specific tasks, but if you share (`extends`) your whole class of the object with that module, you will expose all your private business logic. So, what will you share? **Interface.**
+#### Encapsulation of Business Logic:
+- HDFC Bank has a payment method that contains sensitive business logic.
+- You don’t want to expose the internal implementation but still allow Amazon to use the payment functionality.
+#### Why Not Use Inheritance (extends)?
+- If Amazon extends HDFC Bank, it gets access to everything, including private business logic.
+- This breaks encapsulation and can lead to security risks.
+#### Solution: Use an Interface
+- An interface declares the methods (payment in this case) without defining their implementation.
+- Amazon will interact with the HDFC Bank object using the interface, ensuring controlled access.
+```java
+// Step 1: Define an Interface
+interface PaymentGateway {
+    void payment(double amount);
+}
 
-Now, the person who is implementing the interface of `HDFC Bank` will know what functions `HDFC Bank` has without knowing how it actually does what it's actually doing. If you have the object, you just need the interface and that object will know what to do.
+// Step 2: Implement the Interface in HDFC Bank
+class HDFCBank implements PaymentGateway {
+    // Private business logic inside the implementation
+    @Override
+    public void payment(double amount) {
+        System.out.println("Processing payment of ₹" + amount + " through HDFC Bank.");
+    }
+}
 
+// Step 3: Use the Interface in Amazon
+class Amazon {
+    private PaymentGateway paymentGateway;
+
+    // Constructor Injection
+    public Amazon(PaymentGateway paymentGateway) {
+        this.paymentGateway = paymentGateway;
+    }
+
+    public void purchase(double amount) {
+        System.out.println("Amazon initiating payment...");
+        paymentGateway.payment(amount); // Uses HDFC Bank's payment method via interface
+    }
+}
+
+// Step 4: Test the Implementation
+public class Main {
+    public static void main(String[] args) {
+        HDFCBank hdfc = new HDFCBank(); // Object of HDFC Bank
+        Amazon amazon = new Amazon(hdfc); // Amazon uses HDFC Bank via interface
+
+        amazon.purchase(5000.0);
+    }
+}
+```
 <br>
 
 ## Encapsulation
@@ -1599,18 +1695,90 @@ Encapsulation is the process of binding all the data members and methods into a 
 ### Real-World Example
 Your school or office bag contains different stuff like a pen, pencil, notebook, etc. To get any stuff, you need to open the bag. Similarly, in Java, an encapsulation unit contains its data and behavior within it, and in order to access them, you need an object of that unit.
 
-- **Abstraction** focuses more on hiding the internal detail/logic, while **Encapsulation** focuses more on protecting/hiding the data from misuse.
 
-**[Refer Encapsulation in Detail]**
+ ```java
+class person {
+	int mark=90; //This instance variable is openly available so anyone can access and change the value of variable 
+        // leads to change of our confidential data's. Thus,it results in security issues. So to prevent this we are using private access specifier.
+        // private-> it allows the data memebers,methods,constructors to be accessed only within the class
+	private String name;
+	private int age;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name=name;//why we are using this->to determine whether it's local or instance variable
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age=age;
+	}
+}
+public class EncapsultaionConcept {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		person p=new person();
+		p.mark=50;// instance variable value is changed by oustider. So to prevent this we are using private access specifier.
+		System.out.println("Mark after variable is accessed:" +p.mark);
+		p.setName("Hari");
+		p.setAge(30);
+		//Using Method to get the values from variables
+		System.out.println("Name:"+p.getName());
+		System.out.println("Age:"+p.getAge());
+	}
+
+}
+```
+
 
 <br>
 
 ## Polymorphism
 The word ‘polymorphism’ means having many forms. In Java, polymorphism refers to the ability of a message to be displayed in more than one form.
 
-### Real-life Illustration of Polymorphism in Java
+### Real-life Example
 A person can have different characteristics at the same time. Like a man at the same time is a father, a husband, and an employee. So, the same person possesses different behaviors in different situations.
 
+```java
+package EncapsulationandPolymorphism;
+
+class human{
+	public void person() {
+		System.out.println("I am a person");
+	}
+}
+
+class college extends human{
+	public void student() {
+		super.person();
+		System.out.println("I am a student");
+	}
+
+}
+class employee extends human{
+	
+	public void emp() {
+		super.person();
+		System.out.println("I am a employee");
+	}
+
+}
+public class PolymorphismSample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	 employee obj=new employee();
+	 obj.emp();
+	 
+
+	}
+
+}
+
+```
 
 ![image](https://github.com/user-attachments/assets/e8145dcd-9fc8-4bb4-8ccf-271034058908)
 <br>
