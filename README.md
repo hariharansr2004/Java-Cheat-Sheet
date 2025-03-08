@@ -2697,6 +2697,19 @@ System.out.println(sb2.reverse());//hgfedcba
 Similar functions exist in StringBuffer also.
 <br>
 
+## Memory Management
+
+### What is memory management in Java? 
+- Memory management in Java refers to the process of allocating memory for objects during runtime, and deallocating memory for objects that are no longer in use. Java uses an automatic memory management system known as the Garbage Collector to perform this task.
+
+### What is garbage collection in Java? 
+- Garbage collection (GC) is the process by which the JVM automatically reclaims memory by deleting objects that are no longer reachable in the application.
+  
+### How does the Garbage Collector work in Java? 
+The Garbage Collector periodically scans the heap memory and identifies objects   that are no longer used by any part of the program. These objects are marked for deletion, and the memory they occupy is reclaimed and made available for future use.
+
+<br>
+
 # Collections Framework
 
 ## What is Collection?
