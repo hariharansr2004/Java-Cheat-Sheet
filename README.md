@@ -2665,9 +2665,12 @@ System.out.println(5 + 5 + 25); //35
 
 ## String vs StringBuffer vs StringBuilder
 
-### String: Immutable, meaning its value cannot be changed once created. It is thread-safe but less memory-efficient.
-### StringBuilder: Mutable, not thread-safe, and more memory-efficient compared to String. Best used for single-threaded operations.
-### StringBuffer: Mutable and thread-safe due to synchronization, but less efficient than StringBuilder in terms of performance.
+### String: 
+- Immutable, meaning its value cannot be changed once created. It is thread-safe but less memory-efficient.
+### StringBuilder: 
+- Mutable, not thread-safe, and more memory-efficient compared to String. Best used for single-threaded operations.
+### StringBuffer: 
+- Mutable and thread-safe due to synchronization, but less efficient than StringBuilder in terms of performance.
 
 | Feature        | String              | StringBuffer        | StringBuilder         |
 |--------------|------------------|------------------|------------------|
