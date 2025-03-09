@@ -2572,14 +2572,6 @@ String concat = str3.concat("value2");
 System.out.println(concat); //value1value2
 ```
 
-
-## String vs StringBuffer vs StringBuilder
-- Immutability : String
-- Thread Safety : String(immutable), StringBuffer
-- Performance : StringBuilder (especially when a number of modifications are made.)
-- [Example 1](src/main/java/com/in28minutes/java/string/StringBufferBuilderExamples.java)
-
-
 #### String Constant Pool
 - The string pool, also known as the string constant pool, is a special storage area in the Java heap memory where the JVM stores string literals.
 - All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
@@ -2669,6 +2661,21 @@ System.out.println("" + 5 + 5 + "25"); //5525
 System.out.println(5 + (5 + "25")); //5525
 System.out.println(5 + 5 + 25); //35
 ```
+<br>
+
+## String vs StringBuffer vs StringBuilder
+
+### String: Immutable, meaning its value cannot be changed once created. It is thread-safe but less memory-efficient.
+### StringBuilder: Mutable, not thread-safe, and more memory-efficient compared to String. Best used for single-threaded operations.
+### StringBuffer: Mutable and thread-safe due to synchronization, but less efficient than StringBuilder in terms of performance.
+
+| Feature        | String              | StringBuffer        | StringBuilder         |
+|--------------|------------------|------------------|------------------|
+| **Mutability** | Immutable | Mutable | Mutable |
+| **Thread Safety** | Thread Safe | Thread Safe | Not Thread Safe |
+| **Memory Efficiency** | High Efficient | Less Efficient | Efficient |
+| **Performance** | High (No-Synchronization) | Low (Due to Synchronization) | High (No-Synchronization) |
+| **Usage** | Used when immutability is required. | Used when thread safety is required. | Used when thread safety is not required. |
 <br>
 
 #### String Buffer Examples
