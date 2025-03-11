@@ -2732,10 +2732,6 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 ## Why Collection Framework?
 - Earlier, Arrays are used to store the group of objects. But, arrays are of fixed size. You can't change the size of an array once it is defined. It causes lots of difficulties while handling the group of objects. To overcome this drawback of arrays, Java Collection Framework is introduced from JDK 1.2. 
 
-## Hierarchy of Collection Framework:
-![image](https://github.com/user-attachments/assets/d76691a4-67cc-4366-ad39-3ce6497b2b7f)
-<br>
-
 ## What are the main interfaces in the Collection Framework?
 The core interfaces are:
 - `Collection`: The root interface representing a group of objects.
@@ -2743,6 +2739,13 @@ The core interfaces are:
 - `Set`: A collection that does not allow duplicate elements.
 - `Queue`: A collection used to hold multiple elements prior to processing.
 - `Map`: An object that maps keys to values.
+  
+ <br>
+ 
+## Hierarchy of Collection Framework:
+|<img src="https://github.com/user-attachments/assets/d76691a4-67cc-4366-ad39-3ce6497b2b7f" width="800" height="600"> |
+|-------|
+
 <br>
 
 ### ArrayList: 
@@ -2759,6 +2762,7 @@ The core interfaces are:
 - Create a LinkedHashSet from this ArrayList it will remove the duplicates.
 - Convert this LinkedHashSet back to ArrayList.
 - The Second ArrayList contains the elements with duplicates removed
+
 <br>
 
 ## LinkedList:
@@ -2767,7 +2771,7 @@ The core interfaces are:
 - Every element is a separate object with a data part and address part.
 - The elements are linked using pointers and addresses and each element is known as a node. 
 
-## Structure
+## Structure of LinkedList:
 
 |<img src="https://github.com/user-attachments/assets/e53319fd-6343-49ad-b7ec-0d3ac8a861f3" width="800" height="500">|
 |-------|
@@ -2787,7 +2791,6 @@ The core interfaces are:
 
 | <img src="https://github.com/user-attachments/assets/e3dcde6e-b3ea-4df7-8205-b776c7b42a8c" width="800" height="500">|
 |-------|
-
 
 ### Stack Operations:
 
