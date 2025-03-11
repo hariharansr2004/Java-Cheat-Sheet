@@ -2769,7 +2769,7 @@ The core interfaces are:
 
 ## Structure
 
-|<img src="https://github.com/user-attachments/assets/72198759-fbd4-4805-b1cc-0f2a03855a3e" width="1000" height="500">|
+|<img src="https://github.com/user-attachments/assets/e53319fd-6343-49ad-b7ec-0d3ac8a861f3" width="800" height="500">|
 |-------|
 
 <br>
@@ -2785,7 +2785,7 @@ The core interfaces are:
 
 ### Structure of Stack:
 
-| <img src="https://github.com/user-attachments/assets/7e18e253-a4df-4d22-a537-5d5b22bdde3f" width="1000" height="500">|
+| <img src="https://github.com/user-attachments/assets/7e18e253-a4df-4d22-a537-5d5b22bdde3f" width="800" height="500">|
 |-------|
 
 
