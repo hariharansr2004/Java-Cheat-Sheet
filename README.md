@@ -2746,10 +2746,10 @@ The core interfaces are:
 <br>
 
 ### ArrayList: 
-- ArrayList is a Class
+- ArrayList is a **Class**
 - part of collections framework and it provides us dynamic arrays in java.
 - Performance is lower than Standard Array.
-`Advantages:`
+**Advantages:**
 - No need to define the size when creating ArrayList
 - Automatically adjusts its capacity as elements are added or removed.
 - ArrayList allows randomly access the list
@@ -2761,15 +2761,43 @@ The core interfaces are:
 - The Second ArrayList contains the elements with duplicates removed
 <br>
 
-## Advantages and Disadvantages
+## LinkedList:
+- LinkedList is a **Class**
+- LinkedList implements LinkedList Data Structure where the elements are not stored in continuous location.
+- Every element is a separate object with a data part and address part.
+- The elements are linked using pointers and addresses and each element is known as a node. 
 
-| Advantages                      | Disadvantages                   |
-|--------------------------------|--------------------------------|
-| **Dynamic size**: ArrayList can dynamically grow and shrink in size, making it easy to add or remove elements as needed. | **Slower than arrays**: ArrayList is slower than arrays for certain operations, such as inserting elements in the middle of the list. |
-| **Easy to use**: ArrayList is simple to use, making it a popular choice for many Java developers. | **Increased memory usage**: ArrayList requires more memory than arrays, as it needs to maintain its dynamic size and handle resizing. |
-| **Fast access**: ArrayList provides fast access to elements, as it is implemented as an array under the hood. | **Not thread-safe**: ArrayList is not thread-safe, meaning that multiple threads may access and modify the list concurrently, leading to potential race conditions and data corruption. |
-| **Ordered collection**: ArrayList preserves the order of elements, allowing you to access elements in the order they were added. |       -         |
-| **Supports null values**: ArrayList can store null values, making it useful in cases where the absence of a value needs to be represented. |          -        |
+## Structure
+![image](https://github.com/user-attachments/assets/9f221c84-0a1b-4dd0-8bf7-bc089bce0d73)
+
+<br>
+
+## Vector:
+- Vector is a **class**
+- Vector implements a growable array of objects which grows or shrinks based on its size.
+- Vector class is **Synchronized**
+
+## Stack:
+- Stack is a `Class` which extends the **Vector Class**
+- Stack works on the principle of **Last In First Out (LIFO)**.
+
+### Structure:
+![image](https://github.com/user-attachments/assets/8d2e0961-9afd-495a-94c0-f6b424dd5ad6)
+
+
+### Stack Operations:
+
+| Operation  | Description |
+|-----------|-------------|
+| **Push**  | To push an element on the top of the stack. |
+| **Pop**   | To remove an element from the top of the stack (LIFO). |
+| **Peek**  | Displays the element at the top of the stack. |
+| **Search** | Searches for an element in the stack based on LIFO. |
+| **Empty** | Returns `True` if the stack is empty; otherwise, returns `False`. |
+
+
+
+
 
 
 
