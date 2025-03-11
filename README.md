@@ -2769,7 +2769,8 @@ The core interfaces are:
 
 ## Structure
 
-| <img src=" https://github.com/user-attachments/assets/9f221c84-0a1b-4dd0-8bf7-bc089bce0d73" width="600" height="600">|
+|<img src="https://github.com/user-attachments/assets/72198759-fbd4-4805-b1cc-0f2a03855a3e"width="1000" height="500">
+" width="600" height="600">|
 |-------|
 
 <br>
@@ -2783,9 +2784,9 @@ The core interfaces are:
 - Stack is a `Class` which extends the **Vector Class**
 - Stack works on the principle of **Last In First Out (LIFO)**.
 
-### Structure:
+### Structure of Stack:
 
-| <img src="https://github.com/user-attachments/assets/3bc08788-f704-4826-97f8-d3fc287f49a4" width="600" height="600">|
+| <img src="https://github.com/user-attachments/assets/3bc08788-f704-4826-97f8-d3fc287f49a4" width="1000" height="500">|
 |-------|
 
 
