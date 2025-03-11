@@ -2730,6 +2730,11 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 - It contains interfaces, classes, iterators to implement various Data Structures and Algorithms.
 
 ## Why Collection Framework?
+- Earlier, Arrays are used to store the group of objects. But, arrays are of fixed size. You can't change the size of an array once it is defined. It causes lots of difficulties while handling the group of objects. To overcome this drawback of arrays, Java Collection Framework is introduced from JDK 1.2. 
+
+## Hierarchy of Collection Framework:
+![image](https://github.com/user-attachments/assets/d76691a4-67cc-4366-ad39-3ce6497b2b7f)
+<br>
 
 ## What are the main interfaces in the Collection Framework?
 The core interfaces are:
@@ -2739,4 +2744,25 @@ The core interfaces are:
 - `Queue`: A collection used to hold multiple elements prior to processing.
 - `Map`: An object that maps keys to values.
 <br>
+
+
+### ArrayList: 
+- ArrayList is a Class
+- part of collections framework and it provides us dynamic arrays in java.
+- Performance is lower than Standard Array.
+`Advantages:`
+- No need to define the size when creating ArrayList
+- Automatically adjusts its capacity as elements are added or removed.
+- ArrayList allows randomly access the list
+- Cannot be used for primitive data-types like int,float,Char etc. So,we need Wrapper Classes.
+
+#### When ArrayList Can remove Duplicates? <Important>
+- Create a LinkedHashSet from this ArrayList it will remove the duplicates.
+- Convert this LinkedHashSet back to ArrayList.
+- The Second ArrayList contains the elements with duplicates removed
+<br>
+
+![image](https://github.com/user-attachments/assets/d46fb876-1b16-4499-9e08-89df6cc46b1a)
+
+
 
