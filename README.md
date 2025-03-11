@@ -2768,7 +2768,9 @@ The core interfaces are:
 - The elements are linked using pointers and addresses and each element is known as a node. 
 
 ## Structure
-![image](https://github.com/user-attachments/assets/9f221c84-0a1b-4dd0-8bf7-bc089bce0d73)
+
+|![image](https://github.com/user-attachments/assets/9f221c84-0a1b-4dd0-8bf7-bc089bce0d73)|
+|-------|
 
 <br>
 
@@ -2782,7 +2784,9 @@ The core interfaces are:
 - Stack works on the principle of **Last In First Out (LIFO)**.
 
 ### Structure:
-![image](https://github.com/user-attachments/assets/8d2e0961-9afd-495a-94c0-f6b424dd5ad6)
+
+| ![image](https://github.com/user-attachments/assets/df909570-808a-4e34-9bd6-189c3e0a75e0)|
+|-------|
 
 
 ### Stack Operations:
@@ -2794,7 +2798,6 @@ The core interfaces are:
 | **Peek**  | Displays the element at the top of the stack. |
 | **Search** | Searches for an element in the stack based on LIFO. |
 | **Empty** | Returns `True` if the stack is empty; otherwise, returns `False`. |
-
 
 
 
