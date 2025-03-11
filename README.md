@@ -2768,8 +2768,8 @@ The core interfaces are:
 | **Dynamic size**: ArrayList can dynamically grow and shrink in size, making it easy to add or remove elements as needed. | **Slower than arrays**: ArrayList is slower than arrays for certain operations, such as inserting elements in the middle of the list. |
 | **Easy to use**: ArrayList is simple to use, making it a popular choice for many Java developers. | **Increased memory usage**: ArrayList requires more memory than arrays, as it needs to maintain its dynamic size and handle resizing. |
 | **Fast access**: ArrayList provides fast access to elements, as it is implemented as an array under the hood. | **Not thread-safe**: ArrayList is not thread-safe, meaning that multiple threads may access and modify the list concurrently, leading to potential race conditions and data corruption. |
-| **Ordered collection**: ArrayList preserves the order of elements, allowing you to access elements in the order they were added. | - |
-| **Supports null values**: ArrayList can store null values, making it useful in cases where the absence of a value needs to be represented. | - |
+| **Ordered collection**: ArrayList preserves the order of elements, allowing you to access elements in the order they were added. |       -         |
+| **Supports null values**: ArrayList can store null values, making it useful in cases where the absence of a value needs to be represented. |          -        |
 
 
 
