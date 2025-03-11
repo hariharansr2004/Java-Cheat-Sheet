@@ -2802,8 +2802,7 @@ The core interfaces are:
 | **Search** | Searches for an element in the stack based on LIFO. |
 | **Empty** | Returns `True` if the stack is empty; otherwise, returns `False`. |
 
-
-
+<br>
 
 
 
