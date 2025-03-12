@@ -2814,10 +2814,32 @@ The core interfaces are:
 - Every element is a separate object with a data part and address part.
 - The elements are linked using pointers and addresses and each element is known as a node. 
 
-## Structure of LinkedList:
+## LinkedList Structure:
+<table>
+  <tr>
+    <th colspan="2">Node in LinkedList</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <img src="https://github.com/user-attachments/assets/b966a23d-91bf-4413-87fd-023d6ae07bb2" width="500" height="200">
+    </td>
+  </tr>
+  <tr>
+    <th>Singly LinkedList</th>
+    <th>Doubly LinkedList</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/569f97ef-5b36-44f8-a8f3-340d6a5dbd41" width="500" height="300">
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/eb9eb08e-340b-4366-9857-b51b9771e60b" width="500" height="300">
+    </td>
+  </tr>
+</table>
+<br>
 
-|<img src="https://github.com/user-attachments/assets/e53319fd-6343-49ad-b7ec-0d3ac8a861f3" width="800" height="500">|
-|-------|
+## ArrayList vs LinkedList
 
 | ArrayList | LinkedList |
 |-----------|-----------|
