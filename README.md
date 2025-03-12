@@ -62,27 +62,27 @@ Java is a platform-independent language because:
 ## 1. JDK (Java Development Kit)  
 Java Development Kit provides the environment to develop and execute Java programs. It includes:  
 - A **compiler**, an **archiver**, a **debugger**, and other development tools.  
-- **Java Runtime Environment (JRE)** for executing Java programs.  
-
-**Note:** 
-- **JDK is Platform dependent** So, separate installers are needed for Windows, Unix, and Mac operating systems.
+- **Java Runtime Environment (JRE)** for executing Java programs.
 
 JDK mainly includes two components:  
 - **Development Tools** – Provides an environment to develop Java programs.  
 - **JRE** – Used to execute Java programs.
 
+> **⚠ Important:**  
+> - **JDK is Platform Dependent** – Separate installers are needed for Windows, Unix, and Mac operating systems.
+
+
 <br>
 
 ## 2. JRE (Java Runtime Environment)  
 Java Runtime Environment is a software package that provides an environment to **run** Java programs (not develop them).  
-
 It contains:  
 - **JVM (Java Virtual Machine)**  
-- **Libraries and Other Components** required to run Java applications.  
-
-**Note:** 
-- **JRE is Platform dependent**
-- JRE is primarily for running Java applications, not for development.`
+- **Libraries and Other Components** required to run Java applications.
+  
+> **⚠ Important:**  
+> - **JRE is Platform dependent**
+> - JRE is primarily for running Java applications, not for development.`
  
 <br>
 
@@ -95,8 +95,8 @@ It performs the following tasks:
 - Verifies bytecode with the **bytecode verifier**.  
 - Executes bytecode line by line (hence, it acts as an **interpreter**).  
 
-**Note:** 
-- **JVM is Platform Independent**
+> **⚠ Important:**  
+> - **JVM is Platform Independent**
 
 <br>
 
@@ -106,7 +106,7 @@ Just-In-Time Compiler is a part of the **JVM** that enhances the performance of 
 <br>
 
 ## ClassLoader
-- Find and Loads Java Classes!
+Find and Loads Java Classes!
   
 Three Types
 - System Class Loader - Loads all application classes from CLASSPATH
