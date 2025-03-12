@@ -2150,11 +2150,11 @@ throw new IllegalArgumentException("Age is not valid");
 ```
 ### 2. Built-in Exceptions
 
-#### a.Checked Exceptions
+#### a. Checked Exceptions
 - Exceptions are checked at compile time.
 -  Examples: **SQLException, FileNotFoundException**
 -
-#### b.Unchecked Exceptions
+#### b. Unchecked Exceptions
 - Exceptions are checked at run time.
 - Examples: **NullPointerException, ArrayIndexOutOfBoundsException**
 <br>
@@ -2211,7 +2211,7 @@ public class ExceptionHandlingUsingClass {
 ```
 <br>
 
-#### Number format exception:
+#### Number format Exception:
 ```java
 package Exceptions;
 //Integer.parseInt() -> To convert a string into particular datatype
@@ -2234,7 +2234,7 @@ public class NumberFormatException {
 ```
 <br>
 
-#### FileNoutFound exception:
+#### FileNoutFound Exception:
 ```java
 import java.io.File;
 import java.io.FileReader;
@@ -2282,9 +2282,9 @@ public class OneTryManyCatch {
 ```
 <br>
 
-### `throw` vs `throws`
+### throw vs throws
 
-| Feature  | `throw` | `throws` |
+| Feature  | throw | throws |
 |----------|--------|---------|
 | **Definition** | Used to explicitly throw an exception inside a function or block of code. | Used in the method signature to indicate whether an exception may occur or not. |
 | **Location** | Used inside a method or block of code. | Used in the method signature (main) and also in normal methods. |
@@ -2296,20 +2296,20 @@ public class OneTryManyCatch {
 ### Final Keyword
 The `final` keyword is a non-access modifier used to indicate that a variable, method, or class cannot be modified after it is initialized or defined.
 
-### Uses of `final`
+### Uses of final
 - **Final Variables**: Once a variable is declared as `final`, its value cannot be changed.
 - **Final Methods**: A method declared as `final` cannot be overridden by subclasses. *(Final methods can be overloaded.)*
 - **Final Classes**: A class declared as `final` cannot be extended by other classes.
 <br>
 
-### `finally` Keyword
+### finally Keyword
 A `finally` block is used to execute a particular process regardless of whether an exception is thrown or not and ensures that cleanup code runs.
 - The `finally` block is always executed after the `try` and `catch` blocks.
 - **Note**: The `finally` block is always executed unless there is an unhandled exception that terminates the program.
 - **Will `finally` block return a value?** No, it will not return any value.
 <br>
 
-### `finalize` Method
+### finalize Method
 The `finalize()` method in Java is a method of the `Object` class, called by the Garbage Collector to perform cleanup activities before destroying an object from memory.
 
 #### Syntax
@@ -2318,7 +2318,7 @@ protected void finalize() throws Throwable {
     // Cleanup code
 }
 ```
-#### Why Use `finalize()`?
+#### Why Use finalize()?
 Before the Garbage Collector deletes an object, the `finalize()` method releases all resources the object uses. Once `finalize()` executes, the Garbage Collector immediately eliminates the Java object.
 <br>
 
