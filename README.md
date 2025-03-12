@@ -2848,6 +2848,12 @@ The core interfaces are:
 
 <br>
 
+## HashSet
+- HashSet implements the Set interface of Collections Framework.
+- Hashset is a collection of items where every item is unique that uses hash table for storage
+- Uses HashMap (implementation of hash table data structure) internally.
+- HashSet is not thread-safe.
+
 ## Different Collection in-built Methods Reference
 
 - [Java In-built Methods Reference](https://www.w3schools.com/java/java_ref_reference.asp).
