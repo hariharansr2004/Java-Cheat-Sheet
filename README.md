@@ -2866,9 +2866,111 @@ The core interfaces are:
 - HashSet is a collection of items where every item is unique and internally uses hash table for storage
 - HashSet is not thread-safe.
 
-## Different Collection in-built Methods Reference
+## Collection Framework in-built Methods Reference
 
 - [Java In-built Methods Reference](https://www.w3schools.com/java/java_ref_reference.asp).
+<br>
+
+## Collections Class in-built methods
+
+| Category                     | Method                        | Description |
+|------------------------------|------------------------------|-------------|
+| **Modification Operations**  | `addAll()`                    | Adds all of the specified elements to the specified collection. |
+|                              | `copy()`                      | Copies all the elements from one list into another list. |
+|                              | `fill()`                      | Replaces all of the elements of the specified list with the specified elements. |
+|                              | `replaceAll()`                | Replaces all occurrences of one specified value in a list with another specified value. |
+|                              | `reverse()`                   | Reverses the order of the elements in the specified list. |
+|                              | `rotate()`                    | Rotates the elements in the specified list by a given distance. |
+|                              | `shuffle()`                   | Randomly reorders the specified list elements using a default randomness. |
+|                              | `sort()`                      | Sorts the elements in the specified list in ascending order. |
+|                              | `sort(listname, Collections.reverseOrder())`| Sorts the elements in the specified list in descending order.|
+|                              | `max()`                       | Returns the maximum value of the given collection, according to the natural ordering of its elements. |
+|                              | `min()`                       | Returns the minimum value of the given collection, according to the natural ordering of its elements. |
+|                              | `swap()`                      | Swaps the elements at the specified positions in the specified list. |
+| **Search and Frequency**      | `binarySearch()`              | Searches the list for the specified object and returns its position in a sorted list. |
+|                              | `frequency()`                 | Returns the number of elements in the specified collection equal to the specified object. |
+|                              | `indexOfSubList()`            | Returns the starting position of the first occurrence of the specified target list within the source list. |
+|                              | `lastIndexOfSubList()`        | Returns the starting position of the last occurrence of the specified target list within the source list. |
+| **Empty Collections**         | `emptyEnumeration()`          | Returns an enumeration that has no elements. |
+|                              | `emptyIterator()`             | Returns an iterator that has no elements. |
+|                              | `emptyList()`                 | Returns a list that has no elements. |
+|                              | `emptyListIterator()`         | Returns a list iterator that has no elements. |
+|                              | `emptyMap()`                  | Returns an empty map which is immutable. |
+|                              | `emptyNavigableMap()`         | Returns an empty navigable map which is immutable. |
+|                              | `emptyNavigableSet()`         | Returns an empty navigable set which is immutable. |
+|                              | `emptySet()`                  | Returns a set that has no elements. |
+|                              | `emptySortedMap()`            | Returns an empty sorted map which is immutable. |
+|                              | `emptySortedSet()`            | Returns a sorted set that has no elements. |
+| **Singleton Collections**     | `singleton()`                 | Returns an immutable set containing only the specified object. |
+|                              | `singletonList()`             | Returns an immutable list containing only the specified object. |
+|                              | `singletonMap()`              | Returns an immutable map, mapping only the specified key to the specified value. |
+| **Checked Collections**       | `checkedCollection()`         | Returns a dynamically typesafe view of the specified collection. |
+|                              | `checkedList()`               | Returns a dynamically typesafe view of the specified list. |
+|                              | `checkedMap()`                | Returns a dynamically typesafe view of the specified map. |
+|                              | `checkedNavigableMap()`       | Returns a dynamically typesafe view of the specified navigable map. |
+|                              | `checkedNavigableSet()`       | Returns a dynamically typesafe view of the specified navigable set. |
+|                              | `checkedQueue()`              | Returns a dynamically typesafe view of the specified queue. |
+|                              | `checkedSet()`                | Returns a dynamically typesafe view of the specified set. |
+|                              | `checkedSortedMap()`          | Returns a dynamically typesafe view of the specified sorted map. |
+|                              | `checkedSortedSet()`          | Returns a dynamically typesafe view of the specified sorted set. |
+| **Synchronized Collections**  | `synchronizedCollection()`    | Returns a synchronized (thread-safe) collection backed by the specified collection. |
+|                              | `synchronizedList()`          | Returns a synchronized (thread-safe) list backed by the specified list. |
+|                              | `synchronizedMap()`           | Returns a synchronized (thread-safe) map backed by the specified map. |
+|                              | `synchronizedNavigableMap()`  | Returns a synchronized (thread-safe) navigable map backed by the specified navigable map. |
+|                              | `synchronizedNavigableSet()`  | Returns a synchronized (thread-safe) navigable set backed by the specified navigable set. |
+|                              | `synchronizedSet()`           | Returns a synchronized (thread-safe) set backed by the specified set. |
+|                              | `synchronizedSortedMap()`     | Returns a synchronized (thread-safe) sorted map backed by the specified sorted map. |
+|                              | `synchronizedSortedSet()`     | Returns a synchronized (thread-safe) sorted set backed by the specified sorted set. |
+| **Unmodifiable Collections**  | `unmodifiableCollection()`    | Returns an unmodifiable view of the specified collection. |
+|                              | `unmodifiableList()`          | Returns an unmodifiable view of the specified list. |
+|                              | `unmodifiableMap()`           | Returns an unmodifiable view of the specified map. |
+|                              | `unmodifiableNavigableMap()`  | Returns an unmodifiable view of the specified navigable map. |
+|                              | `unmodifiableNavigableSet()`  | Returns an unmodifiable view of the specified navigable set. |
+|                              | `unmodifiableSet()`           | Returns an unmodifiable view of the specified set. |
+|                              | `unmodifiableSortedMap()`     | Returns an unmodifiable view of the specified sorted map. |
+|                              | `unmodifiableSortedSet()`     | Returns an unmodifiable view of the specified sorted set. |
+| **Other Utility Methods**     | `asLifoQueue()`               | Returns a view of a Deque as a Last-in-first-out (LIFO) Queue. |
+|                              | `disjoint()`                  | Returns true if the two specified collections have no elements in common. |
+|                              | `enumeration()`               | Returns an enumeration over the specified collection. |
+|                              | `list()`                      | Returns an ArrayList containing the elements returned by the specified enumeration. |
+|                              | `nCopies()`                   | Returns an immutable list consisting of n copies of the specified object. |
+|                              | `newSetFromMap()`             | Returns a set backed by the specified map. |
+|                              | `reverseOrder()`              | Returns a comparator that imposes the reverse of the natural ordering on a collection of Comparable objects. |
+
+
+## 💡 Example Usage  
+
+```java
+import java.util.*;
+
+public class CollectionsExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 8, 1, 2));
+
+        // ✅ Sorting the list
+        Collections.sort(numbers);
+        System.out.println("Sorted List: " + numbers);
+        Collections.sort(numbers,Collections.reverseOrder());
+        System.out.println("Sorted List in Reverse: " + numbers);
+
+        // ✅ Finding max and min
+        System.out.println("Max: " + Collections.max(numbers));
+        System.out.println("Min: " + Collections.min(numbers));
+
+        // ✅ Shuffling the list
+        Collections.shuffle(numbers);
+        System.out.println("Shuffled List: " + numbers);
+
+        // ✅ Making the list unmodifiable (read-only)
+        List<Integer> readOnlyList = Collections.unmodifiableList(numbers);
+        System.out.println("Unmodifiable List: " + readOnlyList);
+
+        // Uncommenting the next line will throw an UnsupportedOperationException
+        // readOnlyList.add(10);
+    }
+}
+```
+
 
 <br>
 
