@@ -65,7 +65,7 @@ Java Development Kit provides the environment to develop and execute Java progra
 - **Java Runtime Environment (JRE)** for executing Java programs.  
 
 **Note:** 
-`JDK is platform-dependent, so separate installers are needed for Windows, Unix, and Mac operating systems.`
+- **JDK is Platform dependent** So, separate installers are needed for Windows, Unix, and Mac operating systems.
 
 JDK mainly includes two components:  
 - **Development Tools** – Provides an environment to develop Java programs.  
@@ -81,8 +81,8 @@ It contains:
 - **Libraries and Other Components** required to run Java applications.  
 
 **Note:** 
- `JRE is platform-dependent`
- `JRE is primarily for running Java applications, not for development.`
+- **JRE is Platform dependent**
+- JRE is primarily for running Java applications, not for development.`
  
 <br>
 
@@ -96,7 +96,7 @@ It performs the following tasks:
 - Executes bytecode line by line (hence, it acts as an **interpreter**).  
 
 **Note:** 
-`JVM is platform-Independent`
+- **JVM is Platform Independent**
 
 <br>
 
