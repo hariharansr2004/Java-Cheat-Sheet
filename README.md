@@ -2736,15 +2736,34 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 
 # Collections Framework
 
-## What is Collection?
-- Collection refers to a group of objects represented as single unit.
-
 ## What are Collection Frameworks?
 - Collection Frameworks are sets of classes and interfaces that provide a ready-made architecture for storing and manipulating groups of objects(data) as a single unit.
 - It contains interfaces, classes, iterators to implement various Data Structures and Algorithms.
 
 ## Why Collection Framework?
 - Earlier, Arrays are used to store the group of objects. But, arrays are of fixed size. You can't change the size of an array once it is defined. It causes lots of difficulties while handling the group of objects. To overcome this drawback of arrays, Java Collection Framework is introduced from JDK 1.2. 
+
+## What is Collection ?
+- Collection is an **interface.**
+- Collection refers to a group of objects represented as single unit.
+
+## What is Collections ?
+- **Collections is a Utility class** present in java.util package.
+- It defines several utility methods like sorting and searching which is used to operate on collection.
+- This Collections class consists exclusively of static methods that operate on or return collections.
+  
+## Collection vs Collections  
+
+| Feature        | Collection | Collections |
+|---------------|-----------|-------------|
+| Type         | Interface  | Utility Class |
+| Purpose      | Represents a group of individual objects as a single unit | Provides utility methods to operate on collections |
+<br>
+
+## Hierarchy of Collection Framework:
+|<img src="https://github.com/user-attachments/assets/d76691a4-67cc-4366-ad39-3ce6497b2b7f" width="800" height="600"> |
+|-------|
+<br>
 
 ## What are the main interfaces in the Collection Framework?
 The core interfaces are:
@@ -2753,16 +2772,9 @@ The core interfaces are:
 - `Set`: A collection that does not allow duplicate elements.
 - `Queue`: A collection used to hold multiple elements prior to processing.
 - `Map`: An object that maps keys to values.
-  
- <br>
- 
-## Hierarchy of Collection Framework:
-|<img src="https://github.com/user-attachments/assets/d76691a4-67cc-4366-ad39-3ce6497b2b7f" width="800" height="600"> |
-|-------|
-
 <br>
-
-### ArrayList: 
+ 
+## ArrayList: 
 - ArrayList is a **Class**
 - part of collections framework and it provides us dynamic arrays in java.
 - Performance is lower than Standard Array.
@@ -2775,37 +2787,7 @@ The core interfaces are:
 #### When ArrayList Can remove Duplicates? <Important>
 - Create a LinkedHashSet from this ArrayList it will remove the duplicates.
 - Convert this LinkedHashSet back to ArrayList.
-- The Second ArrayList contains the elements with duplicates removed
-
-### ArrayList Methods:
-| Method          | Description                                              | Return Type  |
-|---------------|------------------------------------------------------|-------------|
-| `add()`       | Add an item to the list                              | `boolean | void` |
-| `addAll()`    | Add a collection of items to the list               | `boolean`  |
-| `clear()`     | Remove all items from the list                      | `void`     |
-| `clone()`     | Create a copy of the ArrayList                      | `Object`   |
-| `contains()`  | Checks whether an item exists in the list           | `boolean`  |
-| `ensureCapacity()` | Increase the capacity of the list to fit a specified number of items | `void` |
-| `forEach()`   | Perform an action on every item in the list         | `void`     |
-| `get()`       | Return the item at a specific position in the list  | `T`        |
-| `indexOf()`   | Return the position of the first occurrence of an item in the list | `int` |
-| `isEmpty()`   | Checks whether the list is empty                    | `boolean`  |
-| `iterator()`  | Return an Iterator object for the ArrayList         | `Iterator` |
-| `lastIndexOf()` | Return the position of the last occurrence of an item in the list | `int` |
-| `listIterator()` | Return a ListIterator object for the ArrayList   | `ListIterator` |
-| `remove()`    | Remove an item from the list                        | `boolean | T` |
-| `removeAll()` | Remove a collection of items from the list          | `boolean`  |
-| `removeIf()`  | Remove all items from the list which meet a specified condition | `boolean` |
-| `replaceAll()` | Replace each item in the list with the result of an operation on that item | `void` |
-| `retainAll()` | Remove all elements from the list which do not belong to a specified collection | `boolean` |
-| `set()`       | Replace an item at a specified position in the list | `T`        |
-| `size()`      | Return the number of items in the list              | `int`      |
-| `sort()`      | Sort the list                                       | `void`     |
-| `spliterator()` | Return a Spliterator object for the ArrayList     | `Spliterator` |
-| `subList()`   | Return a sublist which provides access to a range of this list's items | `List` |
-| `toArray()`   | Return an array containing the list's items         | `Object[]` |
-| `trimToSize()` | Reduce the capacity of the list to match the number of items if necessary | `void` |
-
+- The Second ArrayList contains the elements with duplicates removed.
 <br>
 
 ## LinkedList:
