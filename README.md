@@ -2847,7 +2847,11 @@ The core interfaces are:
 
 <br>
 
+## Different Collection in-built Methods Reference
 
+- [Java In-built Methods Reference](https://www.w3schools.com/java/java_ref_reference.asp).
+
+<br>
 
 ![image](https://github.com/user-attachments/assets/d46fb876-1b16-4499-9e08-89df6cc46b1a)
 
