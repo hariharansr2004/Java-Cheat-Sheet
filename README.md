@@ -1567,6 +1567,24 @@ public class HybridInheritance extends father// if we put son it will only give 
   
 <br>
 
+## Access Modifers:
+**⚠ Important:**
+There are four types of Java access modifiers:
+- **Private:** The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+- **Default:** The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+- **Protected:** The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+- **Public:** The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+<br>
+
+| Access Modifier | Within Class | Within Package | Outside Package by Subclass Only | Outside Package |
+|----------------|-------------|---------------|--------------------------------|----------------|
+| **Private**    | ✅ Yes      | ❌ No        | ❌ No                          | ❌ No         |
+| **Default**    | ✅ Yes      | ✅ Yes       | ❌ No                          | ❌ No         |
+| **Protected**  | ✅ Yes      | ✅ Yes       | ✅ Yes                         | ❌ No         |
+| **Public**     | ✅ Yes      | ✅ Yes       | ✅ Yes                         | ✅ Yes        |
+
+<br>
+
 ## this Keyword
 - ‘this’ keyword in Java is a reference variable that refers to the current instance of the class. It is commonly used to differentiate between instance variables and method parameters with the same name.
 - this can also be used to:
@@ -1588,8 +1606,7 @@ public class HybridInheritance extends father// if we put son it will only give 
 ## Similarities
 - `this()` and `super()` must be the first statements in a constructor.
 - Both this and super are non-static, so they can't be used in static context. It means that we cannot use both the keywords in the main method in Java.
-- Both super and this keywords in Java can be used in constructor chaining to call another constructor. this() calls the no-argument constructor of the current class, and super() calls the no-argument constructor of the parent class.
-- 
+- Both super and this keywords in Java can be used in constructor chaining to call another constructor. this() calls the no-argument constructor of the current class, and super() calls the no-argument constructor of the parent class. 
 <br>
 
 ## Interview Question: When Do You Need a `super` Keyword?
@@ -2132,17 +2149,14 @@ Exceptions that are created by the user.
 throw new IllegalArgumentException("Age is not valid");
 ```
 ### 2. Built-in Exceptions
-> #### Checked Exceptions
-> > - Exceptions are checked at compile time.
-> > Examples:
-> > - `SQLException`
-> > - `FileNotFoundException`
 
-> #### Unchecked Exceptions
-> > - Exceptions are checked at run time.
-> > Examples:
-> > - `NullPointerException`
-> > - `ArrayIndexOutOfBoundsException`
+#### a.Checked Exceptions
+- Exceptions are checked at compile time.
+-  Examples: **SQLException, FileNotFoundException**
+-
+#### b.Unchecked Exceptions
+- Exceptions are checked at run time.
+- Examples: **NullPointerException, ArrayIndexOutOfBoundsException**
 <br>
 
 #### Exception Handling using all Exceptions:
