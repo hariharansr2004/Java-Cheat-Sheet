@@ -2819,6 +2819,15 @@ The core interfaces are:
 |<img src="https://github.com/user-attachments/assets/e53319fd-6343-49ad-b7ec-0d3ac8a861f3" width="800" height="500">|
 |-------|
 
+| ArrayList | LinkedList |
+|-----------|-----------|
+| Uses a dynamic array to store the elements. |  Uses a doubly linked list to store the elements. |
+| Manipulation with ArrayList is slow because it internally uses an array. If any element is removed from the array, all the other elements are shifted in memory. | Manipulation with LinkedList is faster because it uses a doubly linked list, so no bit shifting is required in memory. |
+| ArrayList is better for storing and accessing data. | LinkedList is better for manipulating data. |
+| Insertion & Deletion is Slower | Insertion & Deletion is Faster|
+| The memory location for the elements of an ArrayList is continuous. | The location for the elements of a linked list is not continuous. |
+| An ArrayList is initialized, a default capacity of 10 is assigned to the ArrayList. |  No case of default capacity in a LinkedList. In LinkedList, an empty list is created when a LinkedList is initialized. |
+
 <br>
 
 ## Vector:
