@@ -2825,6 +2825,7 @@ The core interfaces are:
 - Vector is a **class**
 - Vector implements a growable array of objects which grows or shrinks based on its size.
 - Vector class is **Synchronized**
+- Slower than ArrayList due to Synchronization
 
 ## Stack:
 - Stack is a `Class` which extends the **Vector Class**
