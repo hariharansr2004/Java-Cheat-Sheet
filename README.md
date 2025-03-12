@@ -2766,7 +2766,7 @@ The core interfaces are:
 - ArrayList is a **Class**
 - part of collections framework and it provides us dynamic arrays in java.
 - Performance is lower than Standard Array.
-**Advantages:**
+- **Advantages:**
 - No need to define the size when creating ArrayList
 - Automatically adjusts its capacity as elements are added or removed.
 - ArrayList allows randomly access the list
