@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/99366951-1703-4b25-b5d7-3ee45dd76a25)# Java
+
+# Java
 Java is a **Class-based, High-level, Object-Oriented Programming Language**.
 
 ## Key Features:
@@ -1926,8 +1927,10 @@ Explanation: In the example above, The compiler decides which method to call bas
 - Achieved through **method overriding**.  
 
 **Dynamic Method Dispatch** is the mechanism where a call to an overridden method is resolved at runtime rather than compile time.  
-In this process, the overridden method that is called is based on the **actual object type**, not the reference type.  
-![image](https://github.com/user-attachments/assets/b3e1df91-aa39-473d-b590-40527826325d)
+In this process, the overridden method that is called is based on the **actual object type**, not the reference type. 
+
+|<img src="https://github.com/user-attachments/assets/66af9584-a5ae-4e3b-8c98-f3bf1bfd5b8e" width="1000" height="400"> |
+|-------|
 
 
 ```java
