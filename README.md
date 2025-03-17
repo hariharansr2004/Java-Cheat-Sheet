@@ -1,4 +1,4 @@
-# Java
+![image](https://github.com/user-attachments/assets/99366951-1703-4b25-b5d7-3ee45dd76a25)# Java
 Java is a **Class-based, High-level, Object-Oriented Programming Language**.
 
 ## Key Features:
@@ -1927,36 +1927,53 @@ Explanation: In the example above, The compiler decides which method to call bas
 
 **Dynamic Method Dispatch** is the mechanism where a call to an overridden method is resolved at runtime rather than compile time.  
 In this process, the overridden method that is called is based on the **actual object type**, not the reference type.  
+![image](https://github.com/user-attachments/assets/b3e1df91-aa39-473d-b590-40527826325d)
+
 
 ```java
-class Animal {
-    void sound() {
-        System.out.println("Animal makes a sound");
+import java.io.*;
+class MobileOS{
+    void display()
+    {
+        System.out.println("We are talking about mobile operating systems.");
     }
 }
-class Dog extends Animal {
-    @Override
-    void sound() {
-        System.out.println("Dog barks");
+
+class Android extends MobileOS{ 
+    
+    //overriding display method
+    void display()
+    {
+        System.out.println("Android is a MobileOS.");
     }
 }
-class Cat extends Animal {
-    @Override
-    void sound() {
-        System.out.println("Cat meows");
+class iOS extends MobileOS{
+    
+    //overriding display method
+    void display()
+    {
+        System.out.println("iOS is a MobileOS.");
     }
 }
-public class Main {
-    public static void main(String[] args) {
-        Animal myAnimal = new Animal();  // Animal reference and object
-        Animal myDog = new Dog();        // Animal reference but Dog object
-        Animal myCat = new Cat();        // Animal reference but Cat object
-        myAnimal.sound();  // Outputs: Animal makes a sound
-        myDog.sound();     // Outputs: Dog barks
-        myCat.sound();     // Outputs: Cat meows
-    }
+
+class Main {
+	public static void main (String[] args) {
+	    
+	    //Create an object of parent class
+		MobileOS os = new MobileOS();
+		os.display();
+		
+		//Create an object of child class
+		os=new Android(); //Upcasting
+		os.display();
+		
+		//Create an object of child class
+		os=new iOS(); //Upcasting
+		os.display();
+	}
 }
-Explanation: In the example above, Animal is the superclass, and Dog and Cat are subclasses that override the sound method.The actual method that gets executed depends on the object type at runtime, which is determined by the JVM (Java Virtual Machine).
+
+Explanation: In the example above, MobileOS is the superclass, and android and ios are subclasses that override the sound method.The actual method that gets executed depends on the object type at runtime, which is determined by the JVM (Java Virtual Machine).
 
 ```
 <br>
