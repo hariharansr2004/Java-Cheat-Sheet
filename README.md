@@ -1927,7 +1927,7 @@ Explanation: In the example above, The compiler decides which method to call bas
 - Achieved through **method overriding**.  
 
 **Dynamic Method Dispatch** is the mechanism where a call to an overridden method is resolved at runtime rather than compile time.  
-In this process, the overridden method that is called is based on the **actual object type**, not the reference type. 
+- In this process, the overridden method that is called is based on the **actual object type**, not the reference type. 
 
 |<img src="https://github.com/user-attachments/assets/66af9584-a5ae-4e3b-8c98-f3bf1bfd5b8e" width="1000" height="400"> |
 |-------|
@@ -1995,7 +1995,91 @@ Explanation: In the example above, MobileOS is the superclass, and android and i
 
 <br>
 
-# Date and Time Functions
+## UpCastig & DownCasting:
+- Up-casting: Assigning a subclass object to a superclass reference. Both Implicit and  Explicit is allowed.
+- Down-casting: Casting a superclass reference back to a subclass reference. Only explicit is allowed.
+
+### Syntax for Up-casting:
+```java
+Parent obj = new Child();
+```
+
+### Syntax for Down-casting:
+```java
+Parent p1 = new Child(); 
+Child c1 = (Child)p1;
+```
+|<img src="https://github.com/user-attachments/assets/c8735134-36c6-414e-b853-e71d651ab2fa" width="1000" height="400"> |
+|-------|
+
+### Program:
+```java
+package EncapsulationandPolymorphism;
+
+class Sport {
+    public void display() {
+        System.out.println("Cricket and Football are Sports");
+    }
+}
+
+class Cricket extends Sport {
+    @Override
+    public void display() {
+        System.out.println("Cricket");
+    }
+}
+
+class Football extends Sport {
+    @Override
+    public void display() {
+        System.out.println("Football");
+    }
+}
+
+public class DynamicMethodDispatch {
+    public static void main(String[] args) {
+        // Creating an instance of the base class
+        Sport sport = new Sport();
+        sport.display();
+        
+        // Up-casting: Assigning a subclass object to a superclass reference
+        System.out.println("Upcasting:");
+        Sport sport1 = new Cricket();
+        sport1.display(); // Calls Cricket's display method
+        
+        Sport sport2 = new Football();
+        sport2.display(); // Calls Football's display method
+
+        // Down-casting: Casting a superclass reference back to a subclass reference
+        System.out.println("Downcasting:");
+        Sport cricketObj = new Cricket();
+        Cricket downcastedCricket = (Cricket) cricketObj; // Downcasting
+        downcastedCricket.display(); // Calls Cricket's display method
+        
+        Sport footballObj = new Football();
+        Football downcastedFootball = (Football) footballObj; // Downcasting
+        downcastedFootball.display(); // Calls Football's display method
+        
+        /** 
+         - Direct Down-casting[Implicit Down-casting] leads to ClassCastException.
+         
+         Cricket cricket = (Cricket) new Sport();
+	     cricket.display();
+	                    (or)
+	     Cricket cricket = new Sport();
+	     cricket.display();
+	     
+	     Result:
+	        throws ClassCastException.
+	        Sport cannot be cast to class cricket.
+         */
+            
+    }
+}
+```
+
+
+## Date and Time Functions
 
 #### Creating Date Object
 ```java
