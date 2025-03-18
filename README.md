@@ -2795,7 +2795,7 @@ System.out.println(5 + 5 + 25); //35
 |--------------|------------------|------------------|------------------|
 | **Mutability** | Immutable | Mutable | Mutable |
 | **Thread Safety** | Thread Safe | Thread Safe | Not Thread Safe |
-| **Memory Efficiency** | High Efficient | Less Efficient | Efficient |
+| **Memory Efficiency** | Less Efficient | Less Efficient | Efficient |
 | **Performance** | High (No-Synchronization) | Low (Due to Synchronization) | High (No-Synchronization) |
 | **Usage** | Used when immutability is required. | Used when thread safety is required. | Used when thread safety is not required. |
 <br>
