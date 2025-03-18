@@ -1857,37 +1857,38 @@ A person can have different characteristics at the same time. Like a man at the 
 package EncapsulationandPolymorphism;
 
 class human{
-	public void person() {
+	public void show() {
 		System.out.println("I am a person");
 	}
 }
 
 class college extends human{
-	public void student() {
-		super.person();
+	public void show() {
 		System.out.println("I am a student");
 	}
-
 }
 class employee extends human{
-	
-	public void emp() {
-		super.person();
+	public void show() {
 		System.out.println("I am a employee");
 	}
-
 }
 public class PolymorphismSample {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	 employee obj=new employee();
-	 obj.emp();
-	 
-
+	   human obj=new human();
+	   obj.show();
+	   
+	   obj=new college(); //upcating
+	   obj.show();
+	  
+	   obj=new employee();;
+	   obj.show();
+	   
+//Point to remember: irrespective of what type of object reference you have it all depends on what object you have created.
 	}
-
 }
+
 ```
 ## Types of Polymorphism:
 
