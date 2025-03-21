@@ -2914,6 +2914,19 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 |-------|
 <br>
 
+## Iterable interface:
+- Iterable is an interface that allows collection elements to be accessed individually. Using Iterable, elements of collections like arrays, sets, queues, maps, etc. can be transversed easily.
+- Collection interface extends the Iterable interface.
+- Iterable interface is located in java.lang.Iterable
+
+## Iterator
+- Any class that implements an Iterable interface overrides the iterator() method present in the Iterable interface.
+- This iterator() method calls an Iterator interface, which returns an iterator. This iterator is used to iterate over the collection of objects.
+- Iterator interface is located in java.util.Iterator
+- The Iterator interface has four methods namely next(), hasNext(), remove() and forEachRemaining().
+- The hasNext() method check for next element and returns true if present whereas the next() method returns the next element from the iteration.
+
+
 ## What are the main interfaces in the Collection Framework?
 The core interfaces are:
 - `Collection`: The root interface representing a group of objects.
