@@ -2886,7 +2886,7 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 # Collections Framework
 
 ## What are Collection Frameworks?
-- Collection Frameworks are sets of classes and interfaces that provide a ready-made architecture for storing and manipulating groups of objects(data) as a single unit.
+- Collection Framework contains sets of classes and interfaces that provide a ready-made architecture for storing and manipulating groups of objects(data) as a single unit.
 - It contains interfaces, classes, iterators to implement various Data Structures and Algorithms.
 
 ## Why Collection Framework?
@@ -2898,8 +2898,8 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 
 ## What is Collections ?
 - **Collections is a Utility class** present in java.util package.
-- It defines several utility methods like sorting and searching which is used to operate on collection.
-- This Collections class consists exclusively of static methods that operate on or return collections.
+- It contains several utility methods(like sort,search) where we can perform certain operation on the collection objects.
+
   
 ## Collection vs Collections  
 
