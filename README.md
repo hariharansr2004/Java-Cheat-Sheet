@@ -2915,7 +2915,7 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 <br>
 
 ## Iterable interface:
-- Iterable is an interface that allows collection elements to be accessed individually. Using Iterable, elements of collections like arrays, sets, queues, maps, etc. can be transversed easily.
+- Iterable is an interface which allows collection objects to be traversed easily and accessed individually. Using Iterable, elements of collections like arrays, sets, queues, maps, etc. can be transversed easily.
 - Collection interface extends the Iterable interface.
 - Iterable interface is located in java.lang.Iterable
 
