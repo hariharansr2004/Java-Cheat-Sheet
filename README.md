@@ -1,4 +1,3 @@
-
 # Java
 Java is a **Class-based, High-level, Object-Oriented Programming Language**.
 
@@ -1937,7 +1936,7 @@ public class PolymorphismSample {
 ## Types of Polymorphism:
 
 ### 1.Compile-Time Polymorphism  
-- Whenever an object is bound with its functionality at **compile time**, this is known as **compile-time polymorphism** (**method call is decided at compile time**).  
+- Compile-time polymorphism is a type of polymorphism in which the method that is to be executed(invoked) is determined at compile time based on the method signature during compilation. (**method call is decided at compile time**).  
 - Achieved through **method overloading**.  
 - Also called **Early Binding**, **Static Binding**, **Static Method Dispatch**.
 ```java
@@ -1967,11 +1966,11 @@ Explanation: In the example above, The compiler decides which method to call bas
 ```
   
 ### 2.Run-Time Polymorphism  
-- Whenever an object is bound with the functionality at **run time**, this is known as **runtime polymorphism**.  
+- Runtime polymorphism is a type of polymorphism in which a method to be executed(invoked) is determined at runtime, based on the actual type of the object.(**method call is decided at run time**).  
 - Also known as **Dynamic Binding**, **Late Binding**, **Dynamic Method Dispatch**.  
 - Achieved through **method overriding**.  
 
-**Dynamic Method Dispatch** is the mechanism where a call to an overridden method is resolved at runtime rather than compile time.  
+**Dynamic Method Dispatch** is the mechanism where a call to an overridden method which is resolved at runtime rather than at compile time.  
 - In this process, the overridden method that is called is based on the **actual object type**, not the reference type. 
 
 |<img src="https://github.com/user-attachments/assets/66af9584-a5ae-4e3b-8c98-f3bf1bfd5b8e" width="1000" height="400"> |
