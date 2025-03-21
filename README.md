@@ -358,10 +358,10 @@ Exception in thread "main" java.util.InputMismatchException
 ## Interview Questions Related to Java Basics
 
 ### 1. Is Java is pure Object Oriented Language?
-- No, it’s partially object oriented because,it supports primitive data types like "int", "float", and "double", which are not objects.
+- No, it’s partially object oriented because, it supports primitive data types like "int", "float", and "double", which are not objects.
 
 ### 2. Can we change the syntax of the main method?
-No, JVM recognizes `public static void main(String[] args)` as the entry point, so it must remain unchanged for Java applications to run.
+No, JVM recognizes `public static void main(String[] args)` as the entry point, so it must remain unchanged for Java applications to run. If we make change may be it leads to compile error.
 
 ### 3. Can we keep the main method as private?
 No, because JVM needs to access the `main` method from outside the class. If it’s private, the program will compile but not execute, resulting in an error.
@@ -372,6 +372,29 @@ No, `main` is static so JVM can call it without creating an object. If it’s no
 ### 5. Why do we need `f` for float literals?
 By default, decimal numbers are considered `double`. Adding `f` tells Java to treat the number as a `float`.
 
+### 6.public static void main(String args[]) in Java
+- ● public: Public is an access modifier, which is used to specify who can
+access this method. Public means that this Method will be accessible by
+any Class.
+- ● static: It is a keyword in java which identifies it is class-based. main() is
+made static in Java so that it can be accessed without creating the
+instance of a Class. In case, main is not made static then the compiler will
+throw an error as main() is called by the JVM before any objects are made
+and only static methods can be directly invoked via the class.
+- ● void: It is the return type of the method. Void defines the method which will
+not return any value.
+- ● main: It is the name of the method which is searched by JVM as a starting
+point for an application with a particular signature only. It is the method
+where the main execution occurs.
+- ● String args[]: It is the parameter passed to the main method.  It stores Java command-line arguments and is an array of type java.lang.String class. Here, the name of the String array is args but it is not fixed and the user can use any name in place of it.
+
+### 7.Why does Java not make use of pointers
+- Pointers are quite complicated and unsafe to use by beginner programmers. Java focuses on code simplicity, and the usage of pointers can make it challenging. 
+- Moreover, security is also compromised if pointers are used because the users can directly access memory with the help of pointers.
+
+### 8. Difference Between == Operator and equals() Method in Java
+- equals() method compares the content equality of two objects or Strings.
+-  == operator compares the reference or memory location of objects in a heap, whether they point to the same location or not and value equality for primitives. 
 <br>
 
 ## Identifiers
@@ -1335,6 +1358,26 @@ class ConstructorChaining {
 
 - More info:(https://www.geeksforgeeks.org/reference-variable-in-java/)
 
+ ## Diff b/w class and structure
+- **Class:** User defined blueprint or template from which objects are created. It consists of methods or set of instructions that are to be performed on the objects.
+- **Structure:** A structure is basically a user defined collection of variables of different data types.
+
+## Which is the parent class of all classes in Java
+- All the classes in java inherits the **Object Class** which is `java.lang package` by default implicitly.
+- If a class does not extend any other class then it is a direct child class of the Java Object class
+- If it extends another class then it is indirectly derived.
+- The Object class provides several methods such as toString(),equals(), hashCode().
+```java
+  class Parent {
+    // Parent class implicitly extends Object
+}
+
+class Child extends Parent {
+    // Child extends Parent, which indirectly extends Object
+}
+```
+
+<br>
 
 # Object-Oriented Programming System (OOPs)
 
@@ -1569,6 +1612,7 @@ public class HybridInheritance extends father// if we put son it will only give 
 <br>
 
 ## Access Modifers:
+- Access specifiers or access modifiers are keywords that determine the accessibility of methods, classes, etc in OOPs
 **⚠ Important:**
 There are four types of Java access modifiers:
 - **Private:** The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
@@ -1587,7 +1631,7 @@ There are four types of Java access modifiers:
 <br>
 
 ## this Keyword
-- ‘this’ keyword in Java is a reference variable that refers to the current instance of the class. It is commonly used to differentiate between instance variables and method parameters with the same name.
+- ‘this’ keyword in Java is a reference variable that refers to the current instance of the class[current object's refrence]. It is commonly used to differentiate between instance variables and method parameters with the same name.
 - this can also be used to:
 - Call current class constructor
 - Call current class method
@@ -1598,9 +1642,9 @@ There are four types of Java access modifiers:
 ##  Super Keyword
 - Super is a keyword that reference parent class or super class or subclass in java (it only returns parent object) it return the objects that represents from parent class
 - super can be used in various contexts as given below:
-- it can be used to refer superclass instance variable
-- it can be used to call a superclass method
-- it can be used to call a superclass constructor.
+- a. Accessing data members of parent class when the member names of theclass and its child subclasses are the same.
+- b.To call the default and parameterized constructor of the parent class inside the child class.
+- c. Accessing the parent class methods when the child classes haveoverridden them
   
 <br>
 
