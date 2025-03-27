@@ -1691,11 +1691,15 @@ Coupling in Java refers to the degree of interdependence between different compo
 
 ## Types of Coupling in Java
 
-### Loose Coupling
-Loose coupling in Java refers to designing classes and components in a way that minimizes their interdependence. In a loosely coupled system, classes are independent, meaning that changes in one class do not require changes in other classes. This promotes modularity, ease of maintenance, and code reusability.
+### Loose Coupling 
+- Desiging classes or components in a way which minimize the interdependence.
+- In Loose Coupling, classes are independent and changes in one class won't affect the other.
+- This promotes modularity, ease of maintenance, and code reusability.
 
 ### Tight Coupling
-Tight coupling in Java refers to a situation where classes or modules are highly interdependent, meaning that changes in one module often require changes in other modules. Tight coupling can lead to code that is difficult to maintain, as modifications in one part of the system can inadvertently affect other parts.
+- Tight Coupling occurs when a group of classes are highly dependent on one another
+- In Tight Coupling, classes are interdependent and changes in one class can lead to changes in the other.
+- Difficult to modify, reduced flexibility and reusability
 
 ![image](https://github.com/user-attachments/assets/25aa624a-610a-4c52-8153-a4748495551a)
 
