@@ -96,7 +96,8 @@ It performs the following tasks:
 - Executes bytecode line by line (hence, it acts as an **interpreter**).  
 
 > **⚠ Important:**  
-> - **JVM is Platform Independent**
+> - **JVM is Platform dependent since JVM differs for different Operating System**
+> - **Note: Java is platform Independent**
 
 <br>
 
