@@ -2756,7 +2756,7 @@ System.out.println(concat); //value1value2
 ```
 
 #### String Constant Pool
-- The string pool, also known as the string constant pool, is a special storage area in the Java heap memory where the JVM stores string literals.
+- **The string pool, also known as the string constant pool, is a special storage area in the Java heap memory where the JVM stores string literals and it only stores one instance of each literal.**
 - All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
 
 - Following statement creates 1 string object (created on the pool) and 1 reference variable.
@@ -2902,6 +2902,31 @@ Similar functions exist in StringBuffer also.
 The Garbage Collector periodically scans the heap memory and identifies objects   that are no longer used by any part of the program. These objects are marked for deletion, and the memory they occupy is reclaimed and made available for future use.
 
 <br>
+
+## Java 8 Features
+- Java 8 provides following features for Java Programming:
+- 1. Lambda expressions
+- 2. Functional interfaces
+- 3. Stream API
+- 4. Date/Time API
+- 5. Before Java 8, an interface could have only abstract methods. When java 8 was introduced,Interfaces can have Default and static Methods
+
+## Serialization 
+
+
+## Volatile Keyword
+- The volatile keyword is a modifier that is used with variables to ensure their visibility of updates across threads.
+- Threads read the value directly from main memory instead of using thread local cache.
+- Changes to a volatile variable by one thread are immediately visible to all other threads. 
+
+## What is Cache
+- A "cache" is a temporary storage area that temporarily holds frequently accessed data to reduce access time and improve system performance.
+- It is used for faster retrival of data so that future requests for that data can be served faster.
+
+## What is cookie
+- Cookies are small pieces of data stored on a user's browser by a website to remember information like login sessions, preferences, or tracking details.
+
+
 
 # Collections Framework
 
