@@ -373,27 +373,27 @@ No, `main` is static so JVM can call it without creating an object. If it’s no
 By default, decimal numbers are considered `double`. Adding `f` tells Java to treat the number as a `float`.
 
 ### 6.public static void main(String args[]) in Java
-- ● public: Public is an access modifier, which is used to specify who can
+-  public: Public is an access modifier, which is used to specify who can
 access this method. Public means that this Method will be accessible by
 any Class.
-- ● static: It is a keyword in java which identifies it is class-based. main() is
+- static: It is a keyword in java which identifies it is class-based. main() is
 made static in Java so that it can be accessed without creating the
 instance of a Class. In case, main is not made static then the compiler will
 throw an error as main() is called by the JVM before any objects are made
 and only static methods can be directly invoked via the class.
-- ● void: It is the return type of the method. Void defines the method which will
+- void: It is the return type of the method. Void defines the method which will
 not return any value.
-- ● main: It is the name of the method which is searched by JVM as a starting
+- main: It is the name of the method which is searched by JVM as a starting
 point for an application with a particular signature only. It is the method
 where the main execution occurs.
-- ● String args[]: It is the parameter passed to the main method.  It stores Java command-line arguments and is an array of type java.lang.String class. Here, the name of the String array is args but it is not fixed and the user can use any name in place of it.
+- String args[]: It is the parameter passed to the main method.  It stores Java command-line arguments and is an array of type java.lang.String class. Here, the name of the String array is args but it is not fixed and the user can use any name in place of it.
 
 ### 7.Why does Java not make use of pointers
 - Pointers are quite complicated and unsafe to use by beginner programmers. Java focuses on code simplicity, and the usage of pointers can make it challenging. 
 - Moreover, security is also compromised if pointers are used because the users can directly access memory with the help of pointers.
 
 ### 8. Difference Between == Operator and equals() Method in Java
-- equals() method compares the content equality of two objects or Strings.
+- equals() method compares the content of the Strings or equality of two objects.
 -  == operator compares the reference or memory location of objects in a heap, whether they point to the same location or not and value equality for primitives. 
 <br>
 
@@ -933,7 +933,7 @@ class GFG {
 
 | Feature                | Instance Variable | Static Variable | Local Variable |
 |------------------------|------------------|----------------|---------------|
-| Defintion |An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. |A **static variable** is a class-level variable which is shared among all instances of the class. It is declared using the `static` keyword.| variables are declared within a method, constructor, or block.They must be initialized before use, as they do not have default values.|
+| Defintion |An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. |Static variables are variables which contains single copy of the variable and it is shared among all objects. It is declared using the `static` keyword.| local variables are declared within a method, constructor, or block.They must be initialized before use, as they do not have default values.|
 | Memory Allocation      | Created when an object is instantiated. | Allocated once when the class is loaded. | Allocated when the method/block is executed and destroyed after execution. |
 | Memory Location      | Located in Heap | Located in Heap  | Located in Stack |
 | Scope                 | Specific to each object. | Shared across all objects of the class. | Limited to the method/block in which it is declared. |
@@ -1026,7 +1026,7 @@ The return type of a method indicates what type of value it will return to the c
 <br>
 
 ## Method Overriding
-- A subclass (child class) can access the same method of a parent class.
+- A subclass or child class that can access the same method of a parent class.
 - Also called:
   - Run-time Polymorphism
 - **IS-A** relationship is mandatory to perform overriding.
@@ -1342,6 +1342,7 @@ class ConstructorChaining {
 
 ## Class:
 - A Class is a blueprint or template or user-defined prototype for creating objects.
+- Class is a logical entity
 - It consists of Data members, methods, constructors, nested classes, interfaces etc.
   
 ## Object: 
@@ -1359,8 +1360,19 @@ class ConstructorChaining {
 - More info:(https://www.geeksforgeeks.org/reference-variable-in-java/)
 
  ## Diff b/w class and structure
-- **Class:** User defined blueprint or template from which objects are created. It consists of methods or set of instructions that are to be performed on the objects.
-- **Structure:** A structure is basically a user defined collection of variables of different data types.
+- **Class:** User defined blueprint or template from which objects are created. It consists of data members, methods, constructors etc. Created by using class keyword
+- **Structure:** Structures are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure. Created by using struct keyword.
+
+ ## Diff b/w class and object
+
+| Feature           | Class                                   | Object                            |
+|------------------|--------------------------------------|--------------------------------|
+| Definition       | A logical entity which acts as a blueprint for creating objects | A real-time entity that represents an instance of a class |
+| Creation         | Declared using the `class` keyword | Created using the `new` keyword |
+| Access Specifiers | We can define access specifiers (public, private, protected) for a class | Objects do not have access specifiers directly |
+
+## What is Object Cloning?
+- The process of creating an exact copy of an object is known as Object Cloning. The clone() method of Object Class in Java is used to clone an object.
 
 ## Which is the parent class of all classes in Java
 - All the classes in java inherits the **Object Class** which is `java.lang package` by default implicitly.
@@ -2445,6 +2457,10 @@ public class OneTryManyCatch {
 | **Internal Implementation** | Only one exception can be thrown at a time. | Multiple exceptions can be declared using `throws`. |
 | **Example** | `throw new ArithmeticException("Error");` | `public void myMethod() throws IOException {}` |
 <br>
+
+## Questions related to exceptions
+**In try-catch block exception occurs at which time ?**
+- In a `try-catch` block, an **exception occurs at runtime**.
 
 ### Final Keyword
 The `final` keyword is a non-access modifier used to indicate that a variable, method, or class cannot be modified after it is initialized or defined.
