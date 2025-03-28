@@ -2913,10 +2913,9 @@ The Garbage Collector periodically scans the heap memory and identifies objects 
 
 ## Serialization 
 
-
 ## Volatile Keyword
 - The volatile keyword is a modifier that is used with variables to ensure their visibility of updates across threads.
-- Threads read the value directly from main memory instead of using thread local cache.
+- When we use volatile keyword,Threads read the value directly from main memory instead of using thread local cache.
 - Changes to a volatile variable by one thread are immediately visible to all other threads. 
 
 ## What is Cache
