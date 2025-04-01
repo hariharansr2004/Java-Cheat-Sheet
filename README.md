@@ -622,7 +622,7 @@ for (int i = 1; i <= 3; i++) {
 
 
 ## Switch Statement
-- The `switch` statement selects one block from multiple blocks to e executed based on a matching value.
+- The `switch` statement selects one block from multiple blocks to be executed based on a matching value.
 - Multiple nested `switch` statements can also be used.
 **Note:**
 - For `char`, use single quotes (`'A'`).
