@@ -940,7 +940,7 @@ class GFG {
 | Default Values        | Assigned default values by JVM. | Assigned default values by JVM. | Must be explicitly initialized before use. |
 | Access in Static Methods | Cannot be accessed directly in a static method. | Can be accessed directly in static and non-static methods. | Cannot be accessed outside the method/block. |
 | Access in Non-Static Methods | Can be accessed directly in non-static methods. | Can be accessed directly in both static and non-static methods. | Can only be accessed within the method/block where declared. |
-| Modifiers Allowed | Can use all access modifiers. | Can use all access modifiers. | Can only be `default` or `final` (cannot be `private`, `public`, or `protected`). |
+| Modifiers Allowed | Can use all access modifiers. | Can use all access modifiers. | Can only be `default` or `final` (cannot be `static` `private`, `public`, or `protected`). |
 
 
 <br>
@@ -957,10 +957,10 @@ Variable might not be initialized
 - If local var and global var names are same first priority is always given to local variables because they are inside method and nearer for execution to JVM.
 
 ### Can we directly use static variables inside the main?
--	No, we can’t use the static variables inside the main without a method.
+- No, we can’t use the static variables inside the main method. because the static modifier is not allowed for local variables.
 
 ### Can we mark a local variable as static?
-- No, we cannot mark a local variable with a static keyword.
+- No, we cannot mark a local variable with a static keyword because local variables exist only within a method and are destroyed once the method exits. 
 
 ### How to access static variables without using methods?
 - By directly printing the name of the variables
