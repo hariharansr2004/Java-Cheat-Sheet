@@ -389,7 +389,7 @@ where the main execution occurs.
 - String args[]: It is the parameter passed to the main method.  It stores Java command-line arguments. Here, the name of the String array is args but it is not fixed and the user can use any name in place of it.
 
 ### 7.Why does Java not make use of pointers
-- Pointers are quite complicated and unsafe to use by beginner programmers. Java focuses on code simplicity, and the usage of pointers can make it challenging. 
+- Pointers are quite complicated to use by beginner programmers. Java focuses on code simplicity, and the usage of pointers can make it challenging. 
 - Moreover, security is also compromised if pointers are used because the users can directly access memory with the help of pointers.
 
 ### 8. Difference Between == Operator and equals() Method in Java
