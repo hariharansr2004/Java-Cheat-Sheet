@@ -968,6 +968,9 @@ Variable might not be initialized
 ### Can we call a static variable by using objects?
 - Yes, we can call a static variable directly by using object but it’s called object cloning and we should not call static variable by using object.
 
+### Can we use instance variables in static method?
+- No, an instance variable cannot be accessed directly inside a static method because instance variables belong to an object (instance) of a class. Each object has its own copy.
+
 ### Diff b\w null and 0’s 
 - 0 is value and null is nothing where we create an empty memory	
 
