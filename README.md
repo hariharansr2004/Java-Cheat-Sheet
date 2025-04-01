@@ -284,7 +284,7 @@ public class Jtc {
 
 - `print()`: Outputs text on the same line.
 - `println()`: Outputs text and then moves to the next line.
-- Printf(): Outputs formatted output to the console.
+- `printf()`: Outputs formatted output to the console.
 
 #### Format/Printf Examples
 Let's look at a few examples to quickly understand printf function. 
@@ -358,7 +358,7 @@ Exception in thread "main" java.util.InputMismatchException
 ## Interview Questions Related to Java Basics
 
 ### 1. Is Java is pure Object Oriented Language?
-- No, it’s partially object oriented because, it supports primitive data types like "int", "float", and "double", which are not objects.
+No, it’s partially object oriented because, it supports primitive data types like "int", "float", and "double", which are not objects.
 
 ### 2. Can we change the syntax of the main method?
 No, JVM recognizes `public static void main(String[] args)` as the entry point, so it must remain unchanged for Java applications to run. If we make change may be it leads to compile error.
@@ -386,7 +386,7 @@ not return any value.
 - main: It is the name of the method which is searched by JVM as a starting
 point for an application with a particular signature only. It is the method
 where the main execution occurs.
-- String args[]: It is the parameter passed to the main method.  It stores Java command-line arguments and is an array of type java.lang.String class. Here, the name of the String array is args but it is not fixed and the user can use any name in place of it.
+- String args[]: It is the parameter passed to the main method.  It stores Java command-line arguments. Here, the name of the String array is args but it is not fixed and the user can use any name in place of it.
 
 ### 7.Why does Java not make use of pointers
 - Pointers are quite complicated and unsafe to use by beginner programmers. Java focuses on code simplicity, and the usage of pointers can make it challenging. 
