@@ -956,11 +956,14 @@ Variable might not be initialized
 ### What if local variable and global variable names are same?
 - If local var and global var names are same first priority is always given to local variables because they are inside method and nearer for execution to JVM.
 
-### Can we directly use static variables inside the main?
+### Can we Declare a static variables inside the main?
 - No, we can’t use the static variables inside the main method because Java does not allow static variables inside methods.
 
 ### Can We Declare a Static Variable Inside a Static Method in Java?
 - No, we cannot declare a static variable inside a static method because static variables belong to the class, not a method.
+
+### Can We Declare an Instance Variable Inside a Static Method in Java?
+- No, we cannot declare an instance variable inside a static method.
 
 ### Can we mark a local variable as static?
 - No, we cannot mark a local variable with a static keyword because local variables exist only within a method and are destroyed once the method exits. 
