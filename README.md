@@ -1040,7 +1040,8 @@ The return type of a method indicates what type of value it will return to the c
   - Run-time Polymorphism
 - **IS-A** relationship is mandatory to perform overriding.
 - While overriding, the method name and arguments must be the same.
-- Example: Updating an existing feature.
+- Example: Updating an existing feature
+- Realtime Eg: Adding UPI support to an existing Payment Method
 ### Note:
 - Private,static and final methods cannot be overriden.
 
