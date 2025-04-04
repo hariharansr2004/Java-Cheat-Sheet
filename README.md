@@ -721,7 +721,6 @@ switch (selectedCourse) {
 ## Type Casting in Java
 
 - Type casting is a concept in programming where you change the data type of a variable from one type to another.
-
 - In Java, there are two types of casting:
 
 ## 1. Implicit Casting (Automatic)
@@ -936,7 +935,7 @@ class GFG {
 | Defintion |An **instance variable** is a variable that belongs to an object (instance) of a class. It is declared inside a class but outside any method. |Static variables are variables which contains single copy of the variable and it is shared among all objects. It is declared using the `static` keyword.| local variables are declared within a method, constructor, or block.They must be initialized before use, as they do not have default values.|
 | Memory Allocation      | Created when an object is instantiated. | Allocated once when the class is loaded. | Allocated when the method/block is executed and destroyed after execution. |
 | Memory Location      | Located in Heap | Located in Heap  | Located in Stack |
-| Scope                 | Specific to each object. | Shared across all objects of the class. | Limited to the method/block in which it is declared. |
+| Scope level              | Object level |  Class-Level  | Method-Level / Block-Level |
 | Default Values        | Assigned default values by JVM. | Assigned default values by JVM. | Must be explicitly initialized before use. |
 | Access in Static Methods | Cannot be accessed directly in a static method. | Can be accessed directly in static and non-static methods. | Cannot be accessed outside the method/block. |
 | Access in Non-Static Methods | Can be accessed directly in non-static methods. | Can be accessed directly in both static and non-static methods. | Can only be accessed within the method/block where declared. |
