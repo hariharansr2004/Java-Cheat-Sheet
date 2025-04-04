@@ -1112,9 +1112,6 @@ public class MainExample {
     public static void anotherMethod() {
         main(new String[]{"arg1", "arg2"}); // Calling main explicitly
     }
-    public static void main(String[] args) {
-        anotherMethod();
-    }
 }
 ```
 
