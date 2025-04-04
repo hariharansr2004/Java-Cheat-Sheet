@@ -1173,6 +1173,10 @@ public class CallByValue {
 		System.out.println("After Change: "+obj.data);
 	}
  }
+
+Output:
+Before Change: 50
+After Change: 50
 ```
 [CallbyValue Explanation](callbyvalue.pdf)
 
@@ -1242,10 +1246,9 @@ public class VarArgs {
 
 - Constructor is a special method that is used to initialize the objects.
 - By default, a constructor is called when an object is created.
-- It can be used to set initial values for object attributes.
-- A constructor in Java can’t be abstract, final, static, or synchronized.
 - Same Name as Class Name
 - No return Type
+- A constructor  can’t be abstract, final, static, or synchronized.
 - Automatic invocation (e.g., if we apply brakes, the car will stop).
 - Initialization of objects
 
@@ -1257,14 +1260,14 @@ public class VarArgs {
 |--------------------|-------------|---------|
 | Name              | Must be the same as the class name | Can have different names |
 | Return Type       | No return type | Has a return type or `void` if it does not return any value |
-| Invocation        | Called only once at the time of object creation | Can be called any number of times 
+| Invocation        | Called only once at the time of object creation | Can be called any number of times |
 
 <br>
 
 ## Types of Constructors
 
 ### 1. Default Constructor
-A constructor that has no parameters is known as a default constructor. The default constructor provides default values to the object like `0`, `null`, etc., depending on the type.
+A constructor that has no parameters is known as a default constructor. The default constructor provides default values to the object attributes like `0`, `null`, etc., depending on the type.
 
 ### 2. Parameterized Constructor
 A constructor that allows us to pass one or more arguments. It is used to initialize the object's properties with specific values (if we want to initialize variables with our own values).
@@ -1276,8 +1279,7 @@ A constructor that is used to create a new object by copying values from an exis
 
 ## Constructor Overloading
 
--  Constructor overloading is a technique of having more than one constructor in the same class with different parameter lists.
-
+- Multiple Constructors can have same name with different parameters or different data types.
 - Constructor overloading allows multiple ways to initialize an object.
   
 ```java
@@ -1308,7 +1310,7 @@ public static void main(String[] args)
 
 ## Constructor Chaining
 
-- Constructor chaining occurs when one constructor calls another constructor in the same class using this()
+- The process of calling one constructor from another constructor within the same class using this().
 - Rules for Constructor Chaining:
 > 1. this() must be the first statement in the constructor.
 > 2. Only one constructor call is allowed in each constructor.
@@ -1355,8 +1357,8 @@ class ConstructorChaining {
 ## Object: 
 - Objects is a real time entity and it’s created at run time.
 - It is known as instance of a class
-- Each object has a state, behaviour, identity.
 - The objects can be created by using the new keyword.
+- Each object has a state, behaviour, identity.
 - Default value of Object is null
   
 ![image](https://github.com/user-attachments/assets/5bcefa1a-754d-403d-9be6-4f85a4183d22)
@@ -1368,14 +1370,14 @@ class ConstructorChaining {
 
  ## Diff b/w class and structure
 - **Class:** User defined blueprint or template from which objects are created. It consists of data members, methods, constructors etc. Created by using class keyword
-- **Structure:** Structures are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure. Created by using struct keyword.
+- **Structure:** A structure is a container to store multiple types of variables in one place. Each variable in the structure is known as a member of the structure. Created by using struct keyword.
 
  ## Diff b/w class and object
 
 | Feature           | Class                                   | Object                            |
 |------------------|--------------------------------------|--------------------------------|
 | Definition       | A logical entity which acts as a blueprint for creating objects | A real-time entity that represents an instance of a class |
-| Creation         | Declared using the `class` keyword | Created using the `new` keyword |
+| Created by keyword  | Declared using the `class` keyword | Created using the `new` keyword |
 | Access Specifiers | We can define access specifiers (public, private, protected) for a class | Objects do not have access specifiers directly |
 
 ## What is Object Cloning?
