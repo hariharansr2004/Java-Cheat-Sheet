@@ -962,10 +962,10 @@ Variable might not be initialized
 - No, we cannot declare a static variable inside a static method because static variables belong to the class, not a method.
 
 ### Can We Declare an Instance Variable Inside a Static Method in Java?
-- No, we cannot declare an instance variable inside a static method.
+- No, instance variables should not be used with a static method since they need belongs to object.
 
 ### Can we mark a local variable as static?
-- No, we cannot mark a local variable with a static keyword because local variables exist only within a method and are destroyed once the method exits. 
+- No, we cannot mark a local variable with a static because local variables exist only within a method and are destroyed once the method executed. 
 
 ### How to access static variables without using methods?
 - By directly printing the name of the variables
