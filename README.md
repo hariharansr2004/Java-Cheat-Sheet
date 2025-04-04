@@ -1015,6 +1015,7 @@ The return type of a method indicates what type of value it will return to the c
 ## Static Methods:
 - Static Methods are methods that are associated with the class not with objects of the class
 - For Static Methods, we can able to pass the arguments with class_name.method_name without creating objects.
+- If a static method is in other class we use with class_name.method_name. If it in the same class we can directly use the method name.
 <br>
 
 ## Method Overloading
