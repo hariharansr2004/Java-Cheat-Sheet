@@ -1036,12 +1036,12 @@ The return type of a method indicates what type of value it will return to the c
 
 ## Method Overriding
 - A sub class or child class that provides a same implementation of a method that is already defined in the super class/parent class with the same method signature.
-- Also called:
-  - Run-time Polymorphism
+- Also called: Run-time Polymorphism
+**Rules:**
 - **IS-A** relationship is mandatory to perform overriding.
 - While overriding, the method name and arguments must be the same.
 - Example: Updating an existing feature
-- Realtime Eg: Adding UPI support to an existing Payment Method
+- Realtime Eg: Adding UPI support with existing Payment Method like credit card and debit card.
 ### Note:
 - Private,static and final methods cannot be overriden.
 
@@ -1053,14 +1053,13 @@ The return type of a method indicates what type of value it will return to the c
 
 | Feature                                | Method Overloading                                      | Method Overriding                                       |
 |----------------------------------------|---------------------------------------------------------|---------------------------------------------------------|
-| Purpose                                | Increases readability of the program                   | Provides a specific implementation of a superclass method |
 | Implementation                     | Within a single class                                   | In two classes with an IS-A (inheritance) relationship |
-| Parameter requirement                   | Must be different                                      | Must be the same                                       |
-| Type of polymorphism                   | Compile-time polymorphism                              | Run-time polymorphism                                  |
-| Return type condition                   | Cannot be overloaded by changing only return type; parameters must change | Return type must be the same or covariant|
-| Error detection                         | Errors can be caught at compile-time                  | Errors are caught at run-time                          |
 | Applicability to private & final methods | Applicable                                            | Not applicable                                        |                         
 | Static methods                          | Can be overloaded                                     | Cannot be overridden                                  |
+| Parameter requirement                   | Must be different                                      | Must be the same                                       |
+| Type of polymorphism                   | Compile-time polymorphism                              | Run-time polymorphism                                  |
+| Error detection                         | Errors can be caught at compile-time                  | Errors are caught at run-time                          |
+
 
 <br>
 
@@ -1069,12 +1068,11 @@ The return type of a method indicates what type of value it will return to the c
 ### Q. Can we overload final methods ?
  Yes, we can overload final methods because final keyword says do not
 change implementation and in overloading we are not changing
-implementation rather we are changing arguments.
+implementation rather we are changing parameters.
 
 ### Can we overload private methods or not ?
 A. Yes, we can overload private methods because private methods are
-accessible everywhere in same class and overloading also happens within
-class.
+accessible in same class and overloading also happens within the same class.
 
 ### Can we overload non static methods or not ?
 A. Yes, we can overload non static methods but to call them we have to
