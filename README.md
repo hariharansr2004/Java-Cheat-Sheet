@@ -1870,7 +1870,8 @@ public class Main {
 <br>
 
 ## Encapsulation
-Encapsulation is the process of binding all the data members and methods into a single entity. It ensures that the data members and methods of a class can’t be accessed directly from other classes.
+- Encapsulation is the process of binding all the data members and methods into a single entity. It hides the implementation details and provides only functionality to the users.
+- It ensures that the data members and methods of a class can’t be accessed directly from other classes.
 
 ### Real-World Example
 Your school or office bag contains different stuff like a pen, pencil, notebook, etc. To get any stuff, you need to open the bag. Similarly, in Java, an encapsulation unit contains its data and behavior within it, and in order to access them, you need an object of that unit.
