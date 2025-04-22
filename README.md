@@ -1870,7 +1870,7 @@ public class Main {
 <br>
 
 ## Encapsulation
-- Encapsulation is the process of binding all the data members and methods into a single entity. It hides the implementation details and provides only functionality to the users.
+- Encapsulation is the process of binding all the data members and methods into a single entity. It hides the implementation details and provides only functionality to the users. It mainly prevents the data from misuse.
 - It ensures that the data members and methods of a class can’t be accessed directly from other classes.
 
 ### Real-World Example
