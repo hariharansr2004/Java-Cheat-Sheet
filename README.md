@@ -141,7 +141,8 @@ There are three built-in class loaders available in Java:
 
 ## Architecture of JVM:
 
-![image](https://github.com/user-attachments/assets/fbce7588-43e9-4e6a-aac4-06515d5b9f6b)
+<img src="https://github.com/user-attachments/assets/fbce7588-43e9-4e6a-aac4-06515d5b9f6b" width="800" height="500"/>
+
 <br>
 
 ## First Java Program
