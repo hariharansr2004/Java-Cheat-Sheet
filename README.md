@@ -60,13 +60,10 @@ Java is a platform-independent language because:
 ## Java Environment Components  
 
 ## 1. JDK (Java Development Kit)  
-Java Development Kit provides the environment to develop and execute Java programs. It includes:  
+Java Development Kit (JDK) provides environment and tools for developing, compiling, debugging, and executing a Java program.
+It includes:  
 - A **compiler**, an **archiver**, a **debugger**, and other development tools.  
 - **Java Runtime Environment (JRE)** for executing Java programs.
-
-JDK mainly includes two components:  
-- **Development Tools** – Provides an environment to develop Java programs.  
-- **JRE** – Used to execute Java programs.
 
 > **⚠ Important:**  
 > - **JDK is Platform Dependent** – Separate installers are needed for Windows, Unix, and Mac operating systems.
@@ -75,10 +72,12 @@ JDK mainly includes two components:
 <br>
 
 ## 2. JRE (Java Runtime Environment)  
-Java Runtime Environment is a software package that provides an environment to **run** Java programs (not develop them).  
+Java Runtime Environment (JRE) is a bundle of software components used to run Java applications.
 It contains:  
 - **JVM (Java Virtual Machine)**  
 - **Libraries and Other Components** required to run Java applications.
+- Classes required to run the Java programs
+- Property Files
   
 > **⚠ Important:**  
 > - **JRE is Platform dependent**
@@ -87,13 +86,12 @@ It contains:
 <br>
 
 ## 3. JVM (Java Virtual Machine)  
-JVM is a virtual CPU that provides a runtime environment for executing Java bytecodes.  
+Java Virtual Machine (JVM) is an implementation of a virtual machine which executes a Java program.
 
 It performs the following tasks:  
-- Converts **bytecode** into **machine-specific code**.  
 - Loads class files in the **class loader**.  
 - Verifies bytecode with the **bytecode verifier**.  
-- Executes bytecode line by line (hence, it acts as an **interpreter**).  
+- Executes **byte code** line by line into **machine code** (hence, it acts as an **interpreter**).  
 
 > **⚠ Important:**  
 > - **JVM is Platform dependent since JVM differs for different Operating System**
@@ -102,12 +100,14 @@ It performs the following tasks:
 <br>
 
 ## 4. JIT (Just-In-Time Compiler)  
-Just-In-Time Compiler is a part of the **JVM** that enhances the performance of Java applications by **compiling bytecodes to native machine code at runtime**.  
+Just-In-Time Compiler is a part of the **JVM** that optimizes the performance of Java applications by **compiling bytecodes to native machine code at runtime**.  
 
 <br>
 
 ## ClassLoader
-Find and Loads Java Classes!
+A class loader is an object that is responsible for loading classes. It Finds and Loads Java Classes!
+- Class loaders are part of the Java Runtime Environment. 
+- When the JVM requests a class, the class loader tries to locate the class and load the class definition into the runtime using the fully qualified class name
   
 Three Types
 - System Class Loader - Loads all application classes from CLASSPATH
@@ -2902,6 +2902,8 @@ Similar functions exist in StringBuffer also.
 
 ## Memory Management
 
+To run an application in an optimal way, JVM divides memory into stack and heap memory. Whenever we declare new variables and objects, call a new method, declare a String, or perform similar operations, JVM designates memory to these operations from either Stack Memory or Heap Space.
+
 ### What is memory management in Java? 
 - Memory management in Java refers to the process of allocating memory for objects during runtime, and deallocating memory for objects that are no longer in use. Java uses an automatic memory management system known as the Garbage Collector to perform this task.
 
@@ -2909,7 +2911,45 @@ Similar functions exist in StringBuffer also.
 - Garbage collection (GC) is the process by which the JVM automatically reclaims memory by deleting objects that are no longer reachable in the application.
   
 ### How does the Garbage Collector work in Java? 
-The Garbage Collector periodically scans the heap memory and identifies objects   that are no longer used by any part of the program. These objects are marked for deletion, and the memory they occupy is reclaimed and made available for future use.
+- The Garbage Collector periodically scans the heap memory and identifies objects that are no longer used by any part of the program. These objects are marked for deletion, and the memory they occupy is reclaimed and made available for future use.
+
+## Stack memory
+- Stack Memory is used for static memory allocation and the execution of a thread. 
+- It contains primitive values that are specific to a method and references to objects(reference variables) referred from the method that are in a heap.
+- It follows Last-In-First-Out (LIFO) order. Whenever we call a new method, a new block is created on top of the stack
+- It grows and shrinks as new methods are called and returned, respectively.
+- Variables inside the stack exist only as long as the method that created them is running.
+<br>
+
+## Heap memory
+- Heap space is used for the dynamic memory allocation of Java objects and JRE classes at runtime.
+- New objects are always created in heap space, and the references to these objects are stored in stack memory.
+- The Heap memory is divided into smaller parts called **generations**, which include:
+  - **Young Generation**: 
+    - This is where all new objects are allocated and aged.
+    - A *Minor Garbage Collection* occurs when this space fills up.
+  
+  - **Old (Tenured) Generation**:
+    - This is where long-surviving objects are stored.
+    - Objects are promoted here from the Young Generation once they reach a certain age threshold.
+  
+  - **Permanent Generation (or Metaspace in Java 8 and later)**:
+    - Contains JVM metadata for runtime classes and application methods.
+    - In Java 8 and above, PermGen was replaced with **Metaspace**, which grows dynamically based on system memory.
+   
+### Key Features of Stack vs Heap Memory 
+
+| Stack Memory | Heap Memory |
+|--------------|-------------|
+| It’s automatically allocated and deallocated when the method finishes execution. | Unlike stack memory, heap memory isn’t automatically deallocated. It relies on the **Garbage Collector** to free up unused objects to maintain efficient memory usage. |
+| If this memory is full, Java throws `java.lang.StackOverflowError`. | If heap space is full, Java throws `java.lang.OutOfMemoryError`. |
+| Access to this memory is fast when compared to heap memory. | Access to this memory is comparatively slower than stack memory. |
+| This memory is thread-safe, as each thread operates in its own stack. | A heap isn’t thread-safe and requires proper synchronization in code to ensure safe access across threads. |
+
+
+### Internal Representation of Stack and Heap Memory:
+![image](https://github.com/user-attachments/assets/91ea302a-c1ae-49f3-b4f6-9eaa96afec83)
+
 
 <br>
 
@@ -3086,85 +3126,6 @@ The core interfaces are:
 
 - [Java In-built Methods Reference](https://www.w3schools.com/java/java_ref_reference.asp).
 
-## Collections Class in-built methods
-
-| Category                     | Method                        | Description |
-|------------------------------|------------------------------|-------------|
-| **Modification Operations**  | `addAll()`                    | Adds all of the specified elements to the specified collection. |
-|                              | `copy()`                      | Copies all the elements from one list into another list. |
-|                              | `fill()`                      | Replaces all of the elements of the specified list with the specified elements. |
-|                              | `replaceAll()`                | Replaces all occurrences of one specified value in a list with another specified value. |
-|                              | `reverse()`                   | Reverses the order of the elements in the specified list. |
-|                              | `rotate()`                    | Rotates the elements in the specified list by a given distance. |
-|                              | `shuffle()`                   | Randomly reorders the specified list elements using a default randomness. |
-|                              | `sort()`                      | Sorts the elements in the specified list in ascending order. |
-|                              | `sort(listname, Collections.reverseOrder())`| Sorts the elements in the specified list in descending order.|
-|                              | `max()`                       | Returns the maximum value of the given collection, according to the natural ordering of its elements. |
-|                              | `min()`                       | Returns the minimum value of the given collection, according to the natural ordering of its elements. |
-|                              | `swap()`                      | Swaps the elements at the specified positions in the specified list. |
-| **Search and Frequency**      | `binarySearch()`              | Searches the list for the specified object and returns its position in a sorted list. |
-|                              | `frequency()`                 | Returns the number of elements in the specified collection equal to the specified object. |
-|                              | `indexOfSubList()`            | Returns the starting position of the first occurrence of the specified target list within the source list. |
-|                              | `lastIndexOfSubList()`        | Returns the starting position of the last occurrence of the specified target list within the source list. |
-| **Empty Collections**         | `emptyEnumeration()`          | Returns an enumeration that has no elements. |
-|                              | `emptyIterator()`             | Returns an iterator that has no elements. |
-|                              | `emptyList()`                 | Returns a list that has no elements. |
-|                              | `emptyListIterator()`         | Returns a list iterator that has no elements. |
-|                              | `emptyMap()`                  | Returns an empty map which is immutable. |
-|                              | `emptyNavigableMap()`         | Returns an empty navigable map which is immutable. |
-|                              | `emptyNavigableSet()`         | Returns an empty navigable set which is immutable. |
-|                              | `emptySet()`                  | Returns a set that has no elements. |
-|                              | `emptySortedMap()`            | Returns an empty sorted map which is immutable. |
-|                              | `emptySortedSet()`            | Returns a sorted set that has no elements. |
-| **Synchronized Collections**  | `synchronizedCollection()`    | Returns a synchronized (thread-safe) collection backed by the specified collection. |
-|                              | `synchronizedList()`          | Returns a synchronized (thread-safe) list backed by the specified list. |
-|                              | `synchronizedMap()`           | Returns a synchronized (thread-safe) map backed by the specified map. |
-|                              | `synchronizedNavigableMap()`  | Returns a synchronized (thread-safe) navigable map backed by the specified navigable map. |
-|                              | `synchronizedNavigableSet()`  | Returns a synchronized (thread-safe) navigable set backed by the specified navigable set. |
-|                              | `synchronizedSet()`           | Returns a synchronized (thread-safe) set backed by the specified set. |
-|                              | `synchronizedSortedMap()`     | Returns a synchronized (thread-safe) sorted map backed by the specified sorted map. |
-|                              | `synchronizedSortedSet()`     | Returns a synchronized (thread-safe) sorted set backed by the specified sorted set. |
-| **Other Utility Methods**     | `asLifoQueue()`               | Returns a view of a Deque as a Last-in-first-out (LIFO) Queue. |
-|                              | `disjoint()`                  | Returns true if the two specified collections have no elements in common. |
-|                              | `enumeration()`               | Returns an enumeration over the specified collection. |
-|                              | `list()`                      | Returns an ArrayList containing the elements returned by the specified enumeration. |
-|                              | `nCopies()`                   | Returns an immutable list consisting of n copies of the specified object. |
-|                              | `newSetFromMap()`             | Returns a set backed by the specified map. |
-|                              | `reverseOrder()`              | Returns a comparator that imposes the reverse of the natural ordering on a collection of Comparable objects. |
-
-
-## 💡 Example Usage  
-
-```java
-import java.util.*;
-
-public class CollectionsExample {
-    public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 3, 8, 1, 2));
-
-        // ✅ Sorting the list
-        Collections.sort(numbers);
-        System.out.println("Sorted List: " + numbers);
-        Collections.sort(numbers,Collections.reverseOrder());
-        System.out.println("Sorted List in Reverse: " + numbers);
-
-        // ✅ Finding max and min
-        System.out.println("Max: " + Collections.max(numbers));
-        System.out.println("Min: " + Collections.min(numbers));
-
-        // ✅ Shuffling the list
-        Collections.shuffle(numbers);
-        System.out.println("Shuffled List: " + numbers);
-
-        // ✅ Making the list unmodifiable (read-only)
-        List<Integer> readOnlyList = Collections.unmodifiableList(numbers);
-        System.out.println("Unmodifiable List: " + readOnlyList);
-
-        // Uncommenting the next line will throw an UnsupportedOperationException
-        // readOnlyList.add(10);
-    }
-}
-```
 
 <br>
 
