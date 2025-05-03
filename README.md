@@ -103,16 +103,30 @@ Just-In-Time Compiler is a part of the **JVM** that optimizes the performance of
 
 <br>
 
-## ClassLoader
-A class loader is an object that is responsible for loading classes. It Finds and Loads Java Classes!
-- Class loaders are part of the Java Runtime Environment. 
-- When the JVM requests a class, the class loader tries to locate the class and load the class definition into the runtime using the fully qualified class name
- 
-**Types**
-**Bootstrap Class Loader** - This is the root class loader. It is the superclass of Extension Class Loader and loads the standard Java packages like java.lang, java.net, java.util, java.io, and so on.
-**Extension Class Loader** - This is the subclass of the Bootstrap Class Loader and the superclass of the Application Class Loader. This loads the extensions of standard Java libraries which are present in the $JAVA_HOME/jre/lib/ext directory.
-**Application Class Loader** - This is the final class loader and the subclass of Extension Class Loader. It loads the files present on the classpath. 
-Order of execution of ClassLoaders
+### Class Loader
+
+A **class loader** is an object that is responsible for loading classes. It **Finds and Loads Java Classes!**
+
+- Class loaders are part of the Java Runtime Environment.
+- When the JVM requests a class, the class loader tries to locate the class and load the class definition into the runtime using the fully qualified class name.
+
+#### Types of Class Loaders 
+
+There are three built-in class loaders available in Java:
+
+- **Bootstrap Class Loader**  
+  - This is the root class loader.  
+  - It is the superclass of Extension Class Loader and loads the standard Java packages like `java.lang`, `java.net`, `java.util`, `java.io`, and so on.
+
+- **Extension Class Loader**  
+  - This is the subclass of the Bootstrap Class Loader and the superclass of the Application Class Loader.  
+  - It loads the extensions of standard Java libraries which are present in the `$JAVA_HOME/jre/lib/ext` directory.
+
+- **Application Class Loader**  
+  - This is the final class loader and the subclass of Extension Class Loader.  
+  - It loads the files present on the **classpath**.
+
+**Order of execution of ClassLoaders**
 - JVM needs to find a class, it starts with System Class Loader. 
 - If it is not found, it checks with Extension Class Loader. 
 - If it not found, it goes to the Bootstrap Class Loader. 
@@ -123,7 +137,11 @@ Order of execution of ClassLoaders
 ## Architecture of JDK, JRE, JVM:
 
 ![image](https://github.com/user-attachments/assets/f892ba83-e9d9-4cc5-adeb-9c96d9cd7f59)
+<br>
 
+## Architecture of JVM:
+
+![image](https://github.com/user-attachments/assets/fbce7588-43e9-4e6a-aac4-06515d5b9f6b)
 <br>
 
 ## First Java Program
@@ -2766,7 +2784,6 @@ System.out.println(concat); //value1value2
 #### String Constant Pool
 - **The string pool, also known as the string constant pool, is a special storage area in the Java heap memory where the JVM stores string literals and it only stores one instance of each literal.**
 - All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
-
 - Following statement creates 1 string object (created on the pool) and 1 reference variable.
 
 ```java
@@ -2781,6 +2798,24 @@ String str1 = "value";
 String str2 = new String("value");
 ```
 ![image](https://github.com/user-attachments/assets/778ae5dc-008d-4e18-a10c-96deedad6fce)
+
+### String Intern
+- String Interning is a process of storing only one copy of each distinct String value, which must be immutable.
+- The intern() method creates an exact copy of a String object in the heap memory and stores it in the String constant pool.
+```java
+public class StringIntern {
+        public static void main(String[] args) {
+            String s1 = "abc"; // "abc" is placed in the String pool.
+            String s2 = new String("abc"); // Creates a new String object in heap memory, not the same reference as s1.
+            String s3 = new String("foo"); // Creates a new String object in heap memory with value "foo".
+            String s4 = s1.intern();// s1 is already interned ("abc" in the pool), so s4 points to the pooled string "abc".
+            String s5 = s2.intern();// Interns the "abc" string again. Since "abc" is already in the pool, s5 points to the same pooled object.
+            System.out.println(s1 == s5); //Result: True
+            System.out.println(s3 == s4); //Result:False
+  }
+}
+```
+<br>
 
 #### String Method Examples
 
