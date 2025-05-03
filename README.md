@@ -2978,7 +2978,7 @@ To run an application in an optimal way, JVM divides memory into stack and heap 
 | This memory is thread-safe, as each thread operates in its own stack. | A heap isn’t thread-safe and requires proper synchronization in code to ensure safe access across threads. |
 
 ## Internal Representation of Stack and Heap Memory:
-[👉 Internal Memory Allocation of Stack and Heap](https://speakerdeck.com/deepu105/jvm-memory-usage-stack-vs-heap)
+👉 [Internal Memory Allocation of Stack and Heap](https://speakerdeck.com/deepu105/jvm-memory-usage-stack-vs-heap)
 <br>
 
 ## Java 8 Features
