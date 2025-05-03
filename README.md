@@ -2982,9 +2982,18 @@ To run an application in an optimal way, JVM divides memory into stack and heap 
 
 
 ### Internal Representation of Stack and Heap Memory:
-![image](https://github.com/user-attachments/assets/91ea302a-c1ae-49f3-b4f6-9eaa96afec83)
 
-[![SpeakerDeck Presentation]<script defer class="speakerdeck-embed" data-slide="1" data-id="9780d352c95f4361bd8c6fa164554afc" data-ratio="1.7777777777777777" src="//speakerdeck.com/assets/embed.js"></script>
+
+<details>
+  <summary>📊 JVM Memory Usage - Slide 1</summary>
+  <img src="slides/s1.png" width="700"/>
+</details>
+
+<details>
+  <summary>📊 Slide 2</summary>
+  <img src="slides/s2.png" width="700"/>
+</details>
+
 
 
 <br>
