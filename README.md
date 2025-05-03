@@ -86,8 +86,7 @@ It contains:
 <br>
 
 ## 3. JVM (Java Virtual Machine)  
-Java Virtual Machine (JVM) is an implementation of a virtual machine which executes a Java program.
-
+JVM is a virtual machine that enables the execution of Java bytecodes.
 It performs the following tasks:  
 - Loads class files in the **class loader**.  
 - Verifies bytecode with the **bytecode verifier**.  
@@ -108,12 +107,11 @@ Just-In-Time Compiler is a part of the **JVM** that optimizes the performance of
 A class loader is an object that is responsible for loading classes. It Finds and Loads Java Classes!
 - Class loaders are part of the Java Runtime Environment. 
 - When the JVM requests a class, the class loader tries to locate the class and load the class definition into the runtime using the fully qualified class name
-  
-Three Types
-- System Class Loader - Loads all application classes from CLASSPATH
-- Extension Class Loader - Loads all classes from extension directory
-- Bootstrap Class Loader - Loads all the Java core files
-
+ 
+**Types**
+**Bootstrap Class Loader** - This is the root class loader. It is the superclass of Extension Class Loader and loads the standard Java packages like java.lang, java.net, java.util, java.io, and so on.
+**Extension Class Loader** - This is the subclass of the Bootstrap Class Loader and the superclass of the Application Class Loader. This loads the extensions of standard Java libraries which are present in the $JAVA_HOME/jre/lib/ext directory.
+**Application Class Loader** - This is the final class loader and the subclass of Extension Class Loader. It loads the files present on the classpath. 
 Order of execution of ClassLoaders
 - JVM needs to find a class, it starts with System Class Loader. 
 - If it is not found, it checks with Extension Class Loader. 
