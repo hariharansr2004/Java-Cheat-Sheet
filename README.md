@@ -2982,7 +2982,7 @@ To run an application in an optimal way, JVM divides memory into stack and heap 
 
 
 ### Internal Representation of Stack and Heap Memory:
-👉 [Internal Memory Allocation of Stack and Heap](https://1drv.ms/p/c/3E17AC267B9BF4BB/AfcL4tO7sw9DmufyXQz8ibQ?e=Znr7w5&nav=eyJzSWQiOjI1NywiY0lkIjowfQ)
+👉 [Internal Memory Allocation of Stack and Heap](https://onedrive.live.com/personal/3e17ac267b9bf4bb/_layouts/15/Doc.aspx?resid=3E17AC267B9BF4BB!sd3e20bf7b3bb430f9ae7f25d0cfc89b4&cid=3e17ac267b9bf4bb&migratedtospo=true&app=PowerPoint)
 <br>
 
 ## Java 8 Features
