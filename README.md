@@ -2765,18 +2765,14 @@ matrixA[0] = new int[5];
 
 - A String class can store a sequence of characters. String is not a primitive in Java but a Class in its own right. String can be a letter,number,symbol,spaces.
 
-## Strings are immutable
-
+#### Strings are immutable
 - Value of a String Object once created cannot be modified. Any modification on a String object creates a new String object.
-
 ```java
 String str3 = "value1";
 str3.concat("value2");
 System.out.println(str3); //value1
 ```
-
-Note that the value of str3 is not modified in the above example.  The result should be assigned to a new reference variable (or same variable can be reused).
-
+- Note that the value of str3 is not modified in the above example.  The result should be assigned to a new reference variable (or same variable can be reused).
 ```java
 String concat = str3.concat("value2");
 System.out.println(concat); //value1value2
@@ -2798,7 +2794,8 @@ String str1 = "value";
 //2. String Object - created on the heap
 String str2 = new String("value");
 ```
-![image](https://github.com/user-attachments/assets/778ae5dc-008d-4e18-a10c-96deedad6fce)
+![420229074-778ae5dc-008d-4e18-a10c-96deedad6fce](https://github.com/user-attachments/assets/0efe1a06-6e0b-47df-81e0-53cfa66b7c08)
+
 
 ### String Intern
 - String Interning is a process of storing only one copy of each distinct String value, which must be immutable.
@@ -2930,8 +2927,9 @@ System.out.println(sb1.insert(3, "ABCD"));//abcABCDdefgh
 StringBuilder sb2 = new StringBuilder("abcdefgh");
 //StringBuilder reverse()
 System.out.println(sb2.reverse());//hgfedcba
+
+// Similar functions exist in StringBuffer also.
 ```
-Similar functions exist in StringBuffer also.
 <br>
 
 ## Memory Management
@@ -2953,8 +2951,7 @@ To run an application in an optimal way, JVM divides memory into stack and heap 
 - It follows Last-In-First-Out (LIFO) order. Whenever we call a new method, a new block is created on top of the stack
 - It grows and shrinks as new methods are called and returned, respectively.
 - Variables inside the stack exist only as long as the method that created them is running.
-<br>
-
+  
 ## Heap memory
 - Heap space is used for the dynamic memory allocation of Java objects and JRE classes at runtime.
 - New objects are always created in heap space, and the references to these objects are stored in stack memory.
@@ -2971,7 +2968,7 @@ To run an application in an optimal way, JVM divides memory into stack and heap 
     - Contains JVM metadata for runtime classes and application methods.
     - In Java 8 and above, PermGen was replaced with **Metaspace**, which grows dynamically based on system memory.
    
-### Key Features of Stack vs Heap Memory 
+## Differences b/w Stack and Heap 
 
 | Stack Memory | Heap Memory |
 |--------------|-------------|
@@ -2980,9 +2977,96 @@ To run an application in an optimal way, JVM divides memory into stack and heap 
 | Access to this memory is fast when compared to heap memory. | Access to this memory is comparatively slower than stack memory. |
 | This memory is thread-safe, as each thread operates in its own stack. | A heap isn’t thread-safe and requires proper synchronization in code to ensure safe access across threads. |
 
+## Internal Representation of Stack and Heap Memory:
+<details>
+  <summary><strong>👉 Internal Memory Allocation of Stack and Heap </strong></summary>
+  <br/>
+  <details>
+    <summary>➡️ Slide 1</summary>
+    <img src="/Stack and Heap/s2.png" width="1000"/>
+  </details>
 
-### Internal Representation of Stack and Heap Memory:
-👉 [Internal Memory Allocation of Stack and Heap](https://onedrive.live.com/personal/3e17ac267b9bf4bb/_layouts/15/Doc.aspx?resid=3E17AC267B9BF4BB!sd3e20bf7b3bb430f9ae7f25d0cfc89b4&cid=3e17ac267b9bf4bb&migratedtospo=true&app=PowerPoint)
+  <details>
+    <summary>➡️ Slide 2</summary>
+    <img src="/Stack and Heap/s3.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 3</summary>
+    <img src="/Stack and Heap/s4.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 4</summary>
+    <img src="/Stack and Heap/s5.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 5</summary>
+    <img src="/Stack and Heap/s6.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 6</summary>
+    <img src="/Stack and Heap/s7.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 7</summary>
+    <img src="/Stack and Heap/s8.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 8</summary>
+    <img src="/Stack and Heap/s9.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 9</summary>
+    <img src="/Stack and Heap/s10.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 10</summary>
+    <img src="/Stack and Heap/s11.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 11</summary>
+    <img src="/Stack and Heap/s12.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 12</summary>
+    <img src="/Stack and Heap/s13.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 13</summary>
+    <img src="/Stack and Heap/s14.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 14</summary>
+    <img src="/Stack and Heap/s15.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 15</summary>
+    <img src="/Stack and Heap/s16.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 16</summary>
+    <img src="/Stack and Heap/s17.png" width="1000"/>
+  </details>
+
+  <details>
+    <summary>➡️ Slide 17</summary>
+    <img src="/Stack and Heap/s18.png" width="1000"/>
+  </details>
+
+</details>
 <br>
 
 ## Java 8 Features
