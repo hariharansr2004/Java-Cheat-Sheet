@@ -1377,7 +1377,7 @@ class ConstructorChaining {
 - The objects can be created by using the new keyword.
 - Each object has a state, behaviour, identity.
 - Default value of Object is null
-  
+- The new keyword is also used to allocate memory for the object on the heap, the memory space where objects are stored.
 ![image](https://github.com/user-attachments/assets/5bcefa1a-754d-403d-9be6-4f85a4183d22)
 - State: It is represented by attributes(variables) of an object. 
 - Behaviour: It is represented by the methods of an object.
