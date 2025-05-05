@@ -1745,7 +1745,7 @@ Coupling in Java refers to the degree of interdependence between different compo
 <br>
 
 ## Abstraction
-Abstraction is the process of hiding the implementation details and only showing the essential functionality or features to the user.  
+Abstraction is the process of hiding the implementation details and showing only essential functionality or details to the user.  
 
 ### Real-time Example
 When you get a call, we get an option to either pick it up or just reject it. But in reality, there is a lot of code that runs in the background.
@@ -1887,11 +1887,10 @@ public class Main {
 <br>
 
 ## Encapsulation
-- Encapsulation is the process of binding all the data members and methods into a single entity. It hides the implementation details and provides only functionality to the users. It mainly prevents the data from misuse.
-- It ensures that the data members and methods of a class can’t be accessed directly from other classes.
+- Encapsulation is the process of bundling all the data members (variables) and methods that interact with the data into a single unit. It restricts direct access to the data, allowing access only through controlled methods like getters and setters. 
 
 ### Real-World Example
-Your school or office bag contains different stuff like a pen, pencil, notebook, etc. To get any stuff, you need to open the bag. Similarly, in Java, an encapsulation unit contains its data and behavior within it, and in order to access them, you need an object of that unit.
+In a bank app like SBI, users can’t directly access sensitive information like their account balance or transaction history directly. Instead, they interact with the app through secure actions like entering the login PIN, or to use fingerprint. These steps ensure that sensitive data is only accessed through controlled ways. Similarly, in programming, **encapsulation** hides internal data (like account details) and exposes only necessary methods (like getters/setters), ensuring secure, controlled access to information. This ensures data security and controlled access.
 
 
  ```java
@@ -1935,7 +1934,7 @@ public class EncapsultaionConcept {
 <br>
 
 ## Polymorphism
-The word ‘polymorphism’ means having many forms. In Java, polymorphism refers to the ability of a message to be displayed in more than one form.
+The word ‘polymorphism’ means having many forms. In Java, polymorphism refers to the ability of an object to take on many forms. It allows objects of different classes to be treated as objects of a common superclass.
 
 ### Real-life Example
 A person can have different characteristics at the same time. Like a man at the same time is a father, a husband, and an employee. So, the same person possesses different behaviors in different situations.
