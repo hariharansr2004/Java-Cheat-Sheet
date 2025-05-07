@@ -1988,8 +1988,7 @@ public class EncapsultaionConcept {
 <br>
 
 ## Polymorphism
-The word ‘polymorphism’ means having many forms. In Java, polymorphism refers to the ability of an object to take on many forms. It allows objects of different classes to be treated as objects of a common superclass.
-
+The word ‘polymorphism’ means having many forms. In Java, polymorphism refers to the ability of an object to take on many forms.
 ### Real-life Example
 A person can have different characteristics at the same time. Like a man at the same time is a father, a husband, and an employee. So, the same person possesses different behaviors in different situations.
 
