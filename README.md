@@ -1186,7 +1186,7 @@ public class CanWePassObjectsinMethodCall {
 ### Can we overload static methods? 
 - Yes. We can have two or more static methods with the same name, but parameters or datatypes should be different.
 
-### Can we overload methods that differ only by static keywords? 
+### Can we overload methods that differ only by static keyword and no parameters ? 
 - We cannot overload two methods in Java if they differ only by static keyword bcz method overloading depends on method signature — i.e. method name and parameter list (number or type of parameters).
 - But the static keyword is not part of the method signature, so the compiler treats both methods as having the same signature, causing a compile-time error.
 
