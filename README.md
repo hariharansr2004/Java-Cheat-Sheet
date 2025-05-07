@@ -1939,7 +1939,9 @@ public class Main {
 <br>
 
 ## Encapsulation
-- Encapsulation is the process of bundling all the data members (variables) and methods that interact with the data into a single unit. It restricts direct access to the data, allowing access only through controlled methods like getters and setters. 
+- Encapsulation is the process of bundling all the data members (variables) and methods that interact with the data into a single unit.
+- It restricts direct access to the data, allowing access only through controlled methods like getters and setters.
+- It mainly focus on preventing the data from misuse.
 
 ### Real-World Example
 In a bank app like SBI, users can’t directly access sensitive information like their account balance or transaction history directly. Instead, they interact with the app through secure actions like entering the login PIN, or to use fingerprint. These steps ensure that sensitive data is only accessed through controlled ways. Similarly, in programming, **encapsulation** hides internal data (like account details) and exposes only necessary methods (like getters/setters), ensuring secure, controlled access to information. This ensures data security and controlled access.
