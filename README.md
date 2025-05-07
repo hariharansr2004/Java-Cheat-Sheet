@@ -1671,7 +1671,26 @@ public class HybridInheritance extends father// if we put son it will only give 
 - In multiple inheritance, a subclass has more than one superclass. That means if Java allowed multiple inheritance, a subclass would have two or more superclass constructors to call.
 - So, the JVM will get confuse constructor should be called first to complete the constructor chaining.
 - To avoid this confusion multiple inheritance is not allowed in java.
+```java
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor called");
+    }
+}
 
+class Dog extends Animal {
+    Dog() {
+        super(); // optional, inserted by compiler if not written
+        System.out.println("Dog constructor called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+    }
+}
+```
 <br>
   
 ### Q. Can we access all variables and features of parent class in child class?
