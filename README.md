@@ -1058,13 +1058,42 @@ The return type of a method indicates what type of value it will return to the c
 ## Method Overriding
 - A sub class or child class that provides a specific implementation of a method that is already defined in the super class/parent class with the same method signature.
 - Also called: Run-time Polymorphism
-**Rules:**
+- **Rules:**
 - **IS-A** relationship is mandatory to perform overriding.
-- While overriding, the method name and arguments must be the same.
-- Example: Updating an existing feature
-- Realtime Eg: Adding UPI support with existing Payment Method like credit card and debit card.
-### Note:
+- While overriding, the method signature(name & parameters) must be the same.
+- Only Non-static methods can be overridden. Static methods cannot be overridden.
+- Realtime Eg: Adding UPI support with existing Payment Methods like credit card and debit card.
+- ### Note:
 - Private,static and final methods cannot be overriden.
+
+ ```java
+  class Payment {
+    void makePayment() {
+        System.out.println("Payment method selected.");
+    }
+}
+
+class CreditCardPayment extends Payment {
+    @Override
+    void makePayment() {
+        System.out.println("Payment made using Credit Card.");
+    }
+}
+
+class DebitCardPayment extends Payment {
+    @Override
+    void makePayment() {
+        System.out.println("Payment made using Debit Card.");
+    }
+}
+
+class UpiPayment extends Payment {
+    @Override
+    void makePayment() {
+        System.out.println("Payment made using UPI.");
+    }
+}
+```
 
  ## Method Chaining:
 - Method chaining refers to calling multiple methods sequentially within another method
