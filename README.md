@@ -1056,7 +1056,7 @@ The return type of a method indicates what type of value it will return to the c
 <br>
 
 ## Method Overriding
-- A sub class or child class that provides a same implementation of a method that is already defined in the super class/parent class with the same method signature.
+- A sub class or child class that provides a specific implementation of a method that is already defined in the super class/parent class with the same method signature.
 - Also called: Run-time Polymorphism
 **Rules:**
 - **IS-A** relationship is mandatory to perform overriding.
