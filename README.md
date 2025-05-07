@@ -1721,11 +1721,11 @@ There are four types of Java access modifiers:
 <br>
 
 ## this Keyword
-- ‘this’ keyword in Java is a reference variable that refers to the current instance of the class[current object's refrence]. It is commonly used to differentiate between instance variables and method parameters with the same name.
-- this can also be used to:
-- Call current class constructor
-- Call current class method
-- to refer to the current class instance variables.
+- In Java, the this keyword refers to the current object's reference.[the object whose method or constructor is being called.] It is used to distinguish instance variables from local variables or parameters when they have the same name.
+- this can also be used:
+- to call another constructor inside a constructor
+- to call current class method
+
 
 <br>
 
