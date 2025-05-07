@@ -1666,7 +1666,7 @@ public class HybridInheritance extends father// if we put son it will only give 
 - A class that can inherit properties of more than one parent class.
   
 ### Java doesn’t support Multiple Inheritance Why? 
-- As per java rule whenever we create an object for subclass object its super class constructor must be executed first in-order to complete the constructor chaining process
+- As per java rule whenever we create an object for subclass object its super class constructor is called implicitly in-order to complete the constructor chaining process
 - This is because a subclass inherits properties from its superclass, and before the subclass can use them, the superclass must be properly initialized.
 - In multiple inheritance, a subclass has more than one superclass. That means if Java allowed multiple inheritance, a subclass would have two or more superclass constructors to call.
 - So, the JVM will get confuse constructor should be called first to complete the constructor chaining.
