@@ -954,7 +954,7 @@ class GFG {
 | Memory Allocation      | Created when an object is instantiated. | Allocated once when the class is loaded. | Allocated when the method/block is executed and destroyed after execution. |
 | Default Values        | Assigned default values by JVM. | Assigned default values by JVM. | Must be explicitly initialized before use. |
 
-## Declaration & Accessibility
+### Declaration & Accessibility
 | Aspect              | Instance Variable | Static Variable | Local Variable |
 |------------------------|------------------|----------------|---------------|
 | Declaration     | ✅ Declared inside a class but outside methods.| ✅ Declared inside a class but outside any method, constructor, or block | ❌ Cannot be declared at the class level.|
