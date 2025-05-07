@@ -957,9 +957,7 @@ class GFG {
 ### Declaration & Accessibility
 | Aspect              | Instance Variable | Static Variable | Local Variable |
 |------------------------|------------------|----------------|---------------|
-| Declaration     | ✅ Declared inside a class but outside methods.| ✅ Declared inside a class but outside any method, constructor, or block | ❌ Cannot be declared at the class level.|
-| Declaration in Static Methods | ❌ Cannot be declared directly. Only accessed through an object. | ❌ Cannot be declared inside static methods.  | ✅ Can be declared inside static methods.|
-| Declaration in Non-Static Methods| ❌ Cannot be declared inside non-static methods.| ❌ Cannot be declared inside non-static methods.| ✅ Can be declared inside non-static methods.|
+| Declaration     | ✅ Declared inside a class but outside methods. So, We cannot declare instance variables inside static or non-static methods. They need to be part of the class and can be accessed through instances (objects).| ✅ Declared inside a class but outside any method, constructor, or block. So, We cannot declare static variables inside static or non-static methods. They must be declared at the class level, outside any methods, and can be accessed from both static and non-static methods. | Local variables can only be declared only inside the method or block. So in both the static and non static methods they can be used. |
 | Accessibility in Static Methods | Cannot be accessed directly in a static method. | Can be accessed directly in static and non-static methods. | Cannot be accessed outside the method/block. |
 | Accessibility in Non-Static Methods | Can be accessed directly in non-static methods. | Can be accessed directly in both static and non-static methods. | Can only be accessed within the method/block where declared. |
 | Modifiers Allowed | Can use all access modifiers and other modifiers like `final`, `transient`, `volatile`.| Can use all access modifiers and other modifiers. | Can only be `default` or `final` (cannot be `static` `private`, `public`, or `protected`). |
