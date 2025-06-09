@@ -1095,6 +1095,30 @@ class UpiPayment extends Payment {
 }
 ```
 
+### Static Methods cannot be overridden, Why?
+- Static methods cannot be overridden, because Static method invocation is based on the type of reference variable. It does not depend on the type of object referred to. So, when code below runs, static method in Animal is executed.
+  
+Consider the example below:
+
+```java
+class Animal{
+    static void StaticMethod(){
+System.out.println("Animal Static Method");
+    }
+}
+
+class Dog extends Animal{
+    static void StaticMethod(){
+System.out.println("Dog Static Method");
+    }
+}
+When code below is run, static method in Animal is executed. Static method invocation is based on the type of reference variable. It does not depend on the type of object referred to.
+
+Animal animal = new Dog();
+animal.StaticMethod();//Animal Static Method
+```
+<br>
+
  ## Method Chaining:
 - Method chaining refers to calling multiple methods sequentially within another method
 <br>
@@ -2501,6 +2525,26 @@ public class FileNotFoundException {
 ```
 <br>
 
+### try without a catch is allowed
+```java
+public class Test {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Inside try block");
+            int result = 10 / 0; // causes ArithmeticException
+        } finally {
+            System.out.println("Finally block always runs");
+        }
+    }
+}
+Output:
+Inside try block
+Finally block always runs
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+
+```
+
+
 #### OneTryManyCatch:
 ```java
 public class OneTryManyCatch {
@@ -2523,6 +2567,92 @@ public class OneTryManyCatch {
 	}
 
 }
+```
+<br>
+
+## try-catch-finally in returns:
+If try-catch-finally blocks are supposed to return a value:
+- ✔️ If finally block returns a value then try and catch blocks may or may not return a value.
+
+- ✔️ If finally block does not return a value then both try and catch blocks must return a value.
+
+- ✔️ finally block overrides return values from try and catch blocks.
+
+- ✔️ finally block will always be executed even though try and catch blocks are returning the control.
+
+```java
+public class TryCatchFinallyDemo {
+
+// Case 1: finally returns, try/catch do not return
+    public static int case1() {
+        try {
+            System.out.println("Case 1 - Try block");
+        } catch (Exception e) {
+            System.out.println("Case 1 - Catch block");
+        } finally {
+            System.out.println("Case 1 - Finally block");
+            return 100;  // Finally returns value
+        }
+    }
+
+## Output:
+Case 1 - Try block
+Case 1 - Finally block
+Returned from case1: 100
+
+// Case 2: try/catch return, finally does NOT return
+    public static int case2() {
+        try {
+            System.out.println("Case 2 - Try block");
+            return 1;
+        } catch (Exception e) {
+            System.out.println("Case 2 - Catch block");
+            return 2;
+        } finally {
+            System.out.println("Case 2 - Finally block");
+            // No return here
+        }
+    }
+## Output:
+Case 2 - Try block
+Case 2 - Finally block
+Returned from case2: 1
+
+// Case 3: All return, but finally overrides
+    public static int case3() {
+        try {
+            System.out.println("Case 3 - Try block");
+            return 10;
+        } catch (Exception e) {
+            System.out.println("Case 3 - Catch block");
+            return 20;
+        } finally {
+            System.out.println("Case 3 - Finally block");
+            return 30;  // Overrides previous returns
+        }
+    }
+## Output:
+Case 3 - Try block
+Case 3 - Finally block
+Returned from case3: 30
+
+// Case 4: Finally always runs
+    public static int case4() {
+        try {
+            System.out.println("Case 4 - Try block");
+            return 40;
+        } catch (Exception e) {
+            System.out.println("Case 4 - Catch block");
+            return 50;
+        } finally {
+            System.out.println("Case 4 - Finally block (always runs)");
+        }
+    }
+## Output:
+Case 4 - Try block
+Case 4 - Finally block (always runs)
+Returned from case4: 40
+
 ```
 <br>
 
@@ -2948,13 +3078,7 @@ System.out.println(5 + 5 + 25); //35
 ### StringBuffer: 
 - Mutable and thread-safe due to synchronization, but less efficient than StringBuilder in terms of performance.
 
-| Feature        | String              | StringBuffer        | StringBuilder         |
-|--------------|------------------|------------------|------------------|
-| **Mutability** | Immutable | Mutable | Mutable |
-| **Thread Safety** | Thread Safe | Thread Safe | Not Thread Safe |
-| **Memory Efficiency** | Less Efficient | Less Efficient | Efficient |
-| **Performance** | High (No-Synchronization) | Low (Due to Synchronization) | High (No-Synchronization) |
-| **Usage** | Used when immutability is required. | Used when thread safety is required. | Used when thread safety is not required. |
+
 <br>
 
 #### String Buffer Examples
@@ -3045,8 +3169,8 @@ To run an application in an optimal way, JVM divides memory into stack and heap 
 
 ## Volatile Keyword
 - The volatile keyword is a modifier that is used with variables to ensure their visibility of updates across threads.
-- When we use volatile keyword,Threads read the value directly from main memory instead of using thread local cache.
-- Changes to a volatile variable by one thread are immediately visible to all other threads. 
+- When we use volatile keyword,Threads always written to & read the value directly from main memory instead of using thread local cache.
+- Changes to a volatile variable by one thread are immediately visible to all other threads.
 
 ## What is Cache
 - A "cache" is a temporary storage area that temporarily holds frequently accessed data to reduce access time and improve system performance.
