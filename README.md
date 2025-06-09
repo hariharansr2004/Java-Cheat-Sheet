@@ -2949,7 +2949,7 @@ String concat = str3.concat("value2");
 System.out.println(concat); //value1value2
 ```
 
-#### String Constant Pool
+### String Constant Pool
 - **The string pool, also known as the string constant pool, is a special storage area in the Java heap memory where the JVM stores string literals and it only stores one instance of each literal.**
 - All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
 - However, if new operator is used to create string object, the new object is created on the heap. Following piece of code create 2 objects.
@@ -2987,11 +2987,14 @@ public class StringIntern {
 ```
 <br>
 
-### 📚 java.lang.StringBuffer Class
+### String Buffer and String Builder Classes
+- The StringBuffer and StringBuilder classes are used when there is a necessity to make a lot of modifications to the string which holds a mutable sequence of characters.
+
+#### 📚 java.lang.StringBuffer Class
 - Used to create mutable and thread-safe string objects.
 - Important Methods: append(), insert(), delete(), reverse(), length(), charAt(), substring()
 
-### 🚀 java.lang.StringBuilder Class
+#### 🚀 java.lang.StringBuilder Class
 - Used to create mutable and non-thread-safe string objects.
 - Important Methods: append(), insert(), replace(), delete(), reverse(), length(), charAt(), substring()
   
@@ -3012,9 +3015,7 @@ public class StringIntern {
 | `charAt()` `compareTo()` `concat()` `contains()` `contentEquals()` `copyValueOf()` `endsWith()` `startsWith()` `equals()` `equalsIgnoreCase()` `format()` `indexOf()` `lastIndexOf()` `intern()` `isEmpty()` `length()` `matches()` `replace()` `replaceAll()` `replaceFirst()` `split()` `subSequence()` `substring()` `toCharArray()` `toLowerCase()` `toUpperCase()` `trim()` `valueOf()`  `join()` (Java 8) `isBlank()` (Java 11) |
 
 
-### String Concatenation 
-
-#### Three Rules of String Concatenation
+### String Concatenation Rules
 - RULE1: Expressions are evaluated from left to right. Except if there are parenthesis.
 - RULE2: number + number = number
 - RULE3: number + String = String
