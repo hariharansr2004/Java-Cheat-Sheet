@@ -2926,12 +2926,18 @@ matrixA[0] = new int[4];
 matrixA[0] = new int[5];
 ```
 
-# String Class
-
-- A String class can store a sequence of characters. String is not a primitive in Java but a Class in its own right. String can be a letter,number,symbol,spaces.
-
-#### Strings are immutable
-- Value of a String Object once created cannot be modified. Any modification on a String object creates a new String object.
+# Strings
+- Strings are nothing but the sequence of characters enclosed within double quotes. String can be a letter,number,symbol,spaces.
+- For example: "ABC", "xyz", "123" etc.
+- `How are strings represented in Java?`
+- In some other languages, strings are represented as an array of characters.
+- But in Java, strings are represented as objects of java.lang.String class.
+  
+### Strings are immutable
+- java.lang.String objects are immutable
+- Once you create a string, you can’t modify its content.
+- Any change will result in creation of a new string object.
+  
 ```java
 String str3 = "value1";
 str3.concat("value2");
@@ -2946,25 +2952,26 @@ System.out.println(concat); //value1value2
 #### String Constant Pool
 - **The string pool, also known as the string constant pool, is a special storage area in the Java heap memory where the JVM stores string literals and it only stores one instance of each literal.**
 - All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
-- Following statement creates 1 string object (created on the pool) and 1 reference variable.
-
+- However, if new operator is used to create string object, the new object is created on the heap. Following piece of code create 2 objects.
+  
+- Type 1: When you create string objects using literals, they are stored in the String Constant Pool.
 ```java
 String str1 = "value"; 
 ```
-
-- However, if new operator is used to create string object, the new object is created on the heap. Following piece of code create 2 objects.
-
+- Type 2: When you use the new operator, they are stored in normal heap memory.
 ```java
-//1. String Literal "value" - created in the "String constant pool"
-//2. String Object - created on the heap
 String str2 = new String("value");
 ```
 ![420229074-778ae5dc-008d-4e18-a10c-96deedad6fce](https://github.com/user-attachments/assets/0efe1a06-6e0b-47df-81e0-53cfa66b7c08)
 
-
 ### String Intern
-- String Interning is a process of storing only one copy of each distinct String value, which must be immutable.
-- The intern() method creates an exact copy of a String object in the heap memory and stores it in the String constant pool.
+
+- **String intern** refers to string object in the string constant pool.
+
+- Interning is the process of creating a string object in String Constant Pool which will be exact copy of string object in heap memory.
+
+- `intern()` method of `java.lang.String` class is used to perform interning i.e. creating an exact copy of heap string object in string constant pool.
+
 ```java
 public class StringIntern {
         public static void main(String[] args) {
@@ -2980,60 +2987,32 @@ public class StringIntern {
 ```
 <br>
 
-#### String Method Examples
+### 📚 java.lang.StringBuffer Class
+- Used to create mutable and thread-safe string objects.
+- Important Methods: append(), insert(), delete(), reverse(), length(), charAt(), substring()
 
-String class defines a number of methods to get information about the string content.
+### 🚀 java.lang.StringBuilder Class
+- Used to create mutable and non-thread-safe string objects.
+- Important Methods: append(), insert(), replace(), delete(), reverse(), length(), charAt(), substring()
+  
+### String vs StringBuffer vs StringBuilder
 
-```java
-String str = "abcdefghijk";
-```
+| Feature                | String               | StringBuffer | StringBuilder |
+| ---------------------- | -------------------- | ------------ | ------------- |
+| Mutability             | Immutable            | Mutable      | Mutable       |
+| Thread-safe            | Yes                  | Yes          | No            |
+| Object creation method | Literal or `new`     | Only `new`   | Only `new`    |
+| Memory storage         | Constant pool + Heap | Heap only    | Heap only     |
+| Performance            | Slower               | Slower       | Faster        |
 
-##### Get information from String
+### String Methods:
 
-Following methods help to get information from a String.
+|  java.lang.String Methods                                                                                                                                                                                       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `charAt()` `compareTo()` `concat()` `contains()` `contentEquals()` `copyValueOf()` `endsWith()` `startsWith()` `equals()` `equalsIgnoreCase()` `format()` `indexOf()` `lastIndexOf()` `intern()` `isEmpty()` `length()` `matches()` `replace()` `replaceAll()` `replaceFirst()` `split()` `subSequence()` `substring()` `toCharArray()` `toLowerCase()` `toUpperCase()` `trim()` `valueOf()`  `join()` (Java 8) `isBlank()` (Java 11) |
 
-```java
-//char charAt(int paramInt)
-System.out.println(str.charAt(2)); //prints a char - c
-System.out.println("ABCDEFGH".length());//8
-System.out.println("abcdefghij".toString()); //abcdefghij
-System.out.println("ABC".equalsIgnoreCase("abc"));//true
 
-//Get All characters from index paramInt
-//String substring(int paramInt)
-System.out.println("abcdefghij".substring(3)); //defghij
-
-//All characters from index 3 to 6
-System.out.println("abcdefghij".substring(3,7)); //defg
-
-String s1 = new String("HELLO"); 
-String s2 = new String("HELLO"); 
-System.out.println(s1 == s2); // false
-System.out.println(s1.equals(s2)); // true
-```
-
-#### String Manipulation methods
-
-Most important thing to remember is a String object cannot be modified. When any of these methods are called, they return a new String with the modified value. The original String remains unchanged.
-
-```java
-//String concat(String paramString)
-System.out.println(str.concat("lmn"));//abcdefghijklmn
-
-//String replace(char paramChar1, char paramChar2)
-System.out.println("012301230123".replace('0', '4'));//412341234123
-
-//String replace(CharSequence paramCharSequence1, CharSequence paramCharSequence2)
-System.out.println("012301230123".replace("01", "45"));//452345234523
-
-System.out.println("ABCDEFGHIJ".toLowerCase()); //abcdefghij
-
-System.out.println("abcdefghij".toUpperCase()); //ABCDEFGHIJ
-
-//trim removes leading and trailings spaces
-System.out.println(" abcd  ".trim()); //abcd
-```
-### String Concatenation Operator
+### String Concatenation 
 
 #### Three Rules of String Concatenation
 - RULE1: Expressions are evaluated from left to right. Except if there are parenthesis.
@@ -3049,45 +3028,6 @@ System.out.println(5 + 5 + "25"); //1025
 System.out.println("" + 5 + 5 + "25"); //5525
 System.out.println(5 + (5 + "25")); //5525
 System.out.println(5 + 5 + 25); //35
-```
-<br>
-
-## String vs StringBuffer vs StringBuilder
-
-### String: 
-- Immutable, meaning its value cannot be changed once created. It is thread-safe but less memory-efficient.
-### StringBuilder: 
-- Mutable, not thread-safe, and more memory-efficient compared to String. Best used for single-threaded operations.
-### StringBuffer: 
-- Mutable and thread-safe due to synchronization, but less efficient than StringBuilder in terms of performance.
-
-
-<br>
-
-#### String Buffer Examples
-```java
-StringBuffer stringbuffer = new StringBuffer("12345");
-stringbuffer.append("6789");
-System.out.println(stringbuffer); //123456789
-//All StringBuffer methods modify the value of the object.
-```
-#### String Builder Examples
-```java
-StringBuilder sb = new StringBuilder("0123456789");
-
-//StringBuilder delete(int startIndex, int endIndexPlusOne)
-System.out.println(sb.delete(3, 7));//012789
-
-StringBuilder sb1 = new StringBuilder("abcdefgh");
-
-//StringBuilder insert(int indext, String whatToInsert)
-System.out.println(sb1.insert(3, "ABCD"));//abcABCDdefgh
-
-StringBuilder sb2 = new StringBuilder("abcdefgh");
-//StringBuilder reverse()
-System.out.println(sb2.reverse());//hgfedcba
-
-// Similar functions exist in StringBuffer also.
 ```
 <br>
 
