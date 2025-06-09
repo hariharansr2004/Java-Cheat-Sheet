@@ -2636,23 +2636,6 @@ Case 3 - Try block
 Case 3 - Finally block
 Returned from case3: 30
 
-// Case 4: Finally always runs
-    public static int case4() {
-        try {
-            System.out.println("Case 4 - Try block");
-            return 40;
-        } catch (Exception e) {
-            System.out.println("Case 4 - Catch block");
-            return 50;
-        } finally {
-            System.out.println("Case 4 - Finally block (always runs)");
-        }
-    }
-## Output:
-Case 4 - Try block
-Case 4 - Finally block (always runs)
-Returned from case4: 40
-
 ```
 <br>
 
