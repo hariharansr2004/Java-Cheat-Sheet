@@ -205,8 +205,10 @@ Data types in Java are divided into two groups:
 ## ASCII:
 - ASCII- American Standard Code for Information Interchange
 - Created in 1960 for encoding characters in computers and digital systems.
+- Decimal Value for (0-9) : 48-57
 - Decimal Value for (a-z) : 65-90
 - Decimal Value for (A-Z) : 97-122
+
 <br>
 
 ## Size of Data Type in Java
